@@ -1,0 +1,26 @@
+Package: hystReet
+Type: Package
+Title: Get pedestrian frequency data from the hystreet project
+Date: 2019-XX-XX
+Version: 0.0.1
+Authors@R: person("Johannes", "Friedrich", role = c("aut", "cre"), email = "Johannes.Friedrich@posteo.de")
+Maintainer: Johannes Friedrich <Johannes.Friedrich@posteo.de>
+Description: An R API wrapper for the hystreet project.
+URL: https://github.com/JohannesFriedrich/hystReet
+BugReports: https://github.com/JohannesFriedrich/hystReet/issues
+License: GPL-3
+Depends: 
+  R (>= 3.4.0),
+  httr,  
+  jsonlite,
+  lubridate
+Suggests:
+  ggplot2,
+  dplyr,
+  htmltools,
+  knitr,
+  rmarkdown,
+  scales
+RoxygenNote: 6.1.1
+Encoding: UTF-8
+VignetteBuilder: knitr

@@ -1,0 +1,54 @@
+---
+output: rmarkdown::github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# hystReet
+
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      comment = "##",
+                      fig.retina = 2,
+                      fig.align = "center",
+                      fig.path = "README_figs/README-")
+Sys.setlocale("LC_TIME", "C")
+```
+
+## Introduction
+
+17.06
+23.06
+27.06
+
+```{r}
+library(tidyverse)
+library(hystReet)
+```
+
+```{r}
+locations <- get_hystreet_locations()
+
+
+data <- lapply(locations$id, function(x){
+  
+  get_hystreet_station_data(x, query = list(from = "2018-06-14", to = "2018-06-28"))$measurements %>% 
+    mutate(id = x)
+  
+})
+
+df <- do.call(rbind, data) %>% 
+  mutate(day = lubridate::day(timestamp),
+         hour = lubridate::hour(timestamp))
+```
+
+
+```{r}
+ggplot(df, aes(x = hour, y = pedestrians_count, colour = as.factor(id))) +
+  geom_line(group = 1) +
+  facet_grid(~day) 
+```
+
