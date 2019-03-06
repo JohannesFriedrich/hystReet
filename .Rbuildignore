@@ -1,0 +1,23 @@
+# Exclude RStudio files
+^.*\.Rproj$
+^\.Rproj\.user$
+^Auswertungen$
+
+# Exclude test suite files
+^\.travis\.yml$
+
+# Exclude GitHub stuff
+LICENSE$
+Readme\.md
+^appveyor\.yml$
+^docs$
+^_pkgdown\.yml$
+
+# Readme RMD files
+^README_figs
+^README\.html$
+^README\.Rmd$
+^README-.*\.png$
+
+# Exclude rsconnect
+^rsconnect$

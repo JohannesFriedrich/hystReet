@@ -20,7 +20,7 @@ Sys.setlocale("LC_TIME", "C")
 
 ## Introduction
 
-[hyperstreet](https://hystreet.com) is a companie collecting pedestrains in german cities. After registering you can download the data for free from 19 cities.
+[hystreet](https://hystreet.com) is a company collecting pedestrains in german cities. After registering you can download the data for free from 19 cities.
 
 
 ## Installation

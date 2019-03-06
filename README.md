@@ -9,9 +9,9 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 
 ## Introduction
 
-[hyperstreet](https://hystreet.com) is a companie collecting pedestrains
-in german cities. After registering you can download the data for free
-from 19 cities.
+[hystreet](https://hystreet.com) is a company collecting pedestrains in
+german cities. After registering you can download the data for free from
+19 cities.
 
 ## Installation
 
@@ -109,13 +109,13 @@ counts
 
 <td style="text-align:right;">
 
-47
+55
 
 </td>
 
 <td style="text-align:right;">
 
-319335050
+352970219
 
 </td>
 
@@ -172,6 +172,138 @@ city
 
 <td style="text-align:right;">
 
+53
+
+</td>
+
+<td style="text-align:left;">
+
+Schadowstraße (West)
+
+</td>
+
+<td style="text-align:left;">
+
+Düsseldorf
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+114
+
+</td>
+
+<td style="text-align:left;">
+
+Herrenteichsstraße (Ost)
+
+</td>
+
+<td style="text-align:left;">
+
+Osnabrück
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+94
+
+</td>
+
+<td style="text-align:left;">
+
+Kurfürstendamm Südseite (Ost)
+
+</td>
+
+<td style="text-align:left;">
+
+Berlin
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+103
+
+</td>
+
+<td style="text-align:left;">
+
+Schuchardstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Darmstadt
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+108
+
+</td>
+
+<td style="text-align:left;">
+
+Große Straße (Mitte)
+
+</td>
+
+<td style="text-align:left;">
+
+Osnabrück
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+68
+
+</td>
+
+<td style="text-align:left;">
+
+Petersstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Leipzig
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
 95
 
 </td>
@@ -194,19 +326,19 @@ Mannheim
 
 <td style="text-align:right;">
 
-69
+107
 
 </td>
 
 <td style="text-align:left;">
 
-Hainstraße
+Krahnstraße (Süd)
 
 </td>
 
 <td style="text-align:left;">
 
-Leipzig
+Osnabrück
 
 </td>
 
@@ -216,19 +348,19 @@ Leipzig
 
 <td style="text-align:right;">
 
-106
+54
 
 </td>
 
 <td style="text-align:left;">
 
-Schönbornstraße
+Schadowstraße (Ost)
 
 </td>
 
 <td style="text-align:left;">
 
-Würzburg
+Düsseldorf
 
 </td>
 
@@ -238,151 +370,19 @@ Würzburg
 
 <td style="text-align:right;">
 
-63
+109
 
 </td>
 
 <td style="text-align:left;">
 
-Georgstraße
+Krahnstraße (Mitte, Altstadt)
 
 </td>
 
 <td style="text-align:left;">
 
-Hannover
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-96
-
-</td>
-
-<td style="text-align:left;">
-
-Planken (West)
-
-</td>
-
-<td style="text-align:left;">
-
-Mannheim
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-71
-
-</td>
-
-<td style="text-align:left;">
-
-Schusterstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Mainz
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-117
-
-</td>
-
-<td style="text-align:left;">
-
-Ludgeristraße
-
-</td>
-
-<td style="text-align:left;">
-
-Münster
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-49
-
-</td>
-
-<td style="text-align:left;">
-
-Westenhellweg
-
-</td>
-
-<td style="text-align:left;">
-
-Dortmund
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-64
-
-</td>
-
-<td style="text-align:left;">
-
-Große Packhofstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Hannover
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-97
-
-</td>
-
-<td style="text-align:left;">
-
-Kurfürstendamm Nordseite (Ost)
-
-</td>
-
-<td style="text-align:left;">
-
-Berlin
+Osnabrück
 
 </td>
 
@@ -497,11 +497,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##   id                         station    ratio
-## 1 73      München (Neuhauser Straße) 87090.08
-## 2 47     Köln (Schildergasse (West)) 63771.38
-## 3 63          Hannover (Georgstraße) 62201.13
-## 4 77 Stuttgart (Königstraße (Mitte)) 52443.51
-## 5 48      Köln (Hohe Straße (Mitte)) 48623.92
+## 1 73      München (Neuhauser Straße) 86538.62
+## 2 47     Köln (Schildergasse (West)) 63698.54
+## 3 63          Hannover (Georgstraße) 62319.37
+## 4 77 Stuttgart (Königstraße (Mitte)) 52406.47
+## 5 48      Köln (Hohe Straße (Mitte)) 48382.38
 ```
 
 Now let´s visualise the top 10 cities:
