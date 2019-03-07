@@ -9,8 +9,8 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 
 ## Introduction
 
-[hystreet](https://hystreet.com) is a company collecting pedestrains in
-german cities. After registering you can download the data for free from
+[hystreet.com](https://hystreet.com) is a company records pedestrian counts at certain spots in
+german cities. After registering and requesting access to the API you can download the data for free from
 19 cities.
 
 ## Installation
