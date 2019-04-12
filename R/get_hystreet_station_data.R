@@ -46,6 +46,8 @@ get_hystreet_station_data <- function(
   if (!is.null(query) && class(query) != "list")
     stop("[get_hystreet_station_data()] Argument 'query' has to be a list", call. = FALSE)
   
+  # Ids_loop <- lapply(1:length(hystreetId), function(Id){
+  
   
   res <- .create_hystreet_request(API_token, 
                                   hystreetId = hystreetId, 
@@ -56,5 +58,11 @@ get_hystreet_station_data <- function(
   res$metadata$latest_measurement_at <- .convert_dates(res$metadata$latest_measurement_at)
   
   return(res)
+  
+  # })
+  # 
+  # names(Ids_loop) <- hystreetId
+  # 
+  # return(Ids_loop)
   
 }

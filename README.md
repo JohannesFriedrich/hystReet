@@ -9,8 +9,8 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 
 ## Introduction
 
-[hystreet.com](https://hystreet.com) is a company records pedestrian counts at certain spots in
-german cities. After registering and requesting access to the API you can download the data for free from
+[hystreet](https://hystreet.com) is a company collecting pedestrains in
+german cities. After registering you can download the data for free from
 19 cities.
 
 ## Installation
@@ -109,13 +109,13 @@ counts
 
 <td style="text-align:right;">
 
-55
+62
 
 </td>
 
 <td style="text-align:right;">
 
-352970219
+406055184
 
 </td>
 
@@ -172,35 +172,13 @@ city
 
 <td style="text-align:right;">
 
-53
+111
 
 </td>
 
 <td style="text-align:left;">
 
-Schadowstraße (West)
-
-</td>
-
-<td style="text-align:left;">
-
-Düsseldorf
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-114
-
-</td>
-
-<td style="text-align:left;">
-
-Herrenteichsstraße (Ost)
+Jürgensort
 
 </td>
 
@@ -216,107 +194,19 @@ Osnabrück
 
 <td style="text-align:right;">
 
-94
+102
 
 </td>
 
 <td style="text-align:left;">
 
-Kurfürstendamm Südseite (Ost)
+Bürgermeister-Fischer-Straße
 
 </td>
 
 <td style="text-align:left;">
 
-Berlin
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-103
-
-</td>
-
-<td style="text-align:left;">
-
-Schuchardstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Darmstadt
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-108
-
-</td>
-
-<td style="text-align:left;">
-
-Große Straße (Mitte)
-
-</td>
-
-<td style="text-align:left;">
-
-Osnabrück
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-68
-
-</td>
-
-<td style="text-align:left;">
-
-Petersstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Leipzig
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-95
-
-</td>
-
-<td style="text-align:left;">
-
-Planken (Mitte)
-
-</td>
-
-<td style="text-align:left;">
-
-Mannheim
+Augsburg
 
 </td>
 
@@ -348,19 +238,19 @@ Osnabrück
 
 <td style="text-align:right;">
 
-54
+96
 
 </td>
 
 <td style="text-align:left;">
 
-Schadowstraße (Ost)
+Planken (West)
 
 </td>
 
 <td style="text-align:left;">
 
-Düsseldorf
+Mannheim
 
 </td>
 
@@ -370,19 +260,129 @@ Düsseldorf
 
 <td style="text-align:right;">
 
-109
+72
 
 </td>
 
 <td style="text-align:left;">
 
-Krahnstraße (Mitte, Altstadt)
+Stadthausstraße
 
 </td>
 
 <td style="text-align:left;">
 
-Osnabrück
+Mainz
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+104
+
+</td>
+
+<td style="text-align:left;">
+
+Ernst-Ludwig-Straße
+
+</td>
+
+<td style="text-align:left;">
+
+Darmstadt
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+47
+
+</td>
+
+<td style="text-align:left;">
+
+Schildergasse (West)
+
+</td>
+
+<td style="text-align:left;">
+
+Köln
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+84
+
+</td>
+
+<td style="text-align:left;">
+
+Rathausgasse
+
+</td>
+
+<td style="text-align:left;">
+
+Freiburg
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+90
+
+</td>
+
+<td style="text-align:left;">
+
+Karolinenstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Nürnberg
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+126
+
+</td>
+
+<td style="text-align:left;">
+
+Neue Straße
+
+</td>
+
+<td style="text-align:left;">
+
+Braunschweig
 
 </td>
 
@@ -394,7 +394,7 @@ Osnabrück
 
 ### Request data from a specific station
 
-The (properly) most interesting function is
+The (probably) most interesting function is
 ‘get\_hystreet\_station\_data()’. With the hystreetID it is possible
 to request a specific station. By default, all the data from the current
 day are received. With the ‘query’ argument it is possible to set the
@@ -443,13 +443,13 @@ Now let´s compare different stations:
 data_73 <- get_hystreet_station_data(
     hystreetId = 73, 
     query = list(from = "01-01-2019", to = "31-01-2019", resolution = "day"))$measurements %>% 
-  select(1:2) %>% 
+  select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 data_74 <- get_hystreet_station_data(
     hystreetId = 74, 
     query = list(from = "01-01-2019", to = "31-01-2019", resolution = "day"))$measurements %>% 
-    select(1:2) %>% 
+    select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
 data <- bind_rows(data_73, data_74)
@@ -497,11 +497,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##   id                         station    ratio
-## 1 73      München (Neuhauser Straße) 86538.62
-## 2 47     Köln (Schildergasse (West)) 63698.54
-## 3 63          Hannover (Georgstraße) 62319.37
-## 4 77 Stuttgart (Königstraße (Mitte)) 52406.47
-## 5 48      Köln (Hohe Straße (Mitte)) 48382.38
+## 1 73      München (Neuhauser Straße) 85981.88
+## 2 47     Köln (Schildergasse (West)) 63687.52
+## 3 63          Hannover (Georgstraße) 62750.49
+## 4 77 Stuttgart (Königstraße (Mitte)) 52268.06
+## 5 48      Köln (Hohe Straße (Mitte)) 48001.71
 ```
 
 Now let´s visualise the top 10 cities:
