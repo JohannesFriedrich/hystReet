@@ -109,13 +109,13 @@ counts
 
 <td style="text-align:right;">
 
-62
+84
 
 </td>
 
 <td style="text-align:right;">
 
-406055184
+0
 
 </td>
 
@@ -172,19 +172,19 @@ city
 
 <td style="text-align:right;">
 
-111
+151
 
 </td>
 
 <td style="text-align:left;">
 
-Jürgensort
+Stiftstraße
 
 </td>
 
 <td style="text-align:left;">
 
-Osnabrück
+Stuttgart
 
 </td>
 
@@ -194,19 +194,19 @@ Osnabrück
 
 <td style="text-align:right;">
 
-102
+93
 
 </td>
 
 <td style="text-align:left;">
 
-Bürgermeister-Fischer-Straße
+Große Bleichen
 
 </td>
 
 <td style="text-align:left;">
 
-Augsburg
+Hamburg
 
 </td>
 
@@ -216,19 +216,19 @@ Augsburg
 
 <td style="text-align:right;">
 
-107
+135
 
 </td>
 
 <td style="text-align:left;">
 
-Krahnstraße (Süd)
+Schönbornstraße
 
 </td>
 
 <td style="text-align:left;">
 
-Osnabrück
+Würzburg
 
 </td>
 
@@ -238,19 +238,19 @@ Osnabrück
 
 <td style="text-align:right;">
 
-96
+142
 
 </td>
 
 <td style="text-align:left;">
 
-Planken (West)
+Hauptstraße (Süd)
 
 </td>
 
 <td style="text-align:left;">
 
-Mannheim
+Erlangen
 
 </td>
 
@@ -260,57 +260,13 @@ Mannheim
 
 <td style="text-align:right;">
 
-72
+160
 
 </td>
 
 <td style="text-align:left;">
 
-Stadthausstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Mainz
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-104
-
-</td>
-
-<td style="text-align:left;">
-
-Ernst-Ludwig-Straße
-
-</td>
-
-<td style="text-align:left;">
-
-Darmstadt
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-47
-
-</td>
-
-<td style="text-align:left;">
-
-Schildergasse (West)
+Schildergasse (Ost)
 
 </td>
 
@@ -326,35 +282,13 @@ Köln
 
 <td style="text-align:right;">
 
-84
+89
 
 </td>
 
 <td style="text-align:left;">
 
-Rathausgasse
-
-</td>
-
-<td style="text-align:left;">
-
-Freiburg
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-90
-
-</td>
-
-<td style="text-align:left;">
-
-Karolinenstraße
+Kaiserstraße
 
 </td>
 
@@ -370,19 +304,85 @@ Nürnberg
 
 <td style="text-align:right;">
 
-126
+57
 
 </td>
 
 <td style="text-align:left;">
 
-Neue Straße
+Schlösserstraße
 
 </td>
 
 <td style="text-align:left;">
 
-Braunschweig
+Erfurt
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+109
+
+</td>
+
+<td style="text-align:left;">
+
+Krahnstraße (Mitte, Altstadt)
+
+</td>
+
+<td style="text-align:left;">
+
+Osnabrück
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+146
+
+</td>
+
+<td style="text-align:left;">
+
+Hirschstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Ulm
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+143
+
+</td>
+
+<td style="text-align:left;">
+
+Kaiser-Joseph-Straße (Mitte)
+
+</td>
+
+<td style="text-align:left;">
+
+Freiburg
 
 </td>
 
@@ -496,12 +496,12 @@ What stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##   id                         station    ratio
-## 1 73      München (Neuhauser Straße) 85981.88
-## 2 47     Köln (Schildergasse (West)) 63687.52
-## 3 63          Hannover (Georgstraße) 62750.49
-## 4 77 Stuttgart (Königstraße (Mitte)) 52268.06
-## 5 48      Köln (Hohe Straße (Mitte)) 48001.71
+##    id                       station    ratio
+## 1  73    München (Neuhauser Straße) 85242.03
+## 2 150 Frankfurt a.M. (Zeil (Mitte)) 63171.05
+## 3  47   Köln (Schildergasse (West)) 62758.08
+## 4  63        Hannover (Georgstraße) 62459.80
+## 5 159  Köln (Schildergasse (Mitte)) 61161.99
 ```
 
 Now let´s visualise the top 10 cities:
