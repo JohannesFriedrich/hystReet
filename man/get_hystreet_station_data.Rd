@@ -13,7 +13,7 @@ available IDs.}
 
 \item{query}{\link{list} (\strong{optional}): A list with queries. Up do date the following queries are supported:
 \itemize{
-\item from: datetime of earliest measurement (default: today 00:00:00:): e.g. "10-01-2018 12:00:00" or "2018-10-01"
+\item from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
 \item to : datetime of latest measurement (default: today 23:59:59): e.g. "12-01-2018 12:00:00" or "2018-12-01"
 \item resoution: Resultion for the measurement grouping (default: hour): "day", "hour", "month", "week"
 }}

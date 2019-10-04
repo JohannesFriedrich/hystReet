@@ -121,14 +121,14 @@ knitr::kable(
 
 The (probably) most interesting function is 'get_hystreet_station_data()'. With the hystreetID it is possible to request a specific station. By default, all the data from the current day are received.
 With the 'query' argument it is possible to set the received data more precise: 
-* from: datetime of earliest measurement (default: today 00:00:00:): e.g. "10-01-2018 12:00:00" or "2018-10-01"
-* to : datetime of latest measurement (default: today 23:59:59): e.g. "12-01-2018 12:00:00" or "2018-12-01"
+* from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
+* to : datetime of latest measurement (default: today 23:59:59): e.g. "2018-12-01 12:00:00" or "2018-12-01"
 * resoution: Resultion for the measurement grouping (default: hour): "day", "hour", "month", "week"
 
 ```{r}
 data <- get_hystreet_station_data(
-  hystreetId = 71, 
-  query = list(from = "01-12-2018", to = "31-12-2018", resolution = "day"))
+  hystreetId = 71,
+  query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
 ```
 
 
@@ -139,7 +139,7 @@ Let´s see if we can see the most frequent days before christmas ... I think it 
 ```{r}
 data <- get_hystreet_station_data(
     hystreetId = 71, 
-    query = list(from = "01-12-2018", to = "01-01-2019"))
+    query = list(from = "2018-12-01", to = "2019-01-01", resolution = "hour"))
 ```
 
 ```{r}
@@ -158,13 +158,13 @@ Now let´s compare different stations:
 ```{r}
 data_73 <- get_hystreet_station_data(
     hystreetId = 73, 
-    query = list(from = "01-01-2019", to = "31-01-2019", resolution = "day"))$measurements %>% 
+    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 data_74 <- get_hystreet_station_data(
     hystreetId = 74, 
-    query = list(from = "01-01-2019", to = "31-01-2019", resolution = "day"))$measurements %>% 
+    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 

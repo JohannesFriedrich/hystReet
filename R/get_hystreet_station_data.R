@@ -3,7 +3,7 @@
 #' @param hystreetId [integer] (**required**): ID of the requested statin. See [get_hystreet_locations()] for an overview of 
 #' available IDs.
 #' @param query [list] (**optional**): A list with queries. Up do date the following queries are supported:
-#' * from: datetime of earliest measurement (default: today 00:00:00:): e.g. "10-01-2018 12:00:00" or "2018-10-01"
+#' * from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
 #' * to : datetime of latest measurement (default: today 23:59:59): e.g. "12-01-2018 12:00:00" or "2018-12-01"
 #' * resoution: Resultion for the measurement grouping (default: hour): "day", "hour", "month", "week"
 #' @param API_token [character] (**optional**): API key to get access to Hystreet API

@@ -5,7 +5,7 @@
 #' 
 #' @return [data.frame] with parsed data from hystreet API
 #'
-#' @section Function version 0.0.1
+#' @section Function version 0.0.2
 #' @author Johannes Friedrich
 #' 
 #' @examples 
@@ -22,23 +22,17 @@ get_hystreet_stats <- function(verbose = FALSE, API_token = NULL){
   
   if(verbose){
     
-    stats <- data.frame(
-      id = res$id,
-      name = res$name,
-      city = res$city, 
-      lifetime_counts = res$statistics$lifetime_count,
-      earliest_measurement = res$metadata$earliest_measurement_at,
-      latest_measurement = res$metadata$latest_measurement_at)
+    return(res)
     
   } else {
     
     stats <- data.frame(
       stations = nrow(res),
-      counts = sum(res$statistics$lifetime_count)
+      today_count = sum(res$statistics$today_count)
     )
+   
+    return(stats) 
     
   }
-  
-  return(stats)
   
 }

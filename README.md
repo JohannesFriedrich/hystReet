@@ -95,7 +95,7 @@ stations
 
 <th style="text-align:right;">
 
-counts
+today\_count
 
 </th>
 
@@ -109,13 +109,13 @@ counts
 
 <td style="text-align:right;">
 
-84
+100
 
 </td>
 
 <td style="text-align:right;">
 
-0
+2160844
 
 </td>
 
@@ -194,6 +194,28 @@ Stuttgart
 
 <td style="text-align:right;">
 
+168
+
+</td>
+
+<td style="text-align:left;">
+
+Hohe Straße (Nord)
+
+</td>
+
+<td style="text-align:left;">
+
+Köln
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
 93
 
 </td>
@@ -238,6 +260,28 @@ Würzburg
 
 <td style="text-align:right;">
 
+131
+
+</td>
+
+<td style="text-align:left;">
+
+Sack
+
+</td>
+
+<td style="text-align:left;">
+
+Braunschweig
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
 142
 
 </td>
@@ -251,28 +295,6 @@ Hauptstraße (Süd)
 <td style="text-align:left;">
 
 Erlangen
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-160
-
-</td>
-
-<td style="text-align:left;">
-
-Schildergasse (Ost)
-
-</td>
-
-<td style="text-align:left;">
-
-Köln
 
 </td>
 
@@ -304,19 +326,19 @@ Nürnberg
 
 <td style="text-align:right;">
 
-57
+160
 
 </td>
 
 <td style="text-align:left;">
 
-Schlösserstraße
+Schildergasse (Ost)
 
 </td>
 
 <td style="text-align:left;">
 
-Erfurt
+Köln
 
 </td>
 
@@ -348,41 +370,19 @@ Osnabrück
 
 <td style="text-align:right;">
 
-146
+57
 
 </td>
 
 <td style="text-align:left;">
 
-Hirschstraße
+Schlösserstraße
 
 </td>
 
 <td style="text-align:left;">
 
-Ulm
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-143
-
-</td>
-
-<td style="text-align:left;">
-
-Kaiser-Joseph-Straße (Mitte)
-
-</td>
-
-<td style="text-align:left;">
-
-Freiburg
+Erfurt
 
 </td>
 
@@ -399,15 +399,15 @@ The (probably) most interesting function is
 to request a specific station. By default, all the data from the current
 day are received. With the ‘query’ argument it is possible to set the
 received data more precise: \* from: datetime of earliest measurement
-(default: today 00:00:00:): e.g. “10-01-2018 12:00:00” or “2018-10-01”
+(default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01”
 \* to : datetime of latest measurement (default: today 23:59:59): e.g.
-“12-01-2018 12:00:00” or “2018-12-01” \* resoution: Resultion for the
+“2018-12-01 12:00:00” or “2018-12-01” \* resoution: Resultion for the
 measurement grouping (default: hour): “day”, “hour”, “month”, “week”
 
 ``` r
 data <- get_hystreet_station_data(
-  hystreetId = 71, 
-  query = list(from = "01-12-2018", to = "31-12-2018", resolution = "day"))
+  hystreetId = 71,
+  query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
 ```
 
 ## Some ideas to visualise the data
@@ -419,7 +419,7 @@ December … holidays in Germany :-).
 ``` r
 data <- get_hystreet_station_data(
     hystreetId = 71, 
-    query = list(from = "01-12-2018", to = "01-01-2019"))
+    query = list(from = "2018-12-01", to = "2019-01-01", resolution = "hour"))
 ```
 
 ``` r
@@ -442,13 +442,13 @@ Now let´s compare different stations:
 ``` r
 data_73 <- get_hystreet_station_data(
     hystreetId = 73, 
-    query = list(from = "01-01-2019", to = "31-01-2019", resolution = "day"))$measurements %>% 
+    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 data_74 <- get_hystreet_station_data(
     hystreetId = 74, 
-    query = list(from = "01-01-2019", to = "31-01-2019", resolution = "day"))$measurements %>% 
+    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
@@ -496,12 +496,12 @@ What stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                       station    ratio
-## 1  73    München (Neuhauser Straße) 85242.03
-## 2 150 Frankfurt a.M. (Zeil (Mitte)) 63171.05
-## 3  47   Köln (Schildergasse (West)) 62758.08
-## 4  63        Hannover (Georgstraße) 62459.80
-## 5 159  Köln (Schildergasse (Mitte)) 61161.99
+##    id                       station     ratio
+## 1 131           Braunschweig (Sack) 137635.44
+## 2  73    München (Neuhauser Straße)  86950.98
+## 3 165     München (Kaufingerstraße)  85615.70
+## 4 150 Frankfurt a.M. (Zeil (Mitte))  66496.63
+## 5  63        Hannover (Georgstraße)  61751.03
 ```
 
 Now let´s visualise the top 10 cities:
