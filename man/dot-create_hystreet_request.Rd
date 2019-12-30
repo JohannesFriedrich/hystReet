@@ -4,8 +4,7 @@
 \alias{.create_hystreet_request}
 \title{Create request to Hystreet API}
 \usage{
-.create_hystreet_request(API_key = NULL, hystreetId = NULL,
-  query = NULL)
+.create_hystreet_request(API_key = NULL, hystreetId = NULL, query = NULL)
 }
 \arguments{
 \item{API_key}{[character]: API key to get access to Hystreet API}

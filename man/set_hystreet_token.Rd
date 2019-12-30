@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_hystreet_token.R
 \name{set_hystreet_token}
 \alias{set_hystreet_token}
-\title{Create request to Hystreet API}
+\title{Set your API token for the Hystreet API}
 \usage{
 set_hystreet_token(API_token = NULL)
 }
@@ -13,7 +13,7 @@ set_hystreet_token(API_token = NULL)
 Set environment variable
 }
 \description{
-Create request to Hystreet API
+Set your API token for the Hystreet API
 }
 \section{Function version 0.0.1}{
 NA

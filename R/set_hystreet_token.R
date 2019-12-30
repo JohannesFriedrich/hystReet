@@ -1,4 +1,4 @@
-#' Create request to Hystreet API
+#' Set your API token for the Hystreet API
 #'
 #' @param API_token [character] (**required**): API key to get access to Hystreet API
 #' 

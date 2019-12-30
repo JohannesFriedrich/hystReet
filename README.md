@@ -109,13 +109,13 @@ today\_count
 
 <td style="text-align:right;">
 
-100
+110
 
 </td>
 
 <td style="text-align:right;">
 
-2160844
+272711
 
 </td>
 
@@ -167,6 +167,28 @@ city
 </thead>
 
 <tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+209
+
+</td>
+
+<td style="text-align:left;">
+
+Lange Straße
+
+</td>
+
+<td style="text-align:left;">
+
+Oldenburg
+
+</td>
+
+</tr>
 
 <tr>
 
@@ -348,28 +370,6 @@ Köln
 
 <td style="text-align:right;">
 
-109
-
-</td>
-
-<td style="text-align:left;">
-
-Krahnstraße (Mitte, Altstadt)
-
-</td>
-
-<td style="text-align:left;">
-
-Osnabrück
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
 57
 
 </td>
@@ -426,12 +426,17 @@ data <- get_hystreet_station_data(
 ggplot(data$measurements, aes(x = timestamp, y = pedestrians_count, colour = weekdays(timestamp))) +
   geom_path(group = 1) +
   scale_x_datetime(date_breaks = "7 days") +
+  scale_x_datetime(labels = date_format("%d.%m.%Y")) +
   labs(x = "Date",
        y = "Pedestrians",
        colour = "Day")
+## Scale for 'x' is already present. Adding another scale for 'x', which will
+## replace the existing scale.
 ```
 
 <img src="README_figs/README-unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+
+### Compare different stations
 
 Now let´s compare different stations:
 
@@ -466,6 +471,8 @@ ggplot(data, aes(x = timestamp, y = pedestrians_count, fill = weekdays(timestamp
 
 <img src="README_figs/README-unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
 
+### Highest ratio (pedestrians/day)
+
 Now a little bit of big data analysis. Let´s find the station with the
 highest pedestrians per day ratio:
 
@@ -496,12 +503,12 @@ What stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                       station     ratio
-## 1 131           Braunschweig (Sack) 137635.44
-## 2  73    München (Neuhauser Straße)  86950.98
-## 3 165     München (Kaufingerstraße)  85615.70
-## 4 150 Frankfurt a.M. (Zeil (Mitte))  66496.63
-## 5  63        Hannover (Georgstraße)  61751.03
+##    id                       station    ratio
+## 1 165     München (Kaufingerstraße) 92893.67
+## 2 131           Braunschweig (Sack) 89040.85
+## 3  73    München (Neuhauser Straße) 88615.60
+## 4 150 Frankfurt a.M. (Zeil (Mitte)) 66732.31
+## 5 159  Köln (Schildergasse (Mitte)) 63316.30
 ```
 
 Now let´s visualise the top 10 cities:

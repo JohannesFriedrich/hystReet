@@ -4,8 +4,7 @@
 \alias{get_hystreet_station_data}
 \title{Get data from a specific location from the Hystreet Project via Hystreet API}
 \usage{
-get_hystreet_station_data(hystreetId = NULL, query = NULL,
-  API_token = NULL)
+get_hystreet_station_data(hystreetId = NULL, query = NULL, API_token = NULL)
 }
 \arguments{
 \item{hystreetId}{\link{integer} (\strong{required}): ID of the requested statin. See \code{\link[=get_hystreet_locations]{get_hystreet_locations()}} for an overview of
@@ -14,7 +13,7 @@ available IDs.}
 \item{query}{\link{list} (\strong{optional}): A list with queries. Up do date the following queries are supported:
 \itemize{
 \item from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
-\item to : datetime of latest measurement (default: today 23:59:59): e.g. "12-01-2018 12:00:00" or "2018-12-01"
+\item to : datetime of latest measurement (default: today 23:59:59): e.g. "2018-01-12 12:00:00" or "2018-12-01"
 \item resoution: Resultion for the measurement grouping (default: hour): "day", "hour", "month", "week"
 }}
 
@@ -26,7 +25,7 @@ available IDs.}
 \description{
 Get data from a specific location from the Hystreet Project via Hystreet API
 }
-\section{Function version 0.0.1}{
+\section{Function version 0.0.2}{
 NA
 }
 
@@ -37,7 +36,7 @@ data <- get_hystreet_station_data(71)
 ## request data of December 2018 with resolution "day"
 data <- get_hystreet_station_data(
    hystreetId = 71, 
-   query = list(from = "01-12-2018", to = "31-12-2018", resolution = "day"))
+   query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
 ## is the same as 
 ## get_hystreet_station_data(
 ##   hystreetId = 71, 
