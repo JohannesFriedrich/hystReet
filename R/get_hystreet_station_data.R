@@ -10,7 +10,7 @@
 #' 
 #' @return [data.frame] with parsed data from hystreet API
 #'
-#' @section Function version 0.0.2
+#' @section Function version 0.0.1
 #' @author Johannes Friedrich
 #' 
 #' @examples 

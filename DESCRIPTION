@@ -1,7 +1,7 @@
 Package: hystReet
 Type: Package
 Title: Get pedestrian frequency data from the hystreet project
-Date: 2019-XX-XX
+Date: 2020-02-14
 Version: 0.0.1
 Authors@R: person("Johannes", "Friedrich", role = c("aut", "cre"), email = "Johannes.Friedrich@posteo.de")
 Maintainer: Johannes Friedrich <Johannes.Friedrich@posteo.de>
@@ -21,6 +21,6 @@ Suggests:
   knitr,
   rmarkdown,
   scales
-RoxygenNote: 7.0.0
+RoxygenNote: 7.0.2
 Encoding: UTF-8
 VignetteBuilder: knitr

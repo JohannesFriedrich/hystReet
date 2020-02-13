@@ -109,13 +109,13 @@ today\_count
 
 <td style="text-align:right;">
 
-110
+114
 
 </td>
 
 <td style="text-align:right;">
 
-272711
+1832006
 
 </td>
 
@@ -167,6 +167,28 @@ city
 </thead>
 
 <tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+251
+
+</td>
+
+<td style="text-align:left;">
+
+Annastraße
+
+</td>
+
+<td style="text-align:left;">
+
+Augsburg
+
+</td>
+
+</tr>
 
 <tr>
 
@@ -366,28 +388,6 @@ Köln
 
 </tr>
 
-<tr>
-
-<td style="text-align:right;">
-
-57
-
-</td>
-
-<td style="text-align:left;">
-
-Schlösserstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Erfurt
-
-</td>
-
-</tr>
-
 </tbody>
 
 </table>
@@ -504,11 +504,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##    id                       station    ratio
-## 1 165     München (Kaufingerstraße) 92893.67
-## 2 131           Braunschweig (Sack) 89040.85
-## 3  73    München (Neuhauser Straße) 88615.60
-## 4 150 Frankfurt a.M. (Zeil (Mitte)) 66732.31
-## 5 159  Köln (Schildergasse (Mitte)) 63316.30
+## 1  73    München (Neuhauser Straße) 87505.83
+## 2 165     München (Kaufingerstraße) 86875.90
+## 3 131           Braunschweig (Sack) 76076.67
+## 4 150 Frankfurt a.M. (Zeil (Mitte)) 64686.28
+## 5  63        Hannover (Georgstraße) 62961.07
 ```
 
 Now let´s visualise the top 10 cities:

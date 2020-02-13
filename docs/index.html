@@ -166,13 +166,13 @@ today\_count
 <tbody><tr>
 <td style="text-align:right;">
 
-110
+114
 
 </td>
 
 <td style="text-align:right;">
 
-272711
+1832006
 
 </td>
 
@@ -207,6 +207,26 @@ city
 
 </tr></thead>
 <tbody>
+<tr>
+<td style="text-align:right;">
+
+251
+
+</td>
+
+<td style="text-align:left;">
+
+Annastraße
+
+</td>
+
+<td style="text-align:left;">
+
+Augsburg
+
+</td>
+
+</tr>
 <tr>
 <td style="text-align:right;">
 
@@ -387,26 +407,6 @@ Köln
 </td>
 
 </tr>
-<tr>
-<td style="text-align:right;">
-
-57
-
-</td>
-
-<td style="text-align:left;">
-
-Schlösserstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Erfurt
-
-</td>
-
-</tr>
 </tbody>
 </table>
 </div>
@@ -490,11 +490,11 @@ Erfurt
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw">top_n</span>(<span class="dv">5</span>, ratio) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(ratio))</a>
 <a class="sourceLine" id="cb14-4" data-line-number="4"><span class="co">##    id                       station    ratio</span></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">## 1 165     München (Kaufingerstraße) 92893.67</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">## 2 131           Braunschweig (Sack) 89040.85</span></a>
-<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="co">## 3  73    München (Neuhauser Straße) 88615.60</span></a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co">## 4 150 Frankfurt a.M. (Zeil (Mitte)) 66732.31</span></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co">## 5 159  Köln (Schildergasse (Mitte)) 63316.30</span></a></code></pre></div>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">## 1  73    München (Neuhauser Straße) 87505.83</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">## 2 165     München (Kaufingerstraße) 86875.90</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="co">## 3 131           Braunschweig (Sack) 76076.67</span></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co">## 4 150 Frankfurt a.M. (Zeil (Mitte)) 64686.28</span></a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co">## 5  63        Hannover (Georgstraße) 62961.07</span></a></code></pre></div>
 <p>Now let´s visualise the top 10 cities:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">ggplot</span>(ratio <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">         </span><span class="kw">top_n</span>(<span class="dv">10</span>,ratio), <span class="kw">aes</span>(station, ratio)) <span class="op">+</span></a>
