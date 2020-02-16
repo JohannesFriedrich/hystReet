@@ -22,9 +22,9 @@ NA
 }
 
 \examples{
-
+\dontrun{
  hystreet_stats <- get_hystreet_stats(TRUE)
-
+}
 }
 \author{
 Johannes Friedrich

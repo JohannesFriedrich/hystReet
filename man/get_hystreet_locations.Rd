@@ -20,8 +20,9 @@ NA
 }
 
 \examples{
+\dontrun{
  all_hystreet_IDs <- get_hystreet_locations()
-
+}
 }
 \author{
 Johannes Friedrich

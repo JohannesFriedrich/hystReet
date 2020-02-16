@@ -8,8 +8,9 @@
 #' @author Johannes Friedrich
 #' 
 #' @examples
+#' \dontrun{
 #'  all_hystreet_IDs <- get_hystreet_locations()
-#'
+#' }
 #' @md
 #' @export
 

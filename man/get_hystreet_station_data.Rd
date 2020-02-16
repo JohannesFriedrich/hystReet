@@ -25,11 +25,12 @@ available IDs.}
 \description{
 Get data from a specific location from the Hystreet Project via Hystreet API
 }
-\section{Function version 0.0.2}{
+\section{Function version 0.0.1}{
 NA
 }
 
 \examples{
+\dontrun{
 ## request data of the current day of station with hystreetId 71
 data <- get_hystreet_station_data(71)
 
@@ -41,9 +42,7 @@ data <- get_hystreet_station_data(
 ## get_hystreet_station_data(
 ##   hystreetId = 71, 
 ##   query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
-
-
-
+ }
 }
 \author{
 Johannes Friedrich

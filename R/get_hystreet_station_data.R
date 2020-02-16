@@ -14,6 +14,7 @@
 #' @author Johannes Friedrich
 #' 
 #' @examples 
+#' \dontrun{
 #' ## request data of the current day of station with hystreetId 71
 #' data <- get_hystreet_station_data(71)
 #' 
@@ -25,9 +26,7 @@
 #' ## get_hystreet_station_data(
 #' ##   hystreetId = 71, 
 #' ##   query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
-#' 
-#' 
-#'
+#'  }
 #' @md
 #' @export
 
