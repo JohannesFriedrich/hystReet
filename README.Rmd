@@ -43,7 +43,7 @@ library(scales)
 
 ## API Keys
 
-To use this package, you will first need to get your hystreet API key. To do so, go to this link: [https://hystreet.com/](https://hystreet.com/)
+To use this package, you will first need to get your hystreet API key. To do so, go to this link: [https://hystreet.com/](https://hystreet.com/), log in to your accunt and you will find you key in your profile.
 
 Now you have three options:
 

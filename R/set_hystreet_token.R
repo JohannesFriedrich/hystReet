@@ -13,7 +13,7 @@
 set_hystreet_token <- function(API_token = NULL) {
   
   if(is.null(API_token)){
-    stop("Please set env var HYSTREET_API_TOKEN to your hystreet API personal access token",
+    stop("[hystReet] Please set env var HYSTREET_API_TOKEN to your hystreet API personal access token",
          call. = FALSE)}
   
   Sys.setenv(HYSTREET_API_TOKEN = API_token)
@@ -24,7 +24,7 @@ set_hystreet_token <- function(API_token = NULL) {
 .get_hystreet_token <- function() {
   hystreet_token <- Sys.getenv("HYSTREET_API_TOKEN")
   if (hystreet_token == "") {
-    stop("[hystReet] You have given your API key as function argument or set a HYSTREET_API_TOKEN environment variable.\n",
+    stop("[hystReet] You have to give your API key as function argument or set a HYSTREET_API_TOKEN environment variable.\n",
          call. = FALSE)
   }
   return(hystreet_token)

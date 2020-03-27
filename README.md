@@ -27,7 +27,8 @@ devtools::install_github("JohannesFriedrich/hystReet")
 ## API Keys
 
 To use this package, you will first need to get your hystreet API key.
-To do so, go to this link: <https://hystreet.com/>
+To do so, go to this link: <https://hystreet.com/>, log in to your
+accunt and you will find you key in your profile.
 
 Now you have three options:
 
@@ -109,13 +110,13 @@ today\_count
 
 <td style="text-align:right;">
 
-114
+117
 
 </td>
 
 <td style="text-align:right;">
 
-1832006
+230518
 
 </td>
 
@@ -238,6 +239,28 @@ Stuttgart
 
 <td style="text-align:right;">
 
+253
+
+</td>
+
+<td style="text-align:left;">
+
+Neustraße
+
+</td>
+
+<td style="text-align:left;">
+
+Bocholt
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
 168
 
 </td>
@@ -304,6 +327,28 @@ Würzburg
 
 <td style="text-align:right;">
 
+252
+
+</td>
+
+<td style="text-align:left;">
+
+Holm
+
+</td>
+
+<td style="text-align:left;">
+
+Flensburg
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
 131
 
 </td>
@@ -339,50 +384,6 @@ Hauptstraße (Süd)
 <td style="text-align:left;">
 
 Erlangen
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-89
-
-</td>
-
-<td style="text-align:left;">
-
-Kaiserstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Nürnberg
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-160
-
-</td>
-
-<td style="text-align:left;">
-
-Schildergasse (Ost)
-
-</td>
-
-<td style="text-align:left;">
-
-Köln
 
 </td>
 
@@ -504,11 +505,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##    id                       station    ratio
-## 1  73    München (Neuhauser Straße) 87505.83
-## 2 165     München (Kaufingerstraße) 86875.90
-## 3 131           Braunschweig (Sack) 76076.67
-## 4 150 Frankfurt a.M. (Zeil (Mitte)) 64686.28
-## 5  63        Hannover (Georgstraße) 62961.07
+## 1  73    München (Neuhauser Straße) 85458.05
+## 2 165     München (Kaufingerstraße) 79790.84
+## 3 131           Braunschweig (Sack) 66826.53
+## 4 150 Frankfurt a.M. (Zeil (Mitte)) 61987.19
+## 5  63        Hannover (Georgstraße) 61943.64
 ```
 
 Now let´s visualise the top 10 cities:
