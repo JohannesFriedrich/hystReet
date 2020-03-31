@@ -1,11 +1,11 @@
 Package: hystReet
 Type: Package
-Title: Get Pedestrian Frequency Data from the Hystreet Project
+Title: Get Pedestrian Frequency Data from the 'Hystreet' Project
 Date: 2020-03-28
 Version: 0.0.1
 Authors@R: person("Johannes", "Friedrich", role = c("aut", "cre"), email = "Johannes.Friedrich@posteo.de")
 Maintainer: Johannes Friedrich <Johannes.Friedrich@posteo.de>
-Description: An R API wrapper for the Hystreet project.
+Description: An R API wrapper for the 'Hystreet' project <https://hystreet.com>. 'Hystreet' provides pedestrian counts in different cities in Germany.
 URL: https://github.com/JohannesFriedrich/hystReet
 BugReports: https://github.com/JohannesFriedrich/hystReet/issues
 License: GPL-2

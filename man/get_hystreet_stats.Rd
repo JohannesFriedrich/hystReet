@@ -17,7 +17,7 @@ get_hystreet_stats(verbose = FALSE, API_token = NULL)
 \description{
 Get statistics from the Hystreet Project via Hystreet API
 }
-\section{Function version 0.0.2}{
+\section{Function version 0.0.1}{
 NA
 }
 
