@@ -3,6 +3,11 @@
 
 # hystReet
 
+[![CRAN](http://www.r-pkg.org/badges/version/hystReet)](https://CRAN.R-project.org/package=hystReet)
+[![Build
+Status](https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master)](https://travis-ci.org/JohannesFriedrich/hystReet)
+[![Build
+status](https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true)](https://ci.appveyor.com/project/JohannesFriedrich/hystreet)
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
@@ -48,8 +53,7 @@ Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
 3)  If you don’t want to save it here, you can input it in each function
-    using the `API_token`
-parameter.
+    using the `API_token` parameter.
 
 ## Usage
 
@@ -116,7 +120,7 @@ today\_count
 
 <td style="text-align:right;">
 
-230518
+302992
 
 </td>
 
@@ -400,10 +404,11 @@ The (probably) most interesting function is
 to request a specific station. By default, all the data from the current
 day are received. With the ‘query’ argument it is possible to set the
 received data more precise: \* from: datetime of earliest measurement
-(default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01”
-\* to : datetime of latest measurement (default: today 23:59:59): e.g.
-“2018-12-01 12:00:00” or “2018-12-01” \* resoution: Resultion for the
-measurement grouping (default: hour): “day”, “hour”, “month”, “week”
+(default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01”
+\* to : datetime of latest measurement (default: today 23:59:59):
+e.g. “2018-12-01 12:00:00” or “2018-12-01” \* resoution: Resultion
+for the measurement grouping (default: hour): “day”, “hour”, “month”,
+“week”
 
 ``` r
 data <- get_hystreet_station_data(
@@ -504,12 +509,12 @@ What stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                       station    ratio
-## 1  73    München (Neuhauser Straße) 85458.05
-## 2 165     München (Kaufingerstraße) 79790.84
-## 3 131           Braunschweig (Sack) 66826.53
-## 4 150 Frankfurt a.M. (Zeil (Mitte)) 61987.19
-## 5  63        Hannover (Georgstraße) 61943.64
+##    id                     station    ratio
+## 1  73  München (Neuhauser Straße) 81794.29
+## 2 165   München (Kaufingerstraße) 77762.73
+## 3 131         Braunschweig (Sack) 65574.66
+## 4  47 Köln (Schildergasse (West)) 62934.25
+## 5  63      Hannover (Georgstraße) 62334.06
 ```
 
 Now let´s visualise the top 10 cities:
