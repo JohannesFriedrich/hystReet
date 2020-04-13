@@ -18,7 +18,6 @@ Suggests:
   dplyr,
   ggplot2,
   htmltools,
-  httptest (>= 3.0.0),
   knitr,
   rmarkdown,
   scales
