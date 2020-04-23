@@ -85,12 +85,12 @@
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
-<p><a href="https://hystreet.com">hystreet</a> is a company collecting pedestrains in german cities. After registering you can download the data for free from 19 cities.</p>
+<p><a href="https://hystreet.com">hystreet</a> is a company that collects data on pedestrian traffic in shopping streets of different German cities. After registering you can access and download the data via their website.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Until now the package is not on CRAN but you can download it via GitHub with the following command:</p>
+<p>Until now the package is not on CRAN but you can install it from GitHub with the following command:</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"devtools"</span>))
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"JohannesFriedrich/hystReet"</span>)</pre></div>
@@ -98,15 +98,15 @@
 <div id="api-keys" class="section level2">
 <h2 class="hasAnchor">
 <a href="#api-keys" class="anchor"></a>API Keys</h2>
-<p>To use this package, you will first need to get your hystreet API key. To do so, go to this link: <a href="https://hystreet.com/" class="uri">https://hystreet.com/</a>, log in to your accunt and you will find you key in your profile.</p>
+<p>To use this package, you will first need to get a hystreet API key. To do so, you first need to set up an account on <a href="https://hystreet.com/" class="uri">https://hystreet.com/</a>. After that you can request an API key via <a href="mailto:info@hystreet.com">e-mail</a>. Once your request has been granted, you will find you key in your hystreet account profile.</p>
 <p>Now you have three options:</p>
 <p>1)<br>
-Once you have your key, save it as an environment variable for the current session by running the following:</p>
+Once you have your key, you can save it as an environment variable for the current session by running the following command:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="kw">HYSTREET_API_TOKEN</span> <span class="kw">=</span> <span class="st">"PASTE YOUR API TOKEN HERE"</span>)</pre></div>
-<p>2) Alternatively, you can set it permanently with the help of <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code> by adding the line to your <code>.Renviron</code>:</p>
+<p>2) Alternatively, you can set it permanently with the help of <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code> by adding the following line to your <code>.Renviron</code>:</p>
 <!-- end list -->
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">HYSTREET_API_TOKEN =<span class="st"> </span>PASTE YOUR API TOKEN HERE</a></code></pre></div>
-<p>3) If you don’t want to save it here, you can input it in each function using the <code>API_token</code> parameter.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>HYSTREET_API_TOKEN =<span class="st"> </span>PASTE YOUR API TOKEN HERE</span></code></pre></div>
+<p>3) If you don’t want to save your API token here, you can enter it for each function of this package using the <code>API_token</code> parameter.</p>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -130,7 +130,7 @@ Once you have your key, save it as an environment variable for the current sessi
 </tr>
 <tr class="even">
 <td>get_hystreet_locations()</td>
-<td>request all qvailable locations</td>
+<td>request all available locations</td>
 <td>get_hystreet_locations()</td>
 </tr>
 <tr class="odd">
@@ -148,7 +148,7 @@ Once you have your key, save it as an environment variable for the current sessi
 <div id="load-some-statistics" class="section level3">
 <h3 class="hasAnchor">
 <a href="#load-some-statistics" class="anchor"></a>Load some statistics</h3>
-<p>The function ‘get_hystreet_stats()’ summarises the number of available stations and the sum of all counted pedestrians.</p>
+<p>The function <code><a href="reference/get_hystreet_stats.html">get_hystreet_stats()</a></code> summarises the number of available stations and the sum of all counted pedestrians.</p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">hystReet</span>)
 <span class="co">## Loading required package: httr</span>
 <span class="co">## Loading required package: jsonlite</span>
@@ -171,10 +171,10 @@ Once you have your key, save it as an environment variable for the current sessi
 </tr></thead>
 <tbody><tr>
 <td style="text-align:right;">
-<p>117</p>
+<p>119</p>
 </td>
 <td style="text-align:right;">
-<p>230518</p>
+<p>1085039</p>
 </td>
 </tr></tbody>
 </table>
@@ -182,7 +182,7 @@ Once you have your key, save it as an environment variable for the current sessi
 <div id="request-all-stations" class="section level3">
 <h3 class="hasAnchor">
 <a href="#request-all-stations" class="anchor"></a>Request all stations</h3>
-<p>The function ‘get_hystreet_locations()’ requests all available stations of the project.</p>
+<p>The function <code><a href="reference/get_hystreet_locations.html">get_hystreet_locations()</a></code> generates a data frame with all available stations of the project.</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="no">locations</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span>()</pre></div>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="no">locations</span></pre></div>
 <table class="table">
@@ -314,16 +314,16 @@ Once you have your key, save it as an environment variable for the current sessi
 <div id="request-data-from-a-specific-station" class="section level3">
 <h3 class="hasAnchor">
 <a href="#request-data-from-a-specific-station" class="anchor"></a>Request data from a specific station</h3>
-<p>The (probably) most interesting function is ‘get_hystreet_station_data()’. With the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the ‘query’ argument it is possible to set the received data more precise: * from: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” * to : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” * resoution: Resultion for the measurement grouping (default: hour): “day”, “hour”, “month”, “week”</p>
+<p>The (probably) most interesting function is <code><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data()</a></code>. Using the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the <code>query</code> argument it is possible to define the time and sampling frame of the data more precisely: <code>from</code>: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” <code>to</code> : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” <code>resoution</code>: Resultion for the measurement (default: hour): “day”, “hour”, “month”, “week”</p>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
   <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">71</span>,
   <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2018-12-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2018-12-31"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>))</pre></div>
 </div>
 </div>
-<div id="some-ideas-to-visualise-the-data" class="section level2">
+<div id="some-ideas-for-visualising-the-data" class="section level2">
 <h2 class="hasAnchor">
-<a href="#some-ideas-to-visualise-the-data" class="anchor"></a>Some ideas to visualise the data</h2>
-<p>Let´s see if we can see the most frequent days before christmas … I think it could be saturday ;-). Also nice to see the 24th and 25th of December … holidays in Germany :-).</p>
+<a href="#some-ideas-for-visualising-the-data" class="anchor"></a>Some ideas for visualising the data</h2>
+<p>Let´s see if we can find the busiest days in December 2018. Saturdays were probably quite busy, while there should have been substantially less pedestrian traffic on the 24th and 25th of December, both of which are holidays in Germany.</p>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
     <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">71</span>,
     <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2018-12-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2019-01-01"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"hour"</span>))</pre></div>
@@ -340,7 +340,7 @@ Once you have your key, save it as an environment variable for the current sessi
 <div id="compare-different-stations" class="section level3">
 <h3 class="hasAnchor">
 <a href="#compare-different-stations" class="anchor"></a>Compare different stations</h3>
-<p>Now let´s compare different stations:</p>
+<p>Now let´s compare data from different stations:</p>
 <p>1) Load the data</p>
 <!-- end list -->
 <div class="sourceCode" id="cb11"><pre class="r"><span class="no">data_73</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
@@ -386,21 +386,21 @@ Once you have your key, save it as an environment variable for the current sessi
 })
 
 <span class="no">ratio</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">all_data</span>)</pre></div>
-<p>What stations have the highest ratio?</p>
+<p>Which stations have the highest ratio?</p>
 <div class="sourceCode" id="cb14"><pre class="r"><span class="no">ratio</span> <span class="kw">%&gt;%</span>
   <span class="fu">top_n</span>(<span class="fl">5</span>, <span class="no">ratio</span>) <span class="kw">%&gt;%</span>
   <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="no">ratio</span>))
-<span class="co">##    id                       station    ratio</span>
-<span class="co">## 1  73    München (Neuhauser Straße) 85458.05</span>
-<span class="co">## 2 165     München (Kaufingerstraße) 79790.84</span>
-<span class="co">## 3 131           Braunschweig (Sack) 66826.53</span>
-<span class="co">## 4 150 Frankfurt a.M. (Zeil (Mitte)) 61987.19</span>
-<span class="co">## 5  63        Hannover (Georgstraße) 61943.64</span></pre></div>
-<p>Now let´s visualise the top 10 cities:</p>
+<span class="co">##    id                     station    ratio</span>
+<span class="co">## 1  73  München (Neuhauser Straße) 91904.43</span>
+<span class="co">## 2  47 Köln (Schildergasse (West)) 86939.41</span>
+<span class="co">## 3 165   München (Kaufingerstraße) 71187.87</span>
+<span class="co">## 4  48  Köln (Hohe Straße (Mitte)) 65037.64</span>
+<span class="co">## 5  63      Hannover (Georgstraße) 64433.47</span></pre></div>
+<p>Now let´s visualise the top 10 locations:</p>
 <div class="sourceCode" id="cb15"><pre class="r"><span class="fu">ggplot</span>(<span class="no">ratio</span> <span class="kw">%&gt;%</span>
          <span class="fu">top_n</span>(<span class="fl">10</span>,<span class="no">ratio</span>), <span class="fu">aes</span>(<span class="no">station</span>, <span class="no">ratio</span>)) +
   <span class="fu">geom_bar</span>(<span class="kw">stat</span> <span class="kw">=</span> <span class="st">"identity"</span>) +
-  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"City"</span>,
+  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Location"</span>,
        <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Pedestrians per day"</span>) +
     <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"bottom"</span>,
         <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>))</pre></div>
@@ -414,6 +414,8 @@ Once you have your key, save it as an environment variable for the current sessi
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=hystReet">https://​cloud.r-project.org/​package=hystReet</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/JohannesFriedrich/hystReet/">https://​github.com/​JohannesFriedrich/​hystReet/​</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/JohannesFriedrich/hystReet/issues">https://​github.com/​JohannesFriedrich/​hystReet/​issues</a>
@@ -436,6 +438,9 @@ Once you have your key, save it as an environment variable for the current sessi
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://CRAN.R-project.org/package=hystReet"><img src="http://www.r-pkg.org/badges/version/hystReet" alt="CRAN"></a></li>
+<li><a href="https://travis-ci.org/JohannesFriedrich/hystReet"><img src="https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/JohannesFriedrich/hystreet"><img src="https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true" alt="Build status"></a></li>
 <li><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>
 </ul>
 </div>
@@ -448,7 +453,7 @@ Once you have your key, save it as an environment variable for the current sessi
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

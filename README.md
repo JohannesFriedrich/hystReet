@@ -14,13 +14,13 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 
 ## Introduction
 
-[hystreet](https://hystreet.com) is a company collecting pedestrains in
-german cities. After registering you can download the data for free from
-19 cities.
+[hystreet](https://hystreet.com) is a company that collects data on
+pedestrian traffic in shopping streets of different German cities. After
+registering you can access and download the data via their website.
 
 ## Installation
 
-Until now the package is not on CRAN but you can download it via GitHub
+Until now the package is not on CRAN but you can install it from GitHub
 with the following command:
 
 ``` r
@@ -31,42 +31,45 @@ devtools::install_github("JohannesFriedrich/hystReet")
 
 ## API Keys
 
-To use this package, you will first need to get your hystreet API key.
-To do so, go to this link: <https://hystreet.com/>, log in to your
-accunt and you will find you key in your profile.
+To use this package, you will first need to get a hystreet API key. To
+do so, you first need to set up an account on <https://hystreet.com/>.
+After that you can request an API key via
+[e-mail](mailto:info@hystreet.com). Once your request has been granted,
+you will find you key in your hystreet account profile.
 
 Now you have three options:
 
 1)  
-Once you have your key, save it as an environment variable for the
-current session by running the following:
+Once you have your key, you can save it as an environment variable for
+the current session by running the following command:
 
 ``` r
 Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
 ```
 
 2)  Alternatively, you can set it permanently with the help of
-    `usethis::edit_r_environ()` by adding the line to your `.Renviron`:
+    `usethis::edit_r_environ()` by adding the following line to your
+    `.Renviron`:
 
 <!-- end list -->
 
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
-3)  If you don’t want to save it here, you can input it in each function
-    using the `API_token` parameter.
+3)  If you don’t want to save your API token here, you can enter it for
+    each function of this package using the `API_token` parameter.
 
 ## Usage
 
 | Function name                  | Description                                          | Example                          |
 | ------------------------------ | ---------------------------------------------------- | -------------------------------- |
 | get\_hystreet\_stats()         | request common statistics about the hystreet project | get\_hystreet\_stats()           |
-| get\_hystreet\_locations()     | request all qvailable locations                      | get\_hystreet\_locations()       |
+| get\_hystreet\_locations()     | request all available locations                      | get\_hystreet\_locations()       |
 | get\_hystreet\_station\_data() | request data from a stations                         | get\_hystreet\_station\_data(71) |
 | set\_hystreet\_token()         | set your API token                                   | set\_hystreet\_token(123456789)  |
 
 ### Load some statistics
 
-The function ‘get\_hystreet\_stats()’ summarises the number of available
+The function `get_hystreet_stats()` summarises the number of available
 stations and the sum of all counted pedestrians.
 
 ``` r
@@ -114,13 +117,13 @@ today\_count
 
 <td style="text-align:right;">
 
-117
+119
 
 </td>
 
 <td style="text-align:right;">
 
-302992
+1085039
 
 </td>
 
@@ -132,8 +135,8 @@ today\_count
 
 ### Request all stations
 
-The function ‘get\_hystreet\_locations()’ requests all available
-stations of the project.
+The function `get_hystreet_locations()` generates a data frame with all
+available stations of the project.
 
 ``` r
 locations <- get_hystreet_locations()
@@ -400,15 +403,15 @@ Erlangen
 ### Request data from a specific station
 
 The (probably) most interesting function is
-‘get\_hystreet\_station\_data()’. With the hystreetID it is possible
-to request a specific station. By default, all the data from the current
-day are received. With the ‘query’ argument it is possible to set the
-received data more precise: \* from: datetime of earliest measurement
-(default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01”
-\* to : datetime of latest measurement (default: today 23:59:59):
-e.g. “2018-12-01 12:00:00” or “2018-12-01” \* resoution: Resultion
-for the measurement grouping (default: hour): “day”, “hour”, “month”,
-“week”
+`get_hystreet_station_data()`. Using the hystreetID it is possible to
+request a specific station. By default, all the data from the current
+day are received. With the `query` argument it is possible to define the
+time and sampling frame of the data more precisely: `from`: datetime of
+earliest measurement (default: today 00:00:00:): e.g. “2018-10-01
+12:00:00” or “2018-10-01” `to` : datetime of latest measurement
+(default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01”
+`resoution`: Resultion for the measurement (default: hour): “day”,
+“hour”, “month”, “week”
 
 ``` r
 data <- get_hystreet_station_data(
@@ -416,11 +419,12 @@ data <- get_hystreet_station_data(
   query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
 ```
 
-## Some ideas to visualise the data
+## Some ideas for visualising the data
 
-Let´s see if we can see the most frequent days before christmas … I
-think it could be saturday ;-). Also nice to see the 24th and 25th of
-December … holidays in Germany :-).
+Let´s see if we can find the busiest days in December 2018. Saturdays
+were probably quite busy, while there should have been substantially
+less pedestrian traffic on the 24th and 25th of December, both of which
+are holidays in Germany.
 
 ``` r
 data <- get_hystreet_station_data(
@@ -444,7 +448,7 @@ ggplot(data$measurements, aes(x = timestamp, y = pedestrians_count, colour = wee
 
 ### Compare different stations
 
-Now let´s compare different stations:
+Now let´s compare data from different stations:
 
 1)  Load the data
 
@@ -503,27 +507,27 @@ all_data <- lapply(hystreet_ids[,"id"], function(x){
 ratio <- bind_rows(all_data)
 ```
 
-What stations have the highest ratio?
+Which stations have the highest ratio?
 
 ``` r
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##    id                     station    ratio
-## 1  73  München (Neuhauser Straße) 81794.29
-## 2 165   München (Kaufingerstraße) 77762.73
-## 3 131         Braunschweig (Sack) 65574.66
-## 4  47 Köln (Schildergasse (West)) 62934.25
-## 5  63      Hannover (Georgstraße) 62334.06
+## 1  73  München (Neuhauser Straße) 91904.43
+## 2  47 Köln (Schildergasse (West)) 86939.41
+## 3 165   München (Kaufingerstraße) 71187.87
+## 4  48  Köln (Hohe Straße (Mitte)) 65037.64
+## 5  63      Hannover (Georgstraße) 64433.47
 ```
 
-Now let´s visualise the top 10 cities:
+Now let´s visualise the top 10 locations:
 
 ``` r
 ggplot(ratio %>% 
          top_n(10,ratio), aes(station, ratio)) +
   geom_bar(stat = "identity") +
-  labs(x = "City",
+  labs(x = "Location",
        y = "Pedestrians per day") + 
     theme(legend.position = "bottom",
         axis.text.x = element_text(angle = 45, hjust = 1))

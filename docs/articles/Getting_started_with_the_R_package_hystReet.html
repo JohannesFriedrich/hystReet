@@ -76,13 +76,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="Getting_started_with_the_R_package_hystReet_files/header-attrs-2.1.2/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Getting started with the R-package hystReet</h1>
                         <h4 class="author">Johannes Friedrich</h4>
             
-            <h4 class="date">2020-03-31</h4>
+            <h4 class="date">2020-04-23</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/JohannesFriedrich/hystReet/blob/master/vignettes/Getting_started_with_the_R_package_hystReet.Rmd"><code>vignettes/Getting_started_with_the_R_package_hystReet.Rmd</code></a></small>
       <div class="hidden name"><code>Getting_started_with_the_R_package_hystReet.Rmd</code></div>
@@ -298,7 +298,7 @@ Erlangen
 <div id="request-data-from-a-specific-station" class="section level2">
 <h2 class="hasAnchor">
 <a href="#request-data-from-a-specific-station" class="anchor"></a>Request data from a specific station</h2>
-<p>The (probably) most interesting function is ‘get_hystreet_station_data()’. With the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the ‘query’ argument it is possible to set the received data more precise: * from: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” * to : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” * resoution: Resultion for the measurement grouping (default: hour): “day”, “hour”, “month”, “week”</p>
+<p>The (probably) most interesting function is ‘get_hystreet_station_data()’. With the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the ‘query’ argument it is possible to set the received data more precise: * from: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” * to : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” * resoution: Resultion for the measurement grouping (default: hour): “day”, “hour”, “month”, “week”</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">location_71</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
   <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">71</span>,
   <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2018-12-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2018-12-31"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>))</pre></body></html></div>
@@ -409,7 +409,7 @@ Erlangen
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
