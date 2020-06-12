@@ -15,13 +15,14 @@ get_hystreet_locations(API_token = NULL)
 \description{
 Get station IDs of the Hystreet project
 }
-\section{Function version 0.0.1}{
-NA
+\section{Function version}{
+
+0.0.2
 }
 
 \examples{
 \dontrun{
- all_hystreet_IDs <- get_hystreet_locations()
+ get_hystreet_locations()
 }
 }
 \author{

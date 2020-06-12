@@ -5,12 +5,13 @@
 #' 
 #' @return [data.frame] with parsed data from hystreet API
 #'
-#' @section Function version 0.0.1
+#' @section Function version:
+#'  0.0.2
 #' @author Johannes Friedrich
 #' 
 #' @examples 
 #' \dontrun{
-#'  hystreet_stats <- get_hystreet_stats(TRUE)
+#'  get_hystreet_stats(TRUE)
 #' }
 #' @md
 #' @export

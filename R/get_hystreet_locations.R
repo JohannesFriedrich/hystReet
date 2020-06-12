@@ -4,12 +4,13 @@
 #' 
 #' @return [data.frame] with parsed data from hystreet API
 #'
-#' @section Function version 0.0.1
+#' @section Function version:
+#'  0.0.2
 #' @author Johannes Friedrich
 #' 
 #' @examples
 #' \dontrun{
-#'  all_hystreet_IDs <- get_hystreet_locations()
+#'  get_hystreet_locations()
 #' }
 #' @md
 #' @export

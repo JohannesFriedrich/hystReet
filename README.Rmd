@@ -28,13 +28,21 @@ Sys.setlocale("LC_TIME", "C")
 
 ## Installation
 
-Until now the package is not on CRAN but you can install it from GitHub with the following command:
+The package is now on CRAN. The easiest way to download is via:
+
+```{r, eval=FALSE}
+install.packages("hystReet")
+```
+
+
+You can install the development version from GitHub with the following command:
 
 ```{r, eval = FALSE}
 if (!require("devtools"))
   install.packages("devtools")
 devtools::install_github("JohannesFriedrich/hystReet")
 ```
+
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(tidyverse)

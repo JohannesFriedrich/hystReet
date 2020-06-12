@@ -15,8 +15,9 @@ Set environment variable
 \description{
 Set your API token for the Hystreet API
 }
-\section{Function version 0.0.1}{
-NA
+\section{Function version}{
+
+0.0.1
 }
 
 \author{

@@ -4,7 +4,8 @@
 #' 
 #' @return Set environment variable
 #'
-#' @section Function version 0.0.1
+#' @section Function version:
+#'  0.0.1
 #' @author Johannes Friedrich
 #'
 #' @md

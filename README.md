@@ -21,8 +21,14 @@ registering you can access and download the data via their website.
 
 ## Installation
 
-Until now the package is not on CRAN but you can install it from GitHub
-with the following command:
+The package is now on CRAN. The easiest way to download is via:
+
+``` r
+install.packages("hystReet")
+```
+
+You can install the development version from GitHub with the following
+command:
 
 ``` r
 if (!require("devtools"))
@@ -126,7 +132,7 @@ today\_count
 
 <td style="text-align:right;">
 
-347781
+1300407
 
 </td>
 
@@ -518,11 +524,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##    id                       station    ratio
-## 1 165     München (Kaufingerstraße) 64462.33
-## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52516.24
-## 3 159  Köln (Schildergasse (Mitte)) 50313.61
-## 4  73    München (Neuhauser Straße) 49994.01
-## 5 158      Köln (Hohe Straße (Süd)) 39803.41
+## 1 165     München (Kaufingerstraße) 64437.60
+## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52499.92
+## 3 159  Köln (Schildergasse (Mitte)) 50295.28
+## 4  73    München (Neuhauser Straße) 49986.83
+## 5 158      Köln (Hohe Straße (Süd)) 39790.91
 ```
 
 Now let´s visualise the top 10 locations:

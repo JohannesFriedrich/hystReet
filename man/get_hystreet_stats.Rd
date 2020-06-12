@@ -17,13 +17,14 @@ get_hystreet_stats(verbose = FALSE, API_token = NULL)
 \description{
 Get statistics from the Hystreet Project via Hystreet API
 }
-\section{Function version 0.0.1}{
-NA
+\section{Function version}{
+
+0.0.2
 }
 
 \examples{
 \dontrun{
- hystreet_stats <- get_hystreet_stats(TRUE)
+ get_hystreet_stats(TRUE)
 }
 }
 \author{

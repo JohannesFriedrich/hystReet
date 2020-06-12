@@ -6,7 +6,8 @@
 #'
 #' @return [data.frame] with parsed data from hystreet API
 #'
-#' @section Function version 0.0.1
+#' @section Function version:
+#'  0.0.2
 #' @author Johannes Friedrich
 #'
 #' @keywords internal 
@@ -45,7 +46,7 @@
   
   url <- httr::modify_url(host, path = c("api", "locations", hystreetId))
   
-  res <- GET(url,
+  res <- httr::GET(url,
              query = query,
              add_headers(
                "x-api-token" = hystreet_token, 

@@ -209,7 +209,7 @@ ggplot(ratio %>%
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-### Corona effects 
+## Corona effects 
 
 The Hystreet-API is a great source of analysing the social effects of the Corona pandemic in 2020.
 Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.

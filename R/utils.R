@@ -1,8 +1,7 @@
 ## utils
 
-.convert_dates <- function(
-  data){
+.convert_dates <- function(date){
   
-  return(lubridate::ymd_hms(data, tz = "Europe/Amsterdam", quiet = TRUE))  
+  return(lubridate::ymd_hms(date, tz = "Europe/Amsterdam", quiet = TRUE))  
   
 }

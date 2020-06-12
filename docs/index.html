@@ -93,8 +93,10 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Until now the package is not on CRAN but you can install it from GitHub with the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"devtools"</span>))
+<p>The package is now on CRAN. The easiest way to download is via:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"hystReet"</span>)</pre></div>
+<p>You can install the development version from GitHub with the following command:</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"devtools"</span>))
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"JohannesFriedrich/hystReet"</span>)</pre></div>
 </div>
@@ -105,10 +107,10 @@
 <p>Now you have three options:</p>
 <p>1) Once you have your key, you can save it as an environment variable for the current session by running the following command:</p>
 <!-- end list -->
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="kw">HYSTREET_API_TOKEN</span> <span class="kw">=</span> <span class="st">"PASTE YOUR API TOKEN HERE"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="kw">HYSTREET_API_TOKEN</span> <span class="kw">=</span> <span class="st">"PASTE YOUR API TOKEN HERE"</span>)</pre></div>
 <p>2) Alternatively, you can set it permanently with the help of <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code> by adding the following line to your <code>.Renviron</code>:</p>
 <!-- end list -->
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">HYSTREET_API_TOKEN =<span class="st"> </span>PASTE YOUR API TOKEN HERE</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">HYSTREET_API_TOKEN =<span class="st"> </span>PASTE YOUR API TOKEN HERE</a></code></pre></div>
 <p>3) If you don’t want to save your API token here, you can enter it for each function of this package using the <code>API_token</code> parameter.</p>
 </div>
 <div id="usage" class="section level2">
@@ -152,7 +154,7 @@
 <h3 class="hasAnchor">
 <a href="#load-some-statistics" class="anchor"></a>Load some statistics</h3>
 <p>The function <code><a href="reference/get_hystreet_stats.html">get_hystreet_stats()</a></code> summarises the number of available stations and the sum of all counted pedestrians.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">hystReet</span>)
+<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">hystReet</span>)
 <span class="co">## Loading required package: httr</span>
 <span class="co">## Loading required package: jsonlite</span>
 <span class="co">## </span>
@@ -162,7 +164,7 @@
 <span class="co">##     flatten</span>
 
 <span class="no">stats</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_stats.html">get_hystreet_stats</a></span>()</pre></div>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="no">stats</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="no">stats</span></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:right;">
@@ -177,7 +179,7 @@
 <p>127</p>
 </td>
 <td style="text-align:right;">
-<p>347781</p>
+<p>1300407</p>
 </td>
 </tr></tbody>
 </table>
@@ -186,8 +188,8 @@
 <h3 class="hasAnchor">
 <a href="#request-all-stations" class="anchor"></a>Request all stations</h3>
 <p>The function <code><a href="reference/get_hystreet_locations.html">get_hystreet_locations()</a></code> generates a data frame with all available stations of the project.</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="no">locations</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span>()</pre></div>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="no">locations</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="no">locations</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span>()</pre></div>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="no">locations</span></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:right;">
@@ -318,7 +320,7 @@
 <h3 class="hasAnchor">
 <a href="#request-data-from-a-specific-station" class="anchor"></a>Request data from a specific station</h3>
 <p>The (probably) most interesting function is <code><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data()</a></code>. Using the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the <code>query</code> argument it is possible to define the time and sampling frame of the data more precisely: <code>from</code>: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” <code>to</code> : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” <code>resoution</code>: Resultion for the measurement (default: hour): “day”, “hour”, “month”, “week”</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
+<div class="sourceCode" id="cb9"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
   <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">71</span>,
   <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2018-12-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2018-12-31"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>))</pre></div>
 </div>
@@ -327,10 +329,10 @@
 <h2 class="hasAnchor">
 <a href="#some-ideas-for-visualising-the-data" class="anchor"></a>Some ideas for visualising the data</h2>
 <p>Let´s see if we can find the busiest days in December 2018. Saturdays were probably quite busy, while there should have been substantially less pedestrian traffic on the 24th and 25th of December, both of which are holidays in Germany.</p>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
+<div class="sourceCode" id="cb10"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
     <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">71</span>,
     <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2018-12-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2019-01-01"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"hour"</span>))</pre></div>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="fu">ggplot</span>(<span class="no">data</span>$<span class="no">measurements</span>, <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pedestrians_count</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span>(<span class="no">timestamp</span>))) +
+<div class="sourceCode" id="cb11"><pre class="r"><span class="fu">ggplot</span>(<span class="no">data</span>$<span class="no">measurements</span>, <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pedestrians_count</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span>(<span class="no">timestamp</span>))) +
   <span class="fu">geom_path</span>(<span class="kw">group</span> <span class="kw">=</span> <span class="fl">1</span>) +
   <span class="fu">scale_x_datetime</span>(<span class="kw">date_breaks</span> <span class="kw">=</span> <span class="st">"7 days"</span>) +
   <span class="fu">scale_x_datetime</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="fu">date_format</span>(<span class="st">"%d.%m.%Y"</span>)) +
@@ -346,7 +348,7 @@
 <p>Now let´s compare data from different stations:</p>
 <p>1) Load the data</p>
 <!-- end list -->
-<div class="sourceCode" id="cb11"><pre class="r"><span class="no">data_73</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
+<div class="sourceCode" id="cb12"><pre class="r"><span class="no">data_73</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
     <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">73</span>,
     <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2019-01-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2019-01-31"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>))$<span class="no">measurements</span> <span class="kw">%&gt;%</span>
   <span class="fu">select</span>(<span class="no">pedestrians_count</span>, <span class="no">timestamp</span>) <span class="kw">%&gt;%</span>
@@ -359,7 +361,7 @@
   <span class="fu">mutate</span>(<span class="kw">station</span> <span class="kw">=</span> <span class="fl">74</span>)
 
 <span class="no">data_73_74</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">data_73</span>, <span class="no">data_74</span>)</pre></div>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="fu">ggplot</span>(<span class="no">data_73_74</span>, <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pedestrians_count</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span>(<span class="no">timestamp</span>))) +
+<div class="sourceCode" id="cb13"><pre class="r"><span class="fu">ggplot</span>(<span class="no">data_73_74</span>, <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pedestrians_count</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span>(<span class="no">timestamp</span>))) +
   <span class="fu">geom_bar</span>(<span class="kw">stat</span> <span class="kw">=</span> <span class="st">"identity"</span>) +
   <span class="fu">scale_x_datetime</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="fu">date_format</span>(<span class="st">"%d.%m.%Y"</span>)) +
   <span class="fu">facet_wrap</span>(~<span class="no">station</span>, <span class="kw">scales</span> <span class="kw">=</span> <span class="st">"free_y"</span>) +
@@ -371,7 +373,7 @@
 <h3 class="hasAnchor">
 <a href="#highest-ratio-pedestriansday" class="anchor"></a>Highest ratio (pedestrians/day)</h3>
 <p>Now a little bit of big data analysis. Let´s find the station with the highest pedestrians per day ratio:</p>
-<div class="sourceCode" id="cb13"><pre class="r"><span class="no">hystreet_ids</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span>()
+<div class="sourceCode" id="cb14"><pre class="r"><span class="no">hystreet_ids</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span>()
 
 <span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">ID</span>){
   <span class="no">temp</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
@@ -391,17 +393,17 @@
 
 <span class="no">ratio</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">all_data</span>)</pre></div>
 <p>Which stations have the highest ratio?</p>
-<div class="sourceCode" id="cb14"><pre class="r"><span class="no">ratio</span> <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb15"><pre class="r"><span class="no">ratio</span> <span class="kw">%&gt;%</span>
   <span class="fu">top_n</span>(<span class="fl">5</span>, <span class="no">ratio</span>) <span class="kw">%&gt;%</span>
   <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="no">ratio</span>))
 <span class="co">##    id                       station    ratio</span>
-<span class="co">## 1 165     München (Kaufingerstraße) 64462.33</span>
-<span class="co">## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52516.24</span>
-<span class="co">## 3 159  Köln (Schildergasse (Mitte)) 50313.61</span>
-<span class="co">## 4  73    München (Neuhauser Straße) 49994.01</span>
-<span class="co">## 5 158      Köln (Hohe Straße (Süd)) 39803.41</span></pre></div>
+<span class="co">## 1 165     München (Kaufingerstraße) 64437.60</span>
+<span class="co">## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52499.92</span>
+<span class="co">## 3 159  Köln (Schildergasse (Mitte)) 50295.28</span>
+<span class="co">## 4  73    München (Neuhauser Straße) 49986.83</span>
+<span class="co">## 5 158      Köln (Hohe Straße (Süd)) 39790.91</span></pre></div>
 <p>Now let´s visualise the top 10 locations:</p>
-<div class="sourceCode" id="cb15"><pre class="r"><span class="fu">ggplot</span>(<span class="no">ratio</span> <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb16"><pre class="r"><span class="fu">ggplot</span>(<span class="no">ratio</span> <span class="kw">%&gt;%</span>
          <span class="fu">top_n</span>(<span class="fl">10</span>,<span class="no">ratio</span>), <span class="fu">aes</span>(<span class="no">station</span>, <span class="no">ratio</span>)) +
   <span class="fu">geom_bar</span>(<span class="kw">stat</span> <span class="kw">=</span> <span class="st">"identity"</span>) +
   <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Location"</span>,
@@ -414,7 +416,7 @@
 <h3 class="hasAnchor">
 <a href="#corona-effects" class="anchor"></a>Corona effects</h3>
 <p>The Hystreet-API is a great source of analysing the social effects of the Corona pandemic in 2020. Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.</p>
-<div class="sourceCode" id="cb16"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">ID</span>){
+<div class="sourceCode" id="cb17"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">ID</span>){
 
     <span class="no">temp</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
         <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="no">ID</span>,
@@ -432,7 +434,7 @@
 })
 
 <span class="no">data_all</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">data</span>)</pre></div>
-<div class="sourceCode" id="cb17"><pre class="r"><span class="no">data_all</span> <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb18"><pre class="r"><span class="no">data_all</span> <span class="kw">%&gt;%</span>
 <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">ymd</span>(<span class="no">timestamp</span>), <span class="no">pedestrians_count</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">legend</span>)) +
 <span class="fu">geom_line</span>(<span class="kw">alpha</span> <span class="kw">=</span> <span class="fl">0.2</span>) +
     <span class="fu">scale_x_date</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="fu">date_format</span>(<span class="st">"%d.%m.%Y"</span>),

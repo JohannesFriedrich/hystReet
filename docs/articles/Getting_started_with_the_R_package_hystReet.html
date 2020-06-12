@@ -392,9 +392,10 @@ Düsseldorf
     <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"bottom"</span>,
         <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>))</pre></body></html></div>
 <p><img src="Getting_started_with_the_R_package_hystReet_files/figure-html/unnamed-chunk-13-1.png" width="700" style="display: block; margin: auto;"></p>
-<div id="corona-effects" class="section level3">
-<h3 class="hasAnchor">
-<a href="#corona-effects" class="anchor"></a>Corona effects</h3>
+</div>
+<div id="corona-effects" class="section level2">
+<h2 class="hasAnchor">
+<a href="#corona-effects" class="anchor"></a>Corona effects</h2>
 <p>The Hystreet-API is a great source of analysing the social effects of the Corona pandemic in 2020. Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.</p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="no">corona_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">ID</span>){
 
@@ -426,7 +427,6 @@ Düsseldorf
   <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>,
        <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Persons/Day"</span>)</pre></body></html></div>
 <p><img src="Getting_started_with_the_R_package_hystReet_files/figure-html/corona_effects_plot-1.png" width="700" style="display: block; margin: auto;"></p>
-</div>
 </div>
 </div>
   </div>
