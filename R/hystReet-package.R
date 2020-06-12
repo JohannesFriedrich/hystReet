@@ -4,7 +4,7 @@
 #' Download and analyse environmental data provided by https://hystreet.com/
 #'
 #' \tabular{ll}{Package: \tab hystReet \cr Type: \tab Package \cr Version:
-#' \tab 0.0.1 \cr Date: \tab 2020-03-28 \cr License: \tab GPL-2 \cr }
+#' \tab 0.0.2 \cr Date: \tab 2020-06-14 \cr License: \tab GPL-2 \cr }
 #'
 #' @name hystReet-package
 #'
@@ -19,7 +19,7 @@ NULL
 #' @format [data.frame] with pedestrians counta from January 2019
 #' @docType data
 #' @author Johannes Friedrich
-#' @name data
+#' @name data_73_74
 NULL
 
 #' Downloaded data for the vignette
@@ -44,4 +44,12 @@ NULL
 #' @docType data
 #' @author Johannes Friedrich
 #' @name ratio
+NULL
+
+#' Downloaded data for the vignette
+#'
+#' @format [data.frame] with all available stations in March 2020
+#' @docType data
+#' @author Johannes Friedrich
+#' @name corona_data_all
 NULL

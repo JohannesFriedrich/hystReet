@@ -41,12 +41,11 @@ library(hystReet)
 
 # API Keys
 
-To use this package, you will first need to get your hystreet API key. To do so, go to this link: [https://hystreet.com/](https://hystreet.com/)
+To use this package, you will first need to get a hystreet API key. To do so, you first need to set up an account on [https://hystreet.com/](https://hystreet.com/). After that you can request an API key via [e-mail](mailto:info@hystreet.com). Once your request has been granted, you will find you key in your hystreet account profile.
 
 Now you have three options:
 
 (1)
-
 Once you have your key, save it as an environment variable for the current session by running the following:
 
 ```{r}
@@ -110,7 +109,7 @@ With the 'query' argument it is possible to set the received data more precise:
 ```{r}
 location_71 <- get_hystreet_station_data(
   hystreetId = 71,
-  query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
+  query = list(from = "2018-12-01", to = "2019-01-01", resolution = "day"))
 ```
 
 
@@ -153,11 +152,11 @@ location_74 <- get_hystreet_station_data(
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
-data <- bind_rows(location_73, location_74)
+data_73_74 <- bind_rows(location_73, location_74)
 ```
 
 ```{r,eval =TRUE}
-ggplot(data, aes(x = timestamp, y = pedestrians_count, fill = weekdays(timestamp))) +
+ggplot(data_73_74, aes(x = timestamp, y = pedestrians_count, fill = weekdays(timestamp))) +
   geom_bar(stat = "identity") +
   scale_x_datetime(labels = date_format("%d.%m.%Y")) +
   facet_wrap(~station, scales = "free_y") +
@@ -172,16 +171,16 @@ Now a little bit of big data analysis. Let´s find the station with the highest 
 ```{r message=FALSE, warning=FALSE}
 hystreet_ids <- get_hystreet_locations()
 
-all_data <- lapply(hystreet_ids[,"id"], function(x){
+all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
-    hystreetId = x)
+    hystreetId = ID,
+    query = list(from = "2019-01-01", to = today(), resolution = "day"))
   
-  
-    lifetime_count <- temp$statistics$lifetime_count
+    lifetime_count <- temp$statistics$timerange_count
     days_counted <- as.numeric(temp$metadata$latest_measurement_at  - temp$metadata$earliest_measurement_at)
     
     return(data.frame(
-      id = x,
+      id = ID,
       station = paste0(temp$city, " (",temp$name,")"),
       ratio = lifetime_count/days_counted))
   
@@ -210,3 +209,42 @@ ggplot(ratio %>%
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+### Corona effects 
+
+The Hystreet-API is a great source of analysing the social effects of the Corona pandemic in 2020.
+Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.
+
+```{r corona_effects_data}
+corona_data <- lapply(hystreet_ids[,"id"], function(ID){
+
+    temp <- get_hystreet_station_data(
+        hystreetId = ID,
+        query = list(from = "2020-03-01", to = "2020-06-10", resolution = "day")
+    )
+    
+    return(data.frame(
+    name = temp$name,
+    city = temp$city,
+    timestamp = format(as.POSIXct(temp$measurements$timestamp), "%Y-%m-%d"),
+    pedestrians_count = temp$measurements$pedestrians_count,
+    legend = paste(temp$city, temp$name, sep = " - ")
+  ))
+   
+}) 
+
+corona_data_all <- bind_rows(data)
+```
+
+```{r corona_effects_plot, eval = TRUE}
+corona_data_all %>% 
+ggplot(aes(ymd(timestamp), pedestrians_count, colour = legend)) +
+geom_line(alpha = 0.2) +
+    scale_x_date(labels = date_format("%d.%m.%Y"),
+               breaks = date_breaks("7 days")
+     ) +
+  theme(legend.position = "none",
+        legend.title = element_text("Legende"),
+         axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "Date",
+       y = "Persons/Day")
+```

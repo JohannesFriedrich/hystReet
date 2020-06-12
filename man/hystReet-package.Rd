@@ -10,6 +10,6 @@ Download and analyse environmental data provided by https://hystreet.com/
 }
 \details{
 \tabular{ll}{Package: \tab hystReet \cr Type: \tab Package \cr Version:
-\tab 0.0.1 \cr Date: \tab 2020-03-28 \cr License: \tab GPL-2 \cr }
+\tab 0.0.2 \cr Date: \tab 2020-06-14 \cr License: \tab GPL-2 \cr }
 }
 \keyword{package}

@@ -18,8 +18,12 @@ Readme\.md
 ^README\.html$
 ^README\.Rmd$
 ^README-.*\.png$
+NEWS.Rmd
 
 # Exclude rsconnect
 ^rsconnect$
 ^doc$
 ^Meta$
+
+# Exclude data-raw
+^data-raw

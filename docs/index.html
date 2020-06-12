@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">hystReet</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2</span>
       </span>
     </div>
 
@@ -57,6 +57,9 @@
       <a href="articles/Getting_started_with_the_R_package_hystReet.html">Getting started with the R-package hystReet</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -100,12 +103,12 @@
 <a href="#api-keys" class="anchor"></a>API Keys</h2>
 <p>To use this package, you will first need to get a hystreet API key. To do so, you first need to set up an account on <a href="https://hystreet.com/" class="uri">https://hystreet.com/</a>. After that you can request an API key via <a href="mailto:info@hystreet.com">e-mail</a>. Once your request has been granted, you will find you key in your hystreet account profile.</p>
 <p>Now you have three options:</p>
-<p>1)<br>
-Once you have your key, you can save it as an environment variable for the current session by running the following command:</p>
+<p>1) Once you have your key, you can save it as an environment variable for the current session by running the following command:</p>
+<!-- end list -->
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="kw">HYSTREET_API_TOKEN</span> <span class="kw">=</span> <span class="st">"PASTE YOUR API TOKEN HERE"</span>)</pre></div>
 <p>2) Alternatively, you can set it permanently with the help of <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code> by adding the following line to your <code>.Renviron</code>:</p>
 <!-- end list -->
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>HYSTREET_API_TOKEN =<span class="st"> </span>PASTE YOUR API TOKEN HERE</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">HYSTREET_API_TOKEN =<span class="st"> </span>PASTE YOUR API TOKEN HERE</a></code></pre></div>
 <p>3) If you don’t want to save your API token here, you can enter it for each function of this package using the <code>API_token</code> parameter.</p>
 </div>
 <div id="usage" class="section level2">
@@ -171,10 +174,10 @@ Once you have your key, you can save it as an environment variable for the curre
 </tr></thead>
 <tbody><tr>
 <td style="text-align:right;">
-<p>119</p>
+<p>127</p>
 </td>
 <td style="text-align:right;">
-<p>1085039</p>
+<p>347781</p>
 </td>
 </tr></tbody>
 </table>
@@ -200,32 +203,87 @@ Once you have your key, you can save it as an environment variable for the curre
 <tbody>
 <tr>
 <td style="text-align:right;">
-<p>251</p>
+<p>59</p>
 </td>
 <td style="text-align:left;">
-<p>Annastraße</p>
+<p>Goethestraße</p>
 </td>
 <td style="text-align:left;">
-<p>Augsburg</p>
+<p>Frankfurt a.M.</p>
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-<p>209</p>
+<p>57</p>
 </td>
 <td style="text-align:left;">
-<p>Lange Straße</p>
+<p>Schlösserstraße</p>
 </td>
 <td style="text-align:left;">
-<p>Oldenburg</p>
+<p>Erfurt</p>
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-<p>151</p>
+<p>68</p>
 </td>
 <td style="text-align:left;">
-<p>Stiftstraße</p>
+<p>Petersstraße</p>
+</td>
+<td style="text-align:left;">
+<p>Leipzig</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>256</p>
+</td>
+<td style="text-align:left;">
+<p>Kirchgasse (Nord)</p>
+</td>
+<td style="text-align:left;">
+<p>Wiesbaden</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>86</p>
+</td>
+<td style="text-align:left;">
+<p>Löhrstraße (Mitte)</p>
+</td>
+<td style="text-align:left;">
+<p>Koblenz</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>107</p>
+</td>
+<td style="text-align:left;">
+<p>Krahnstraße (Süd)</p>
+</td>
+<td style="text-align:left;">
+<p>Osnabrück</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>206</p>
+</td>
+<td style="text-align:left;">
+<p>Kröpeliner Straße (West)</p>
+</td>
+<td style="text-align:left;">
+<p>Rostock</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>77</p>
+</td>
+<td style="text-align:left;">
+<p>Königstraße (Süd)</p>
 </td>
 <td style="text-align:left;">
 <p>Stuttgart</p>
@@ -233,79 +291,24 @@ Once you have your key, you can save it as an environment variable for the curre
 </tr>
 <tr>
 <td style="text-align:right;">
-<p>253</p>
+<p>150</p>
 </td>
 <td style="text-align:left;">
-<p>Neustraße</p>
+<p>Zeil (Mitte)</p>
 </td>
 <td style="text-align:left;">
-<p>Bocholt</p>
+<p>Frankfurt a.M.</p>
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-<p>168</p>
+<p>53</p>
 </td>
 <td style="text-align:left;">
-<p>Hohe Straße (Nord)</p>
+<p>Schadowstraße (West)</p>
 </td>
 <td style="text-align:left;">
-<p>Köln</p>
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-<p>93</p>
-</td>
-<td style="text-align:left;">
-<p>Große Bleichen</p>
-</td>
-<td style="text-align:left;">
-<p>Hamburg</p>
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-<p>135</p>
-</td>
-<td style="text-align:left;">
-<p>Schönbornstraße</p>
-</td>
-<td style="text-align:left;">
-<p>Würzburg</p>
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-<p>252</p>
-</td>
-<td style="text-align:left;">
-<p>Holm</p>
-</td>
-<td style="text-align:left;">
-<p>Flensburg</p>
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-<p>131</p>
-</td>
-<td style="text-align:left;">
-<p>Sack</p>
-</td>
-<td style="text-align:left;">
-<p>Braunschweig</p>
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-<p>142</p>
-</td>
-<td style="text-align:left;">
-<p>Hauptstraße (Süd)</p>
-</td>
-<td style="text-align:left;">
-<p>Erlangen</p>
+<p>Düsseldorf</p>
 </td>
 </tr>
 </tbody>
@@ -314,7 +317,7 @@ Once you have your key, you can save it as an environment variable for the curre
 <div id="request-data-from-a-specific-station" class="section level3">
 <h3 class="hasAnchor">
 <a href="#request-data-from-a-specific-station" class="anchor"></a>Request data from a specific station</h3>
-<p>The (probably) most interesting function is <code><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data()</a></code>. Using the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the <code>query</code> argument it is possible to define the time and sampling frame of the data more precisely: <code>from</code>: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” <code>to</code> : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” <code>resoution</code>: Resultion for the measurement (default: hour): “day”, “hour”, “month”, “week”</p>
+<p>The (probably) most interesting function is <code><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data()</a></code>. Using the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the <code>query</code> argument it is possible to define the time and sampling frame of the data more precisely: <code>from</code>: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” <code>to</code> : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” <code>resoution</code>: Resultion for the measurement (default: hour): “day”, “hour”, “month”, “week”</p>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
   <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="fl">71</span>,
   <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2018-12-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2018-12-31"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>))</pre></div>
@@ -336,7 +339,7 @@ Once you have your key, you can save it as an environment variable for the curre
        <span class="kw">colour</span> <span class="kw">=</span> <span class="st">"Day"</span>)
 <span class="co">## Scale for 'x' is already present. Adding another scale for 'x', which will</span>
 <span class="co">## replace the existing scale.</span></pre></div>
-<p><img src="README_figs/README-unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;"></p>
+<p><img src="README_figs/README-station_71-1.png" width="672" style="display: block; margin: auto;"></p>
 <div id="compare-different-stations" class="section level3">
 <h3 class="hasAnchor">
 <a href="#compare-different-stations" class="anchor"></a>Compare different stations</h3>
@@ -355,14 +358,14 @@ Once you have your key, you can save it as an environment variable for the curre
     <span class="fu">select</span>(<span class="no">pedestrians_count</span>, <span class="no">timestamp</span>) <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">station</span> <span class="kw">=</span> <span class="fl">74</span>)
 
-<span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">data_73</span>, <span class="no">data_74</span>)</pre></div>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="fu">ggplot</span>(<span class="no">data</span>, <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pedestrians_count</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span>(<span class="no">timestamp</span>))) +
+<span class="no">data_73_74</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">data_73</span>, <span class="no">data_74</span>)</pre></div>
+<div class="sourceCode" id="cb12"><pre class="r"><span class="fu">ggplot</span>(<span class="no">data_73_74</span>, <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">pedestrians_count</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span>(<span class="no">timestamp</span>))) +
   <span class="fu">geom_bar</span>(<span class="kw">stat</span> <span class="kw">=</span> <span class="st">"identity"</span>) +
   <span class="fu">scale_x_datetime</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="fu">date_format</span>(<span class="st">"%d.%m.%Y"</span>)) +
   <span class="fu">facet_wrap</span>(~<span class="no">station</span>, <span class="kw">scales</span> <span class="kw">=</span> <span class="st">"free_y"</span>) +
   <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"bottom"</span>,
         <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>))</pre></div>
-<p><img src="README_figs/README-unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;"></p>
+<p><img src="README_figs/README-station_73_74-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 <div id="highest-ratio-pedestriansday" class="section level3">
 <h3 class="hasAnchor">
@@ -370,16 +373,17 @@ Once you have your key, you can save it as an environment variable for the curre
 <p>Now a little bit of big data analysis. Let´s find the station with the highest pedestrians per day ratio:</p>
 <div class="sourceCode" id="cb13"><pre class="r"><span class="no">hystreet_ids</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span>()
 
-<span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">x</span>){
+<span class="no">all_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">ID</span>){
   <span class="no">temp</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
-    <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="no">x</span>)
+    <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="no">ID</span>,
+    <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2019-01-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="fu">today</span>(), <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>))
 
 
-    <span class="no">lifetime_count</span> <span class="kw">&lt;-</span> <span class="no">temp</span>$<span class="no">statistics</span>$<span class="no">lifetime_count</span>
+    <span class="no">lifetime_count</span> <span class="kw">&lt;-</span> <span class="no">temp</span>$<span class="no">statistics</span>$<span class="no">timerange_count</span>
     <span class="no">days_counted</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">temp</span>$<span class="no">metadata</span>$<span class="no">latest_measurement_at</span>  - <span class="no">temp</span>$<span class="no">metadata</span>$<span class="no">earliest_measurement_at</span>)
 
     <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-      <span class="kw">id</span> <span class="kw">=</span> <span class="no">x</span>,
+      <span class="kw">id</span> <span class="kw">=</span> <span class="no">ID</span>,
       <span class="kw">station</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="no">temp</span>$<span class="no">city</span>, <span class="st">" ("</span>,<span class="no">temp</span>$<span class="no">name</span>,<span class="st">")"</span>),
       <span class="kw">ratio</span> <span class="kw">=</span> <span class="no">lifetime_count</span>/<span class="no">days_counted</span>))
 
@@ -390,12 +394,12 @@ Once you have your key, you can save it as an environment variable for the curre
 <div class="sourceCode" id="cb14"><pre class="r"><span class="no">ratio</span> <span class="kw">%&gt;%</span>
   <span class="fu">top_n</span>(<span class="fl">5</span>, <span class="no">ratio</span>) <span class="kw">%&gt;%</span>
   <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="no">ratio</span>))
-<span class="co">##    id                     station    ratio</span>
-<span class="co">## 1  73  München (Neuhauser Straße) 91904.43</span>
-<span class="co">## 2  47 Köln (Schildergasse (West)) 86939.41</span>
-<span class="co">## 3 165   München (Kaufingerstraße) 71187.87</span>
-<span class="co">## 4  48  Köln (Hohe Straße (Mitte)) 65037.64</span>
-<span class="co">## 5  63      Hannover (Georgstraße) 64433.47</span></pre></div>
+<span class="co">##    id                       station    ratio</span>
+<span class="co">## 1 165     München (Kaufingerstraße) 64462.33</span>
+<span class="co">## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52516.24</span>
+<span class="co">## 3 159  Köln (Schildergasse (Mitte)) 50313.61</span>
+<span class="co">## 4  73    München (Neuhauser Straße) 49994.01</span>
+<span class="co">## 5 158      Köln (Hohe Straße (Süd)) 39803.41</span></pre></div>
 <p>Now let´s visualise the top 10 locations:</p>
 <div class="sourceCode" id="cb15"><pre class="r"><span class="fu">ggplot</span>(<span class="no">ratio</span> <span class="kw">%&gt;%</span>
          <span class="fu">top_n</span>(<span class="fl">10</span>,<span class="no">ratio</span>), <span class="fu">aes</span>(<span class="no">station</span>, <span class="no">ratio</span>)) +
@@ -404,7 +408,42 @@ Once you have your key, you can save it as an environment variable for the curre
        <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Pedestrians per day"</span>) +
     <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"bottom"</span>,
         <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>))</pre></div>
-<p><img src="README_figs/README-unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;"></p>
+<p><img src="README_figs/README-ratio_plot-1.png" width="672" style="display: block; margin: auto;"></p>
+</div>
+<div id="corona-effects" class="section level3">
+<h3 class="hasAnchor">
+<a href="#corona-effects" class="anchor"></a>Corona effects</h3>
+<p>The Hystreet-API is a great source of analysing the social effects of the Corona pandemic in 2020. Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.</p>
+<div class="sourceCode" id="cb16"><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="no">hystreet_ids</span>[,<span class="st">"id"</span>], <span class="kw">function</span>(<span class="no">ID</span>){
+
+    <span class="no">temp</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span>(
+        <span class="kw">hystreetId</span> <span class="kw">=</span> <span class="no">ID</span>,
+        <span class="kw">query</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">from</span> <span class="kw">=</span> <span class="st">"2020-03-01"</span>, <span class="kw">to</span> <span class="kw">=</span> <span class="st">"2020-06-10"</span>, <span class="kw">resolution</span> <span class="kw">=</span> <span class="st">"day"</span>)
+    )
+
+    <span class="fu"><a href="https://rdrr.io/r/base/function.html">return</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+    <span class="kw">name</span> <span class="kw">=</span> <span class="no">temp</span>$<span class="no">name</span>,
+    <span class="kw">city</span> <span class="kw">=</span> <span class="no">temp</span>$<span class="no">city</span>,
+    <span class="kw">timestamp</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span>(<span class="no">temp</span>$<span class="no">measurements</span>$<span class="no">timestamp</span>), <span class="st">"%Y-%m-%d"</span>),
+    <span class="kw">pedestrians_count</span> <span class="kw">=</span> <span class="no">temp</span>$<span class="no">measurements</span>$<span class="no">pedestrians_count</span>,
+    <span class="kw">legend</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">temp</span>$<span class="no">city</span>, <span class="no">temp</span>$<span class="no">name</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">" - "</span>)
+  ))
+
+})
+
+<span class="no">data_all</span> <span class="kw">&lt;-</span> <span class="fu">bind_rows</span>(<span class="no">data</span>)</pre></div>
+<div class="sourceCode" id="cb17"><pre class="r"><span class="no">data_all</span> <span class="kw">%&gt;%</span>
+<span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">ymd</span>(<span class="no">timestamp</span>), <span class="no">pedestrians_count</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">legend</span>)) +
+<span class="fu">geom_line</span>(<span class="kw">alpha</span> <span class="kw">=</span> <span class="fl">0.2</span>) +
+    <span class="fu">scale_x_date</span>(<span class="kw">labels</span> <span class="kw">=</span> <span class="fu">date_format</span>(<span class="st">"%d.%m.%Y"</span>),
+               <span class="kw">breaks</span> <span class="kw">=</span> <span class="fu">date_breaks</span>(<span class="st">"7 days"</span>)
+     ) +
+  <span class="fu">theme</span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"none"</span>,
+        <span class="kw">legend.title</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="st">"Legende"</span>),
+         <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu">element_text</span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>)) +
+  <span class="fu">labs</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Date"</span>,
+       <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Persons/Day"</span>)</pre></div>
+<p><img src="README_figs/README-corona_effects_plot-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 </div>
 </div>
@@ -439,6 +478,7 @@ Once you have your key, you can save it as an environment variable for the curre
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=hystReet"><img src="http://www.r-pkg.org/badges/version/hystReet" alt="CRAN"></a></li>
+<li><a href="https://www.r-pkg.org/pkg/hystReet"><img src="https://cranlogs.r-pkg.org/badges/grand-total/hystReet" alt="Downloads"></a></li>
 <li><a href="https://travis-ci.org/JohannesFriedrich/hystReet"><img src="https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/JohannesFriedrich/hystreet"><img src="https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true" alt="Build status"></a></li>
 <li><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>

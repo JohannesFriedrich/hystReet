@@ -4,6 +4,7 @@
 # hystReet
 
 [![CRAN](http://www.r-pkg.org/badges/version/hystReet)](https://CRAN.R-project.org/package=hystReet)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/hystReet)](https://www.r-pkg.org/pkg/hystReet)
 [![Build
 Status](https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master)](https://travis-ci.org/JohannesFriedrich/hystReet)
 [![Build
@@ -39,9 +40,10 @@ you will find you key in your hystreet account profile.
 
 Now you have three options:
 
-1)  
-Once you have your key, you can save it as an environment variable for
-the current session by running the following command:
+1)  Once you have your key, you can save it as an environment variable
+    for the current session by running the following command:
+
+<!-- end list -->
 
 ``` r
 Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
@@ -56,7 +58,8 @@ Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
 3)  If you don’t want to save your API token here, you can enter it for
-    each function of this package using the `API_token` parameter.
+    each function of this package using the `API_token`
+parameter.
 
 ## Usage
 
@@ -117,13 +120,13 @@ today\_count
 
 <td style="text-align:right;">
 
-119
+127
 
 </td>
 
 <td style="text-align:right;">
 
-1085039
+347781
 
 </td>
 
@@ -180,19 +183,19 @@ city
 
 <td style="text-align:right;">
 
-251
+59
 
 </td>
 
 <td style="text-align:left;">
 
-Annastraße
+Goethestraße
 
 </td>
 
 <td style="text-align:left;">
 
-Augsburg
+Frankfurt a.M.
 
 </td>
 
@@ -202,19 +205,19 @@ Augsburg
 
 <td style="text-align:right;">
 
-209
+57
 
 </td>
 
 <td style="text-align:left;">
 
-Lange Straße
+Schlösserstraße
 
 </td>
 
 <td style="text-align:left;">
 
-Oldenburg
+Erfurt
 
 </td>
 
@@ -224,13 +227,123 @@ Oldenburg
 
 <td style="text-align:right;">
 
-151
+68
 
 </td>
 
 <td style="text-align:left;">
 
-Stiftstraße
+Petersstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Leipzig
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+256
+
+</td>
+
+<td style="text-align:left;">
+
+Kirchgasse (Nord)
+
+</td>
+
+<td style="text-align:left;">
+
+Wiesbaden
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+86
+
+</td>
+
+<td style="text-align:left;">
+
+Löhrstraße (Mitte)
+
+</td>
+
+<td style="text-align:left;">
+
+Koblenz
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+107
+
+</td>
+
+<td style="text-align:left;">
+
+Krahnstraße (Süd)
+
+</td>
+
+<td style="text-align:left;">
+
+Osnabrück
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+206
+
+</td>
+
+<td style="text-align:left;">
+
+Kröpeliner Straße (West)
+
+</td>
+
+<td style="text-align:left;">
+
+Rostock
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+77
+
+</td>
+
+<td style="text-align:left;">
+
+Königstraße (Süd)
 
 </td>
 
@@ -246,19 +359,19 @@ Stuttgart
 
 <td style="text-align:right;">
 
-253
+150
 
 </td>
 
 <td style="text-align:left;">
 
-Neustraße
+Zeil (Mitte)
 
 </td>
 
 <td style="text-align:left;">
 
-Bocholt
+Frankfurt a.M.
 
 </td>
 
@@ -268,129 +381,19 @@ Bocholt
 
 <td style="text-align:right;">
 
-168
+53
 
 </td>
 
 <td style="text-align:left;">
 
-Hohe Straße (Nord)
+Schadowstraße (West)
 
 </td>
 
 <td style="text-align:left;">
 
-Köln
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-93
-
-</td>
-
-<td style="text-align:left;">
-
-Große Bleichen
-
-</td>
-
-<td style="text-align:left;">
-
-Hamburg
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-135
-
-</td>
-
-<td style="text-align:left;">
-
-Schönbornstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Würzburg
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-252
-
-</td>
-
-<td style="text-align:left;">
-
-Holm
-
-</td>
-
-<td style="text-align:left;">
-
-Flensburg
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-131
-
-</td>
-
-<td style="text-align:left;">
-
-Sack
-
-</td>
-
-<td style="text-align:left;">
-
-Braunschweig
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-142
-
-</td>
-
-<td style="text-align:left;">
-
-Hauptstraße (Süd)
-
-</td>
-
-<td style="text-align:left;">
-
-Erlangen
+Düsseldorf
 
 </td>
 
@@ -407,9 +410,9 @@ The (probably) most interesting function is
 request a specific station. By default, all the data from the current
 day are received. With the `query` argument it is possible to define the
 time and sampling frame of the data more precisely: `from`: datetime of
-earliest measurement (default: today 00:00:00:): e.g. “2018-10-01
+earliest measurement (default: today 00:00:00:): e.g. “2018-10-01
 12:00:00” or “2018-10-01” `to` : datetime of latest measurement
-(default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01”
+(default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01”
 `resoution`: Resultion for the measurement (default: hour): “day”,
 “hour”, “month”, “week”
 
@@ -444,7 +447,7 @@ ggplot(data$measurements, aes(x = timestamp, y = pedestrians_count, colour = wee
 ## replace the existing scale.
 ```
 
-<img src="README_figs/README-unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_figs/README-station_71-1.png" width="672" style="display: block; margin: auto;" />
 
 ### Compare different stations
 
@@ -467,11 +470,11 @@ data_74 <- get_hystreet_station_data(
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
-data <- bind_rows(data_73, data_74)
+data_73_74 <- bind_rows(data_73, data_74)
 ```
 
 ``` r
-ggplot(data, aes(x = timestamp, y = pedestrians_count, fill = weekdays(timestamp))) +
+ggplot(data_73_74, aes(x = timestamp, y = pedestrians_count, fill = weekdays(timestamp))) +
   geom_bar(stat = "identity") +
   scale_x_datetime(labels = date_format("%d.%m.%Y")) +
   facet_wrap(~station, scales = "free_y") +
@@ -479,7 +482,7 @@ ggplot(data, aes(x = timestamp, y = pedestrians_count, fill = weekdays(timestamp
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<img src="README_figs/README-unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_figs/README-station_73_74-1.png" width="672" style="display: block; margin: auto;" />
 
 ### Highest ratio (pedestrians/day)
 
@@ -489,16 +492,17 @@ highest pedestrians per day ratio:
 ``` r
 hystreet_ids <- get_hystreet_locations()
 
-all_data <- lapply(hystreet_ids[,"id"], function(x){
+all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
-    hystreetId = x)
+    hystreetId = ID,
+    query = list(from = "2019-01-01", to = today(), resolution = "day"))
   
   
-    lifetime_count <- temp$statistics$lifetime_count
+    lifetime_count <- temp$statistics$timerange_count
     days_counted <- as.numeric(temp$metadata$latest_measurement_at  - temp$metadata$earliest_measurement_at)
     
     return(data.frame(
-      id = x,
+      id = ID,
       station = paste0(temp$city, " (",temp$name,")"),
       ratio = lifetime_count/days_counted))
   
@@ -513,12 +517,12 @@ Which stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                     station    ratio
-## 1  73  München (Neuhauser Straße) 91904.43
-## 2  47 Köln (Schildergasse (West)) 86939.41
-## 3 165   München (Kaufingerstraße) 71187.87
-## 4  48  Köln (Hohe Straße (Mitte)) 65037.64
-## 5  63      Hannover (Georgstraße) 64433.47
+##    id                       station    ratio
+## 1 165     München (Kaufingerstraße) 64462.33
+## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52516.24
+## 3 159  Köln (Schildergasse (Mitte)) 50313.61
+## 4  73    München (Neuhauser Straße) 49994.01
+## 5 158      Köln (Hohe Straße (Süd)) 39803.41
 ```
 
 Now let´s visualise the top 10 locations:
@@ -533,4 +537,47 @@ ggplot(ratio %>%
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<img src="README_figs/README-unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_figs/README-ratio_plot-1.png" width="672" style="display: block; margin: auto;" />
+
+### Corona effects
+
+The Hystreet-API is a great source of analysing the social effects of
+the Corona pandemic in 2020. Let´s collect all german stations since
+March 2020 and analyse the pedestrian count until 10th June 2020.
+
+``` r
+data <- lapply(hystreet_ids[,"id"], function(ID){
+
+    temp <- get_hystreet_station_data(
+        hystreetId = ID,
+        query = list(from = "2020-03-01", to = "2020-06-10", resolution = "day")
+    )
+    
+    return(data.frame(
+    name = temp$name,
+    city = temp$city,
+    timestamp = format(as.POSIXct(temp$measurements$timestamp), "%Y-%m-%d"),
+    pedestrians_count = temp$measurements$pedestrians_count,
+    legend = paste(temp$city, temp$name, sep = " - ")
+  ))
+   
+}) 
+
+data_all <- bind_rows(data)
+```
+
+``` r
+data_all %>% 
+ggplot(aes(ymd(timestamp), pedestrians_count, colour = legend)) +
+geom_line(alpha = 0.2) +
+    scale_x_date(labels = date_format("%d.%m.%Y"),
+               breaks = date_breaks("7 days")
+     ) +
+  theme(legend.position = "none",
+        legend.title = element_text("Legende"),
+         axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "Date",
+       y = "Persons/Day")
+```
+
+<img src="README_figs/README-corona_effects_plot-1.png" width="672" style="display: block; margin: auto;" />
