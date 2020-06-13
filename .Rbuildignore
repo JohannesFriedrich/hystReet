@@ -18,7 +18,7 @@ Readme\.md
 ^README\.html$
 ^README\.Rmd$
 ^README-.*\.png$
-NEWS.Rmd
+NEWS.md
 
 # Exclude rsconnect
 ^rsconnect$
