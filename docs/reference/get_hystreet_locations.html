@@ -132,7 +132,7 @@
     <p>Get station IDs of the Hystreet project</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_hystreet_locations</span>(<span class='kw'>API_token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_hystreet_locations</span><span class='op'>(</span>API_token <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,137 +151,14 @@
     
 
 <p>0.0.2</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Johannes Friedrich</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \dontrun{</span>
- <span class='fu'>get_hystreet_locations</span>()</div><div class='output co'>#&gt;      id                             name                city
-#&gt; 1   246              Westenhellweg (Ost)            Dortmund
-#&gt; 2    59                     Goethestraße      Frankfurt a.M.
-#&gt; 3    57                  Schlösserstraße              Erfurt
-#&gt; 4    68                     Petersstraße             Leipzig
-#&gt; 5   256                Kirchgasse (Nord)           Wiesbaden
-#&gt; 6    86               Löhrstraße (Mitte)             Koblenz
-#&gt; 7   107                Krahnstraße (Süd)           Osnabrück
-#&gt; 8   206         Kröpeliner Straße (West)             Rostock
-#&gt; 9    77                Königstraße (Süd)           Stuttgart
-#&gt; 10  150                     Zeil (Mitte)      Frankfurt a.M.
-#&gt; 11   53             Schadowstraße (West)          Düsseldorf
-#&gt; 12  254                    Zöllnerstraße               Celle
-#&gt; 13   47             Schildergasse (West)                Köln
-#&gt; 14  125                 Kettwiger Straße               Essen
-#&gt; 15  167                  Zeppelinstraße                 Köln
-#&gt; 16  138                       Brotstraße               Trier
-#&gt; 17   73                 Neuhauser Straße             München
-#&gt; 18  166         Maximilianstraße (Mitte)             München
-#&gt; 19   72                  Stadthausstraße               Mainz
-#&gt; 20  257            Holstenstraße (Mitte)                Kiel
-#&gt; 21  104              Ernst-Ludwig-Straße           Darmstadt
-#&gt; 22  155              Georgstraße  (West)           Osnabrück
-#&gt; 23  129                      Schuhstraße        Braunschweig
-#&gt; 24  117                    Ludgeristraße             Münster
-#&gt; 25  126                      Neue Straße        Braunschweig
-#&gt; 26   71                   Schusterstraße               Mainz
-#&gt; 27  132                       Langer Hof        Braunschweig
-#&gt; 28  154                       Poststraße           Wuppertal
-#&gt; 29  131                             Sack        Braunschweig
-#&gt; 30  130                             Damm        Braunschweig
-#&gt; 31  128                       Hutfiltern        Braunschweig
-#&gt; 32  127                       Poststraße        Braunschweig
-#&gt; 33  151                      Stiftstraße           Stuttgart
-#&gt; 34   87                       Poststraße                Bonn
-#&gt; 35   58        Große Bockenheimer Straße      Frankfurt a.M.
-#&gt; 36  157                     Mittelstraße          Düsseldorf
-#&gt; 37   91                       Neuer Wall             Hamburg
-#&gt; 38  253                        Neustraße             Bocholt
-#&gt; 39  260          Schadowstraße (Südwest)          Düsseldorf
-#&gt; 40  143     Kaiser-Joseph-Straße (Mitte)            Freiburg
-#&gt; 41   56       Königsallee Ostseite (Süd)          Düsseldorf
-#&gt; 42   56       Königsallee Ostseite (Süd)          Düsseldorf
-#&gt; 43  139                   Fleiner Straße           Heilbronn
-#&gt; 44  245         Hindenburgstraße (Mitte)     Mönchengladbach
-#&gt; 45  141               Hauptstraße (West)          Heidelberg
-#&gt; 46  170            Adalbertstraße (West)              Aachen
-#&gt; 47   52                      Sternstraße                Bonn
-#&gt; 48  210                    Achternstraße           Oldenburg
-#&gt; 49   78                    Münsterplatz                  Ulm
-#&gt; 50  249            Bahnhofstraße (Mitte)              Brilon
-#&gt; 51  251                       Annastraße            Augsburg
-#&gt; 52  248             Bahnhofstraße (West)              Brilon
-#&gt; 53  100                       Rothenburg             Münster
-#&gt; 54  147                     Ludwigstraße              Passau
-#&gt; 55   79               Kirchgasse (Mitte)           Wiesbaden
-#&gt; 56  161                 Stresemannstraße           Bielefeld
-#&gt; 57   96                    Planken (Ost)            Mannheim
-#&gt; 58   88                     Breite Gasse            Nürnberg
-#&gt; 59  116        Herrenteichsstraße (West)           Osnabrück
-#&gt; 60  108             Große Straße (Mitte)           Osnabrück
-#&gt; 61   65                  Karmarschstraße            Hannover
-#&gt; 62   51                   Remigiusstraße                Bonn
-#&gt; 63   64              Große Packhofstraße            Hannover
-#&gt; 64  171                      Hauptstraße   Bergisch-Gladbach
-#&gt; 65  258             Mittelstraße (Mitte)               Lemgo
-#&gt; 66  114         Herrenteichsstraße (Ost)           Osnabrück
-#&gt; 67  261           Flinger Straße (Mitte)          Düsseldorf
-#&gt; 68  111                       Jürgensort           Osnabrück
-#&gt; 69   75                    Bahnhofstraße         Saarbrücken
-#&gt; 70   55             Flinger Straße (Ost)          Düsseldorf
-#&gt; 71  259            Schadowstraße (Mitte)          Düsseldorf
-#&gt; 72   85                         Am Brand               Mainz
-#&gt; 73  208                        Hoher Weg          Hildesheim
-#&gt; 74  244             Weender Straße (Süd)           Göttingen
-#&gt; 75   98 Tauentzienstraße Südseite (West)              Berlin
-#&gt; 76   69                       Hainstraße             Leipzig
-#&gt; 77  207            Breite Straße (Mitte)              Lübeck
-#&gt; 78  135                  Schönbornstraße            Würzburg
-#&gt; 79  162            Bahnhofstraße (Mitte)           Bielefeld
-#&gt; 80  164             Prager Straße (Nord)             Dresden
-#&gt; 81  148             Werner-Senger-Straße             Limburg
-#&gt; 82   63                      Georgstraße            Hannover
-#&gt; 83  153               Große Straße (Süd)           Osnabrück
-#&gt; 84  146                     Hirschstraße                 Ulm
-#&gt; 85  134                    Wilhelmstraße          Reutlingen
-#&gt; 86   90                  Karolinenstraße            Nürnberg
-#&gt; 87  160              Schildergasse (Ost)                Köln
-#&gt; 88  102     Bürgermeister-Fischer-Straße            Augsburg
-#&gt; 89  205              Ehrenstraße (Mitte)                Köln
-#&gt; 90   54              Schadowstraße (Ost)          Düsseldorf
-#&gt; 91   95                  Planken (Mitte)            Mannheim
-#&gt; 92   81                   Spitalerstraße             Hamburg
-#&gt; 93   81                   Spitalerstraße             Hamburg
-#&gt; 94   76              Königstraße (Mitte)           Stuttgart
-#&gt; 95   93                   Große Bleichen             Hamburg
-#&gt; 96   93                   Große Bleichen             Hamburg
-#&gt; 97   84                     Rathausgasse            Freiburg
-#&gt; 98   97    Kurfürstendamm Südseite (Ost)              Berlin
-#&gt; 99   74                   Schützenstraße             München
-#&gt; 100 165                  Kaufingerstraße             München
-#&gt; 101  49            Westenhellweg (Mitte)            Dortmund
-#&gt; 102 168               Hohe Straße (Nord)                Köln
-#&gt; 103 158                Hohe Straße (Süd)                Köln
-#&gt; 104 109    Krahnstraße (Mitte, Altstadt)           Osnabrück
-#&gt; 105 123                     Ludwigstraße          Ingolstadt
-#&gt; 106 103                  Schuchardstraße           Darmstadt
-#&gt; 107 209                     Lange Straße           Oldenburg
-#&gt; 108  94   Kurfürstendamm Nordseite (Ost)              Berlin
-#&gt; 109  94   Kurfürstendamm Nordseite (Ost)              Berlin
-#&gt; 110 122                       Seltersweg              Gießen
-#&gt; 111 252                             Holm           Flensburg
-#&gt; 112 140                    Fleischstraße               Trier
-#&gt; 113 110            Johannisstraße (Nord)           Osnabrück
-#&gt; 114  50                Ehrenstraße (Ost)                Köln
-#&gt; 115  89                     Kaiserstraße            Nürnberg
-#&gt; 116 159            Schildergasse (Mitte)                Köln
-#&gt; 117 163              Bahnhofstraße (Süd)           Bielefeld
-#&gt; 118 145               Rheinstraße (West)             Krefeld
-#&gt; 119 144               Hochstraße (Mitte)             Krefeld
-#&gt; 120  48              Hohe Straße (Mitte)                Köln
-#&gt; 121 118                     Grüner Markt             Bamberg
-#&gt; 122  92                    Jungfernstieg             Hamburg
-#&gt; 123 142                Hauptstraße (Süd)            Erlangen
-#&gt; 124 250                 Bürgerturmstraße Biberach an der Riß
-#&gt; 125 169                    Westernstraße           Paderborn
-#&gt; 126 172                      Obernstraße              Bremen
-#&gt; 127  67             Kaiserstraße (Mitte)           Karlsruhe</div><div class='input'># }
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='fu'>get_hystreet_locations</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -298,7 +175,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

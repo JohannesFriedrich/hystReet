@@ -132,7 +132,7 @@
     <p>Get statistics from the Hystreet Project via Hystreet API</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_hystreet_stats</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>API_token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_hystreet_stats</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>FALSE</span>, API_token <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -155,137 +155,14 @@
     
 
 <p>0.0.2</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Johannes Friedrich</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \dontrun{</span>
- <span class='fu'>get_hystreet_stats</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;      id                             name                city today_count
-#&gt; 1   246              Westenhellweg (Ost)            Dortmund       14613
-#&gt; 2    59                     Goethestraße      Frankfurt a.M.        1921
-#&gt; 3    57                  Schlösserstraße              Erfurt        7941
-#&gt; 4    68                     Petersstraße             Leipzig       12715
-#&gt; 5   256                Kirchgasse (Nord)           Wiesbaden       12681
-#&gt; 6    86               Löhrstraße (Mitte)             Koblenz       12561
-#&gt; 7   107                Krahnstraße (Süd)           Osnabrück        6013
-#&gt; 8   206         Kröpeliner Straße (West)             Rostock       11930
-#&gt; 9    77                Königstraße (Süd)           Stuttgart       18490
-#&gt; 10  150                     Zeil (Mitte)      Frankfurt a.M.       26979
-#&gt; 11   53             Schadowstraße (West)          Düsseldorf       15454
-#&gt; 12  254                    Zöllnerstraße               Celle        3826
-#&gt; 13   47             Schildergasse (West)                Köln       25814
-#&gt; 14  125                 Kettwiger Straße               Essen       13319
-#&gt; 15  167                  Zeppelinstraße                 Köln       13006
-#&gt; 16  138                       Brotstraße               Trier       10337
-#&gt; 17   73                 Neuhauser Straße             München       27549
-#&gt; 18  166         Maximilianstraße (Mitte)             München        3695
-#&gt; 19   72                  Stadthausstraße               Mainz        7993
-#&gt; 20  257            Holstenstraße (Mitte)                Kiel        7916
-#&gt; 21  104              Ernst-Ludwig-Straße           Darmstadt        7296
-#&gt; 22  155              Georgstraße  (West)           Osnabrück        4925
-#&gt; 23  129                      Schuhstraße        Braunschweig        4727
-#&gt; 24  117                    Ludgeristraße             Münster       12860
-#&gt; 25  126                      Neue Straße        Braunschweig        3173
-#&gt; 26   71                   Schusterstraße               Mainz        6111
-#&gt; 27  132                       Langer Hof        Braunschweig        4597
-#&gt; 28  154                       Poststraße           Wuppertal       14539
-#&gt; 29  131                             Sack        Braunschweig        4612
-#&gt; 30  130                             Damm        Braunschweig        4708
-#&gt; 31  128                       Hutfiltern        Braunschweig        5160
-#&gt; 32  127                       Poststraße        Braunschweig        5527
-#&gt; 33  151                      Stiftstraße           Stuttgart        5321
-#&gt; 34   87                       Poststraße                Bonn       10184
-#&gt; 35   58        Große Bockenheimer Straße      Frankfurt a.M.        8395
-#&gt; 36  157                     Mittelstraße          Düsseldorf        7440
-#&gt; 37   91                       Neuer Wall             Hamburg        7240
-#&gt; 38  253                        Neustraße             Bocholt        6860
-#&gt; 39  260          Schadowstraße (Südwest)          Düsseldorf       10986
-#&gt; 40  143     Kaiser-Joseph-Straße (Mitte)            Freiburg       14633
-#&gt; 41   56       Königsallee Ostseite (Süd)          Düsseldorf        7689
-#&gt; 42   56       Königsallee Ostseite (Süd)          Düsseldorf        7689
-#&gt; 43  139                   Fleiner Straße           Heilbronn       14251
-#&gt; 44  245         Hindenburgstraße (Mitte)     Mönchengladbach       11125
-#&gt; 45  141               Hauptstraße (West)          Heidelberg       12685
-#&gt; 46  170            Adalbertstraße (West)              Aachen       12994
-#&gt; 47   52                      Sternstraße                Bonn       12678
-#&gt; 48  210                    Achternstraße           Oldenburg        6767
-#&gt; 49   78                    Münsterplatz                  Ulm        8921
-#&gt; 50  249            Bahnhofstraße (Mitte)              Brilon        2038
-#&gt; 51  251                       Annastraße            Augsburg        7902
-#&gt; 52  248             Bahnhofstraße (West)              Brilon        2352
-#&gt; 53  100                       Rothenburg             Münster       10086
-#&gt; 54  147                     Ludwigstraße              Passau       11162
-#&gt; 55   79               Kirchgasse (Mitte)           Wiesbaden       16740
-#&gt; 56  161                 Stresemannstraße           Bielefeld       11446
-#&gt; 57   96                    Planken (Ost)            Mannheim        7635
-#&gt; 58   88                     Breite Gasse            Nürnberg       12085
-#&gt; 59  116        Herrenteichsstraße (West)           Osnabrück        3847
-#&gt; 60  108             Große Straße (Mitte)           Osnabrück       10897
-#&gt; 61   65                  Karmarschstraße            Hannover        9331
-#&gt; 62   51                   Remigiusstraße                Bonn       13375
-#&gt; 63   64              Große Packhofstraße            Hannover        8721
-#&gt; 64  171                      Hauptstraße   Bergisch-Gladbach        8360
-#&gt; 65  258             Mittelstraße (Mitte)               Lemgo        5012
-#&gt; 66  114         Herrenteichsstraße (Ost)           Osnabrück        2155
-#&gt; 67  261           Flinger Straße (Mitte)          Düsseldorf       11911
-#&gt; 68  111                       Jürgensort           Osnabrück        5077
-#&gt; 69   75                    Bahnhofstraße         Saarbrücken       12715
-#&gt; 70   55             Flinger Straße (Ost)          Düsseldorf       12884
-#&gt; 71  259            Schadowstraße (Mitte)          Düsseldorf        6408
-#&gt; 72   85                         Am Brand               Mainz       10998
-#&gt; 73  208                        Hoher Weg          Hildesheim           0
-#&gt; 74  244             Weender Straße (Süd)           Göttingen        6690
-#&gt; 75   98 Tauentzienstraße Südseite (West)              Berlin           0
-#&gt; 76   69                       Hainstraße             Leipzig       13251
-#&gt; 77  207            Breite Straße (Mitte)              Lübeck        9972
-#&gt; 78  135                  Schönbornstraße            Würzburg       16830
-#&gt; 79  162            Bahnhofstraße (Mitte)           Bielefeld       11527
-#&gt; 80  164             Prager Straße (Nord)             Dresden       13029
-#&gt; 81  148             Werner-Senger-Straße             Limburg        9119
-#&gt; 82   63                      Georgstraße            Hannover       19364
-#&gt; 83  153               Große Straße (Süd)           Osnabrück       10242
-#&gt; 84  146                     Hirschstraße                 Ulm       16412
-#&gt; 85  134                    Wilhelmstraße          Reutlingen       11335
-#&gt; 86   90                  Karolinenstraße            Nürnberg       15535
-#&gt; 87  160              Schildergasse (Ost)                Köln       12421
-#&gt; 88  102     Bürgermeister-Fischer-Straße            Augsburg        9502
-#&gt; 89  205              Ehrenstraße (Mitte)                Köln        9925
-#&gt; 90   54              Schadowstraße (Ost)          Düsseldorf       12186
-#&gt; 91   95                  Planken (Mitte)            Mannheim       14330
-#&gt; 92   81                   Spitalerstraße             Hamburg       14407
-#&gt; 93   81                   Spitalerstraße             Hamburg       14407
-#&gt; 94   76              Königstraße (Mitte)           Stuttgart       21395
-#&gt; 95   93                   Große Bleichen             Hamburg        6021
-#&gt; 96   93                   Große Bleichen             Hamburg        6021
-#&gt; 97   84                     Rathausgasse            Freiburg        5887
-#&gt; 98   97    Kurfürstendamm Südseite (Ost)              Berlin        7545
-#&gt; 99   74                   Schützenstraße             München        3813
-#&gt; 100 165                  Kaufingerstraße             München       29299
-#&gt; 101  49            Westenhellweg (Mitte)            Dortmund       16624
-#&gt; 102 168               Hohe Straße (Nord)                Köln       17008
-#&gt; 103 158                Hohe Straße (Süd)                Köln       18680
-#&gt; 104 109    Krahnstraße (Mitte, Altstadt)           Osnabrück        5764
-#&gt; 105 123                     Ludwigstraße          Ingolstadt        8306
-#&gt; 106 103                  Schuchardstraße           Darmstadt        6871
-#&gt; 107 209                     Lange Straße           Oldenburg        6394
-#&gt; 108  94   Kurfürstendamm Nordseite (Ost)              Berlin        4181
-#&gt; 109  94   Kurfürstendamm Nordseite (Ost)              Berlin        4181
-#&gt; 110 122                       Seltersweg              Gießen        9614
-#&gt; 111 252                             Holm           Flensburg       10587
-#&gt; 112 140                    Fleischstraße               Trier        5206
-#&gt; 113 110            Johannisstraße (Nord)           Osnabrück        4328
-#&gt; 114  50                Ehrenstraße (Ost)                Köln        8594
-#&gt; 115  89                     Kaiserstraße            Nürnberg        5927
-#&gt; 116 159            Schildergasse (Mitte)                Köln       26710
-#&gt; 117 163              Bahnhofstraße (Süd)           Bielefeld       16702
-#&gt; 118 145               Rheinstraße (West)             Krefeld         164
-#&gt; 119 144               Hochstraße (Mitte)             Krefeld       10091
-#&gt; 120  48              Hohe Straße (Mitte)                Köln       18768
-#&gt; 121 118                     Grüner Markt             Bamberg       15918
-#&gt; 122  92                    Jungfernstieg             Hamburg       11487
-#&gt; 123 142                Hauptstraße (Süd)            Erlangen        5823
-#&gt; 124 250                 Bürgerturmstraße Biberach an der Riß        1996
-#&gt; 125 169                    Westernstraße           Paderborn       13520
-#&gt; 126 172                      Obernstraße              Bremen        7533
-#&gt; 127  67             Kaiserstraße (Mitte)           Karlsruhe       16982</div><div class='input'># }
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='fu'>get_hystreet_stats</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -302,7 +179,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

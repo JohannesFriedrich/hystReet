@@ -64,8 +64,7 @@ Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
 3)  If you don’t want to save your API token here, you can enter it for
-    each function of this package using the `API_token`
-parameter.
+    each function of this package using the `API_token` parameter.
 
 ## Usage
 
@@ -126,13 +125,13 @@ today\_count
 
 <td style="text-align:right;">
 
-127
+133
 
 </td>
 
 <td style="text-align:right;">
 
-1300407
+1953993
 
 </td>
 
@@ -211,182 +210,6 @@ Frankfurt a.M.
 
 <td style="text-align:right;">
 
-57
-
-</td>
-
-<td style="text-align:left;">
-
-Schlösserstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Erfurt
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-68
-
-</td>
-
-<td style="text-align:left;">
-
-Petersstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Leipzig
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-256
-
-</td>
-
-<td style="text-align:left;">
-
-Kirchgasse (Nord)
-
-</td>
-
-<td style="text-align:left;">
-
-Wiesbaden
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-86
-
-</td>
-
-<td style="text-align:left;">
-
-Löhrstraße (Mitte)
-
-</td>
-
-<td style="text-align:left;">
-
-Koblenz
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-107
-
-</td>
-
-<td style="text-align:left;">
-
-Krahnstraße (Süd)
-
-</td>
-
-<td style="text-align:left;">
-
-Osnabrück
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-206
-
-</td>
-
-<td style="text-align:left;">
-
-Kröpeliner Straße (West)
-
-</td>
-
-<td style="text-align:left;">
-
-Rostock
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-77
-
-</td>
-
-<td style="text-align:left;">
-
-Königstraße (Süd)
-
-</td>
-
-<td style="text-align:left;">
-
-Stuttgart
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-150
-
-</td>
-
-<td style="text-align:left;">
-
-Zeil (Mitte)
-
-</td>
-
-<td style="text-align:left;">
-
-Frankfurt a.M.
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
 53
 
 </td>
@@ -405,6 +228,182 @@ Düsseldorf
 
 </tr>
 
+<tr>
+
+<td style="text-align:right;">
+
+258
+
+</td>
+
+<td style="text-align:left;">
+
+Mittelstraße (Mitte)
+
+</td>
+
+<td style="text-align:left;">
+
+Lemgo
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+155
+
+</td>
+
+<td style="text-align:left;">
+
+Georgstraße (West)
+
+</td>
+
+<td style="text-align:left;">
+
+Osnabrück
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+131
+
+</td>
+
+<td style="text-align:left;">
+
+Sack
+
+</td>
+
+<td style="text-align:left;">
+
+Braunschweig
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+160
+
+</td>
+
+<td style="text-align:left;">
+
+Schildergasse (Ost)
+
+</td>
+
+<td style="text-align:left;">
+
+Köln
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+52
+
+</td>
+
+<td style="text-align:left;">
+
+Sternstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Bonn
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+85
+
+</td>
+
+<td style="text-align:left;">
+
+Am Brand
+
+</td>
+
+<td style="text-align:left;">
+
+Mainz
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+72
+
+</td>
+
+<td style="text-align:left;">
+
+Stadthausstraße
+
+</td>
+
+<td style="text-align:left;">
+
+Mainz
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+47
+
+</td>
+
+<td style="text-align:left;">
+
+Schildergasse (West)
+
+</td>
+
+<td style="text-align:left;">
+
+Köln
+
+</td>
+
+</tr>
+
 </tbody>
 
 </table>
@@ -416,10 +415,10 @@ The (probably) most interesting function is
 request a specific station. By default, all the data from the current
 day are received. With the `query` argument it is possible to define the
 time and sampling frame of the data more precisely: `from`: datetime of
-earliest measurement (default: today 00:00:00:): e.g. “2018-10-01
+earliest measurement (default: today 00:00:00:): e.g. “2018-10-01
 12:00:00” or “2018-10-01” `to` : datetime of latest measurement
-(default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01”
-`resoution`: Resultion for the measurement (default: hour): “day”,
+(default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01”
+`resoution`: Resolution for the measurement (default: hour): “day”,
 “hour”, “month”, “week”
 
 ``` r
@@ -444,13 +443,10 @@ data <- get_hystreet_station_data(
 ``` r
 ggplot(data$measurements, aes(x = timestamp, y = pedestrians_count, colour = weekdays(timestamp))) +
   geom_path(group = 1) +
-  scale_x_datetime(date_breaks = "7 days") +
-  scale_x_datetime(labels = date_format("%d.%m.%Y")) +
+  scale_x_datetime(date_breaks = "7 days", labels = date_format("%d.%m.%Y")) +
   labs(x = "Date",
        y = "Pedestrians",
        colour = "Day")
-## Scale for 'x' is already present. Adding another scale for 'x', which will
-## replace the existing scale.
 ```
 
 <img src="README_figs/README-station_71-1.png" width="672" style="display: block; margin: auto;" />
@@ -501,7 +497,7 @@ hystreet_ids <- get_hystreet_locations()
 all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
     hystreetId = ID,
-    query = list(from = "2019-01-01", to = today(), resolution = "day"))
+    query = list(from = "2019-01-01", to = "2019-12-31", resolution = "day"))
   
   
     lifetime_count <- temp$statistics$timerange_count
@@ -523,12 +519,12 @@ Which stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                       station    ratio
-## 1 165     München (Kaufingerstraße) 64437.60
-## 2 150 Frankfurt a.M. (Zeil (Mitte)) 52499.92
-## 3 159  Köln (Schildergasse (Mitte)) 50295.28
-## 4  73    München (Neuhauser Straße) 49986.83
-## 5 158      Köln (Hohe Straße (Süd)) 39790.91
+##    id                      station    ratio
+## 1  73   München (Neuhauser Straße) 33467.86
+## 2 165    München (Kaufingerstraße) 25722.27
+## 3  63       Hannover (Georgstraße) 24647.99
+## 4  47  Köln (Schildergasse (West)) 23868.80
+## 5 159 Köln (Schildergasse (Mitte)) 23219.94
 ```
 
 Now let´s visualise the top 10 locations:
