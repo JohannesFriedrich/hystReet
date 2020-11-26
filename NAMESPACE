@@ -3,6 +3,7 @@
 export(get_hystreet_locations)
 export(get_hystreet_station_data)
 export(get_hystreet_stats)
+export(read_hystreet_csv)
 export(set_hystreet_token)
 import(httr)
 import(jsonlite)
