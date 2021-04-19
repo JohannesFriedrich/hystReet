@@ -6,12 +6,14 @@
 #' * from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
 #' * to : datetime of latest measurement (default: today 23:59:59): e.g. "2018-01-12 12:00:00" or "2018-12-01"
 #' * resolution: Resolution for the measurement grouping (default: hour): "day", "hour", "month", "week"
+#' @param no_metadata [logical] (**optional**): If set to \code{TRUE}, the result contains no meta data but only a clean data frame 
+#' with the measurements of the requested station. Defaults to \code{FALSE}.
 #' @param API_token [character] (**optional**): API key to get access to Hystreet API
 #' 
 #' @return [data.frame] with parsed data from hystreet API
 #'
 #' @section Function version:
-#' 0.0.2
+#' 0.0.3
 #' @author Johannes Friedrich
 #' 
 #' @examples 
@@ -30,6 +32,7 @@
 get_hystreet_station_data <- function(
   hystreetId = NULL, 
   query = NULL,
+  no_metadata = FALSE,
   API_token = NULL){
   
   ##=======================================##
@@ -42,6 +45,9 @@ get_hystreet_station_data <- function(
   if (!is.null(query) && class(query) != "list")
     stop("[get_hystreet_station_data()] Argument 'query' has to be a list", call. = FALSE)
   
+  if(!is.logical(no_metadata)) 
+    stop("The 'no_metadata' parameter has to be logical (TRUE or FALSE).", call. = FALSE)
+  
   # Ids_loop <- lapply(1:length(hystreetId), function(Id){
   
   
@@ -49,11 +55,22 @@ get_hystreet_station_data <- function(
                                   hystreetId = hystreetId, 
                                   query = query)
   
-  res$measurements$timestamp <- .convert_dates(res$measurements$timestamp)
-  res$metadata$earliest_measurement_at <- .convert_dates(res$metadata$earliest_measurement_at)
-  res$metadata$latest_measurement_at <- .convert_dates(res$metadata$latest_measurement_at)
-  
-  return(res)
+  if (no_metadata == TRUE) {
+    
+    res <- res$measurements
+    res$timestamp <- .convert_dates(res$timestamp)
+    
+    return(res)
+    
+  } else {
+    
+    res$measurements$timestamp <- .convert_dates(res$measurements$timestamp)
+    res$metadata$earliest_measurement_at <- .convert_dates(res$metadata$earliest_measurement_at)
+    res$metadata$latest_measurement_at <- .convert_dates(res$metadata$latest_measurement_at)
+    
+    return(res)
+    
+  }
   
   # })
   # 
