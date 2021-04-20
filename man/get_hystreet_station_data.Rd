@@ -4,7 +4,12 @@
 \alias{get_hystreet_station_data}
 \title{Get data from a specific location from the Hystreet Project via Hystreet API}
 \usage{
-get_hystreet_station_data(hystreetId = NULL, query = NULL, API_token = NULL)
+get_hystreet_station_data(
+  hystreetId = NULL,
+  query = NULL,
+  no_metadata = FALSE,
+  API_token = NULL
+)
 }
 \arguments{
 \item{hystreetId}{\link{integer} (\strong{required}): ID of the requested station. See \code{\link[=get_hystreet_locations]{get_hystreet_locations()}} for an overview of
@@ -17,6 +22,9 @@ available IDs.}
 \item resolution: Resolution for the measurement grouping (default: hour): "day", "hour", "month", "week"
 }}
 
+\item{no_metadata}{\link{logical} (\strong{optional}): If set to \code{TRUE}, the result contains no meta data but only a clean data frame
+with the measurements of the requested station. Defaults to \code{FALSE}.}
+
 \item{API_token}{\link{character} (\strong{optional}): API key to get access to Hystreet API}
 }
 \value{
@@ -27,7 +35,7 @@ Get data from a specific location from the Hystreet Project via Hystreet API
 }
 \section{Function version}{
 
-0.0.2
+0.0.3
 }
 
 \examples{
