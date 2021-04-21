@@ -5,11 +5,14 @@ output: rmarkdown::github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # hystReet
+<!-- badges: start -->
 [![CRAN](http://www.r-pkg.org/badges/version/hystReet)](https://CRAN.R-project.org/package=hystReet)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/hystReet)](https://www.r-pkg.org/pkg/hystReet)
 [![Build Status](https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master)](https://travis-ci.org/JohannesFriedrich/hystReet)
 [![Build status](https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true)](https://ci.appveyor.com/project/JohannesFriedrich/hystreet)
+[![R-CMD-check](https://github.com/JohannesFriedrich/hystReet/workflows/R-CMD-check/badge.svg)](https://github.com/JohannesFriedrich/hystReet/actions)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+<!-- badges: end -->
 
 
 ```{r setup, include=FALSE, echo = FALSE}

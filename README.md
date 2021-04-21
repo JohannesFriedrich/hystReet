@@ -3,15 +3,19 @@
 
 # hystReet
 
+<!-- badges: start -->
+
 [![CRAN](http://www.r-pkg.org/badges/version/hystReet)](https://CRAN.R-project.org/package=hystReet)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/hystReet)](https://www.r-pkg.org/pkg/hystReet)
 [![Build
 Status](https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master)](https://travis-ci.org/JohannesFriedrich/hystReet)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true)](https://ci.appveyor.com/project/JohannesFriedrich/hystreet)
+[![R-CMD-check](https://github.com/JohannesFriedrich/hystReet/workflows/R-CMD-check/badge.svg)](https://github.com/JohannesFriedrich/hystReet/actions)
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+<!-- badges: end -->
 
 ## Introduction
 
@@ -46,30 +50,28 @@ you will find you key in your hystreet account profile.
 
 Now you have three options:
 
-1)  Once you have your key, you can save it as an environment variable
+1.  Once you have your key, you can save it as an environment variable
     for the current session by running the following command:
-
-<!-- end list -->
 
 ``` r
 Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
 ```
 
-2)  Alternatively, you can set it permanently with the help of
+1.  Alternatively, you can set it permanently with the help of
     `usethis::edit_r_environ()` by adding the following line to your
     `.Renviron`:
 
-<!-- end list -->
+<!-- -->
 
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
-3)  If you don’t want to save your API token here, you can enter it for
+1.  If you don’t want to save your API token here, you can enter it for
     each function of this package using the `API_token` parameter.
 
 ## Usage
 
 | Function name                  | Description                                          | Example                          |
-| ------------------------------ | ---------------------------------------------------- | -------------------------------- |
+|--------------------------------|------------------------------------------------------|----------------------------------|
 | get\_hystreet\_stats()         | request common statistics about the hystreet project | get\_hystreet\_stats()           |
 | get\_hystreet\_locations()     | request all available locations                      | get\_hystreet\_locations()       |
 | get\_hystreet\_station\_data() | request data from a stations                         | get\_hystreet\_station\_data(71) |
@@ -98,47 +100,26 @@ stats
 ```
 
 <table>
-
 <thead>
-
 <tr>
-
 <th style="text-align:right;">
-
 stations
-
 </th>
-
 <th style="text-align:right;">
-
 today\_count
-
 </th>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td style="text-align:right;">
-
-133
-
+145
 </td>
-
 <td style="text-align:right;">
-
-1953993
-
+1146088
 </td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 ### Request all stations
@@ -155,257 +136,131 @@ locations
 ```
 
 <table>
-
 <thead>
-
 <tr>
-
 <th style="text-align:right;">
-
 id
-
 </th>
-
 <th style="text-align:left;">
-
 name
-
 </th>
-
 <th style="text-align:left;">
-
 city
-
 </th>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td style="text-align:right;">
-
-59
-
+318
 </td>
-
 <td style="text-align:left;">
-
-Goethestraße
-
+Grote Marktstraat (West)
 </td>
-
 <td style="text-align:left;">
-
-Frankfurt a.M.
-
+Den Haag
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:right;">
-
-53
-
+123
 </td>
-
 <td style="text-align:left;">
-
-Schadowstraße (West)
-
+Ludwigstraße
 </td>
-
 <td style="text-align:left;">
-
-Düsseldorf
-
+Ingolstadt
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:right;">
-
-258
-
-</td>
-
-<td style="text-align:left;">
-
-Mittelstraße (Mitte)
-
-</td>
-
-<td style="text-align:left;">
-
-Lemgo
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-155
-
-</td>
-
-<td style="text-align:left;">
-
-Georgstraße (West)
-
-</td>
-
-<td style="text-align:left;">
-
-Osnabrück
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-131
-
-</td>
-
-<td style="text-align:left;">
-
-Sack
-
-</td>
-
-<td style="text-align:left;">
-
-Braunschweig
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-160
-
-</td>
-
-<td style="text-align:left;">
-
-Schildergasse (Ost)
-
-</td>
-
-<td style="text-align:left;">
-
-Köln
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-52
-
-</td>
-
-<td style="text-align:left;">
-
-Sternstraße
-
-</td>
-
-<td style="text-align:left;">
-
-Bonn
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-85
-
-</td>
-
-<td style="text-align:left;">
-
-Am Brand
-
-</td>
-
-<td style="text-align:left;">
-
-Mainz
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
 72
-
 </td>
-
 <td style="text-align:left;">
-
 Stadthausstraße
-
 </td>
-
 <td style="text-align:left;">
-
 Mainz
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:right;">
-
-47
-
+108
 </td>
-
 <td style="text-align:left;">
-
-Schildergasse (West)
-
+Große Straße (Mitte)
 </td>
-
 <td style="text-align:left;">
-
-Köln
-
+Osnabrück
 </td>
-
 </tr>
-
+<tr>
+<td style="text-align:right;">
+310
+</td>
+<td style="text-align:left;">
+Salzstraße (West)
+</td>
+<td style="text-align:left;">
+Münster
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+305
+</td>
+<td style="text-align:left;">
+Kärntner Straße (Mitte)
+</td>
+<td style="text-align:left;">
+Wien
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:left;">
+Rheinstraße (West)
+</td>
+<td style="text-align:left;">
+Krefeld
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+249
+</td>
+<td style="text-align:left;">
+Bahnhofstraße (Mitte)
+</td>
+<td style="text-align:left;">
+Brilon
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:left;">
+Petersstraße
+</td>
+<td style="text-align:left;">
+Leipzig
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:left;">
+Rathausgasse
+</td>
+<td style="text-align:left;">
+Freiburg
+</td>
+</tr>
 </tbody>
-
 </table>
 
 ### Request data from a specific station
@@ -455,9 +310,7 @@ ggplot(data$measurements, aes(x = timestamp, y = pedestrians_count, colour = wee
 
 Now let´s compare data from different stations:
 
-1)  Load the data
-
-<!-- end list -->
+1.  Load the data
 
 ``` r
 data_73 <- get_hystreet_station_data(
@@ -520,11 +373,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##    id                      station    ratio
-## 1  73   München (Neuhauser Straße) 33467.86
-## 2 165    München (Kaufingerstraße) 25722.27
-## 3  63       Hannover (Georgstraße) 24647.99
-## 4  47  Köln (Schildergasse (West)) 23868.80
-## 5 159 Köln (Schildergasse (Mitte)) 23219.94
+## 1  73   München (Neuhauser Straße) 28881.47
+## 2  63       Hannover (Georgstraße) 21270.34
+## 3  47  Köln (Schildergasse (West)) 20597.99
+## 4 165    München (Kaufingerstraße) 19367.74
+## 5 159 Köln (Schildergasse (Mitte)) 18026.41
 ```
 
 Now let´s visualise the top 10 locations:

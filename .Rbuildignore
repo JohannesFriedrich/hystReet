@@ -27,3 +27,4 @@ NEWS.md
 
 # Exclude data-raw
 ^data-raw
+^\.github$
