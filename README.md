@@ -57,7 +57,7 @@ Now you have three options:
 Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
 ```
 
-1.  Alternatively, you can set it permanently with the help of
+2.  Alternatively, you can set it permanently with the help of
     `usethis::edit_r_environ()` by adding the following line to your
     `.Renviron`:
 
@@ -65,17 +65,17 @@ Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
 
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
-1.  If you don’t want to save your API token here, you can enter it for
+3.  If you don’t want to save your API token here, you can enter it for
     each function of this package using the `API_token` parameter.
 
 ## Usage
 
-| Function name                  | Description                                          | Example                          |
-|--------------------------------|------------------------------------------------------|----------------------------------|
-| get\_hystreet\_stats()         | request common statistics about the hystreet project | get\_hystreet\_stats()           |
-| get\_hystreet\_locations()     | request all available locations                      | get\_hystreet\_locations()       |
-| get\_hystreet\_station\_data() | request data from a stations                         | get\_hystreet\_station\_data(71) |
-| set\_hystreet\_token()         | set your API token                                   | set\_hystreet\_token(123456789)  |
+| Function name               | Description                                          | Example                       |
+|-----------------------------|------------------------------------------------------|-------------------------------|
+| get_hystreet_stats()        | request common statistics about the hystreet project | get_hystreet_stats()          |
+| get_hystreet_locations()    | request all available locations                      | get_hystreet_locations()      |
+| get_hystreet_station_data() | request data from a stations                         | get_hystreet_station_data(71) |
+| set_hystreet_token()        | set your API token                                   | set_hystreet_token(123456789) |
 
 ### Load some statistics
 
@@ -106,17 +106,17 @@ stats
 stations
 </th>
 <th style="text-align:right;">
-today\_count
+today_count
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:right;">
-145
+154
 </td>
 <td style="text-align:right;">
-1146088
+38869
 </td>
 </tr>
 </tbody>
@@ -152,35 +152,101 @@ city
 <tbody>
 <tr>
 <td style="text-align:right;">
-318
+85
 </td>
 <td style="text-align:left;">
-Grote Marktstraat (West)
-</td>
-<td style="text-align:left;">
-Den Haag
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-123
-</td>
-<td style="text-align:left;">
-Ludwigstraße
-</td>
-<td style="text-align:left;">
-Ingolstadt
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-72
-</td>
-<td style="text-align:left;">
-Stadthausstraße
+Am Brand
 </td>
 <td style="text-align:left;">
 Mainz
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:left;">
+Poststraße
+</td>
+<td style="text-align:left;">
+Braunschweig
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:left;">
+Grimmaische Straße
+</td>
+<td style="text-align:left;">
+Leipzig
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+306
+</td>
+<td style="text-align:left;">
+Mariahilfer Straße (Mitte)
+</td>
+<td style="text-align:left;">
+Wien
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:left;">
+Breite Gasse
+</td>
+<td style="text-align:left;">
+Nürnberg
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+256
+</td>
+<td style="text-align:left;">
+Kirchgasse (Nord)
+</td>
+<td style="text-align:left;">
+Wiesbaden
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:left;">
+Platzgasse (Süd)
+</td>
+<td style="text-align:left;">
+Ulm
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:left;">
+Simeonstraße
+</td>
+<td style="text-align:left;">
+Trier
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:left;">
+Große Packhofstraße
+</td>
+<td style="text-align:left;">
+Hannover
 </td>
 </tr>
 <tr>
@@ -192,72 +258,6 @@ Große Straße (Mitte)
 </td>
 <td style="text-align:left;">
 Osnabrück
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-310
-</td>
-<td style="text-align:left;">
-Salzstraße (West)
-</td>
-<td style="text-align:left;">
-Münster
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-305
-</td>
-<td style="text-align:left;">
-Kärntner Straße (Mitte)
-</td>
-<td style="text-align:left;">
-Wien
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-145
-</td>
-<td style="text-align:left;">
-Rheinstraße (West)
-</td>
-<td style="text-align:left;">
-Krefeld
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-249
-</td>
-<td style="text-align:left;">
-Bahnhofstraße (Mitte)
-</td>
-<td style="text-align:left;">
-Brilon
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-68
-</td>
-<td style="text-align:left;">
-Petersstraße
-</td>
-<td style="text-align:left;">
-Leipzig
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-84
-</td>
-<td style="text-align:left;">
-Rathausgasse
-</td>
-<td style="text-align:left;">
-Freiburg
 </td>
 </tr>
 </tbody>
@@ -373,11 +373,11 @@ ratio %>%
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
 ##    id                      station    ratio
-## 1  73   München (Neuhauser Straße) 28881.47
-## 2  63       Hannover (Georgstraße) 21270.34
-## 3  47  Köln (Schildergasse (West)) 20597.99
-## 4 165    München (Kaufingerstraße) 19367.74
-## 5 159 Köln (Schildergasse (Mitte)) 18026.41
+## 1  73   München (Neuhauser Straße) 26466.29
+## 2  63       Hannover (Georgstraße) 19491.42
+## 3  47  Köln (Schildergasse (West)) 18873.99
+## 4 165    München (Kaufingerstraße) 16631.00
+## 5 159 Köln (Schildergasse (Mitte)) 15688.65
 ```
 
 Now let´s visualise the top 10 locations:

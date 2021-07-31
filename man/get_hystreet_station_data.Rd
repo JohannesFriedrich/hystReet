@@ -50,5 +50,5 @@ get_hystreet_station_data(
  }
 }
 \author{
-Johannes Friedrich
+Johannes Friedrich, Yannik Buhl
 }

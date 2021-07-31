@@ -14,7 +14,7 @@
 #'
 #' @section Function version:
 #' 0.0.3
-#' @author Johannes Friedrich
+#' @author Johannes Friedrich, Yannik Buhl
 #' 
 #' @examples 
 #' \dontrun{
@@ -46,7 +46,7 @@ get_hystreet_station_data <- function(
     stop("[get_hystreet_station_data()] Argument 'query' has to be a list", call. = FALSE)
   
   if(!is.logical(no_metadata)) 
-    stop("The 'no_metadata' parameter has to be logical (TRUE or FALSE).", call. = FALSE)
+    stop("[get_hystreet_station_data()] Parameter 'no_metadata' has to be logical (TRUE or FALSE).", call. = FALSE)
   
   # Ids_loop <- lapply(1:length(hystreetId), function(Id){
   
