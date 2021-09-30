@@ -12,6 +12,8 @@
 #'
 #' @keywords package
 #' @import httr jsonlite lubridate
+#' @importFrom utils read.csv2
+
 NULL
 
 #' Downloaded data for the vignette

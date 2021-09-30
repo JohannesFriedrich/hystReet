@@ -7,7 +7,7 @@
 read_hystreet_csv(path, ...)
 }
 \arguments{
-\item{path}{\link{string} (\strong{required}): path to the downloaded csv file}
+\item{path}{\link{character} (\strong{required}): path to the downloaded csv file}
 
 \item{...}{(\strong{optional}): arguments passed to \code{\link[utils:read.table]{utils::read.csv2()}}}
 }

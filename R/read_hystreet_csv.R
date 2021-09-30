@@ -1,6 +1,6 @@
 #' Read downloaded data from the hystreet webpage to  data.frames
 #'
-#' @param path [string] (**required**): path to the downloaded csv file
+#' @param path [character] (**required**): path to the downloaded csv file
 #' @param ... (**optional**): arguments passed to [utils::read.csv2()]
 #' 
 #' @return [data.frame] with parsed data from hystreet API
