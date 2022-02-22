@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">hystReet</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -64,7 +60,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/JohannesFriedrich/hystReet/">
+  <a href="https://github.com/JohannesFriedrich/hystReet/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -81,49 +77,49 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="hystreet" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#hystreet" class="anchor"></a>hystReet</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="hystreet">hystReet<a class="anchor" aria-label="anchor" href="#hystreet"></a>
+</h1></div>
 <!-- badges: start -->
 
-<div id="introduction" class="section level2">
-<h2 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h2>
-<p><a href="https://hystreet.com">hystreet</a> is a company that collects data on pedestrian traffic in shopping streets of different German cities. After registering you can access and download the data via their website.</p>
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<p><a href="https://hystreet.com" class="external-link">hystreet</a> is a company that collects data on pedestrian traffic in shopping streets of different German cities. After registering you can access and download the data via their website.</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>The package is now on CRAN. The easiest way to download is via:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"hystReet"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"hystReet"</span><span class="op">)</span></code></pre></div>
 <p>You can install the development version from GitHub with the following command:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/">"devtools"</a></span><span class="op">)</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"JohannesFriedrich/hystReet"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/" class="external-link">"devtools"</a></span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"JohannesFriedrich/hystReet"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="api-keys" class="section level2">
-<h2 class="hasAnchor">
-<a href="#api-keys" class="anchor"></a>API Keys</h2>
-<p>To use this package, you will first need to get a hystreet API key. To do so, you first need to set up an account on <a href="https://hystreet.com/" class="uri">https://hystreet.com/</a>. After that you can request an API key via <a href="mailto:info@hystreet.com">e-mail</a>. Once your request has been granted, you will find you key in your hystreet account profile.</p>
+<div class="section level2">
+<h2 id="api-keys">API Keys<a class="anchor" aria-label="anchor" href="#api-keys"></a>
+</h2>
+<p>To use this package, you will first need to get a hystreet API key. To do so, you first need to set up an account on <a href="https://hystreet.com/" class="external-link uri">https://hystreet.com/</a>. After that you can request an API key via <a href="mailto:info@hystreet.com">e-mail</a>. Once your request has been granted, you will find you key in your hystreet account profile.</p>
 <p>Now you have three options:</p>
-<ol>
+<ol style="list-style-type: decimal">
 <li>Once you have your key, you can save it as an environment variable for the current session by running the following command:</li>
 </ol>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>HYSTREET_API_TOKEN <span class="op">=</span> <span class="st">"PASTE YOUR API TOKEN HERE"</span><span class="op">)</span></code></pre></div>
-<ol>
-<li>Alternatively, you can set it permanently with the help of <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code> by adding the following line to your <code>.Renviron</code>:</li>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>HYSTREET_API_TOKEN <span class="op">=</span> <span class="st">"PASTE YOUR API TOKEN HERE"</span><span class="op">)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Alternatively, you can set it permanently with the help of <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> by adding the following line to your <code>.Renviron</code>:</li>
 </ol>
 <!-- --><div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>HYSTREET_API_TOKEN <span class="ot">=</span> PASTE YOUR API TOKEN HERE</span></code></pre></div>
-<ol>
+<ol start="3" style="list-style-type: decimal">
 <li>If you don’t want to save your API token here, you can enter it for each function of this package using the <code>API_token</code> parameter.</li>
 </ol>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
 <table class="table">
 <colgroup>
 <col width="25%">
@@ -158,12 +154,12 @@
 </tr>
 </tbody>
 </table>
-<div id="load-some-statistics" class="section level3">
-<h3 class="hasAnchor">
-<a href="#load-some-statistics" class="anchor"></a>Load some statistics</h3>
+<div class="section level3">
+<h3 id="load-some-statistics">Load some statistics<a class="anchor" aria-label="anchor" href="#load-some-statistics"></a>
+</h3>
 <p>The function <code><a href="reference/get_hystreet_stats.html">get_hystreet_stats()</a></code> summarises the number of available stations and the sum of all counted pedestrians.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/JohannesFriedrich/hystReet">hystReet</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/JohannesFriedrich/hystReet" class="external-link">hystReet</a></span><span class="op">)</span>
 <span class="co">## Loading required package: httr</span>
 <span class="co">## Loading required package: jsonlite</span>
 <span class="co">## </span>
@@ -186,17 +182,17 @@ today_count
 </tr></thead>
 <tbody><tr>
 <td style="text-align:right;">
-154
+180
 </td>
 <td style="text-align:right;">
-38869
+2249056
 </td>
 </tr></tbody>
 </table>
 </div>
-<div id="request-all-stations" class="section level3">
-<h3 class="hasAnchor">
-<a href="#request-all-stations" class="anchor"></a>Request all stations</h3>
+<div class="section level3">
+<h3 id="request-all-stations">Request all stations<a class="anchor" aria-label="anchor" href="#request-all-stations"></a>
+</h3>
 <p>The function <code><a href="reference/get_hystreet_locations.html">get_hystreet_locations()</a></code> generates a data frame with all available stations of the project.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">locations</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -217,21 +213,21 @@ city
 <tbody>
 <tr>
 <td style="text-align:right;">
-85
+153
 </td>
 <td style="text-align:left;">
-Am Brand
+Große Straße (Süd)
 </td>
 <td style="text-align:left;">
-Mainz
+Osnabrück
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-127
+129
 </td>
 <td style="text-align:left;">
-Poststraße
+Schuhstraße
 </td>
 <td style="text-align:left;">
 Braunschweig
@@ -239,65 +235,21 @@ Braunschweig
 </tr>
 <tr>
 <td style="text-align:right;">
-300
+251
 </td>
 <td style="text-align:left;">
-Grimmaische Straße
+Annastraße
 </td>
 <td style="text-align:left;">
-Leipzig
+Augsburg
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-306
+352
 </td>
 <td style="text-align:left;">
-Mariahilfer Straße (Mitte)
-</td>
-<td style="text-align:left;">
-Wien
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-88
-</td>
-<td style="text-align:left;">
-Breite Gasse
-</td>
-<td style="text-align:left;">
-Nürnberg
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-256
-</td>
-<td style="text-align:left;">
-Kirchgasse (Nord)
-</td>
-<td style="text-align:left;">
-Wiesbaden
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-311
-</td>
-<td style="text-align:left;">
-Platzgasse (Süd)
-</td>
-<td style="text-align:left;">
-Ulm
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-255
-</td>
-<td style="text-align:left;">
-Simeonstraße
+Fahrstraße
 </td>
 <td style="text-align:left;">
 Trier
@@ -305,78 +257,122 @@ Trier
 </tr>
 <tr>
 <td style="text-align:right;">
-64
+347
 </td>
 <td style="text-align:left;">
-Große Packhofstraße
+Freckenhorster Straße (Nord)
 </td>
 <td style="text-align:left;">
-Hannover
+Warendorf
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-108
+351
 </td>
 <td style="text-align:left;">
-Große Straße (Mitte)
+Johann-Philipp-Straße
 </td>
 <td style="text-align:left;">
-Osnabrück
+Trier
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+317
+</td>
+<td style="text-align:left;">
+Kalverstraat (Süd)
+</td>
+<td style="text-align:left;">
+Amsterdam
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:left;">
+Königsstraße
+</td>
+<td style="text-align:left;">
+Regensburg
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:left;">
+Schildergasse (West)
+</td>
+<td style="text-align:left;">
+Köln
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:left;">
+Schildergasse (Mitte)
+</td>
+<td style="text-align:left;">
+Köln
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="request-data-from-a-specific-station" class="section level3">
-<h3 class="hasAnchor">
-<a href="#request-data-from-a-specific-station" class="anchor"></a>Request data from a specific station</h3>
+<div class="section level3">
+<h3 id="request-data-from-a-specific-station">Request data from a specific station<a class="anchor" aria-label="anchor" href="#request-data-from-a-specific-station"></a>
+</h3>
 <p>The (probably) most interesting function is <code><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data()</a></code>. Using the hystreetID it is possible to request a specific station. By default, all the data from the current day are received. With the <code>query</code> argument it is possible to define the time and sampling frame of the data more precisely: <code>from</code>: datetime of earliest measurement (default: today 00:00:00:): e.g. “2018-10-01 12:00:00” or “2018-10-01” <code>to</code> : datetime of latest measurement (default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01” <code>resoution</code>: Resolution for the measurement (default: hour): “day”, “hour”, “month”, “week”</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span><span class="op">(</span>
   hystreetId <span class="op">=</span> <span class="fl">71</span>,
-  query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2018-12-01"</span>, to <span class="op">=</span> <span class="st">"2018-12-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+  query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2018-12-01"</span>, to <span class="op">=</span> <span class="st">"2018-12-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="some-ideas-for-visualising-the-data" class="section level2">
-<h2 class="hasAnchor">
-<a href="#some-ideas-for-visualising-the-data" class="anchor"></a>Some ideas for visualising the data</h2>
+<div class="section level2">
+<h2 id="some-ideas-for-visualising-the-data">Some ideas for visualising the data<a class="anchor" aria-label="anchor" href="#some-ideas-for-visualising-the-data"></a>
+</h2>
 <p>Let´s see if we can find the busiest days in December 2018. Saturdays were probably quite busy, while there should have been substantially less pedestrian traffic on the 24th and 25th of December, both of which are holidays in Germany.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span><span class="op">(</span>
     hystreetId <span class="op">=</span> <span class="fl">71</span>, 
-    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2018-12-01"</span>, to <span class="op">=</span> <span class="st">"2019-01-01"</span>, resolution <span class="op">=</span> <span class="st">"hour"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2018-12-01"</span>, to <span class="op">=</span> <span class="st">"2019-01-01"</span>, resolution <span class="op">=</span> <span class="st">"hour"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">measurements</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">timestamp</span>, y <span class="op">=</span> <span class="va">pedestrians_count</span>, colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span><span class="op">(</span><span class="va">timestamp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+<code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">measurements</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">timestamp</span>, y <span class="op">=</span> <span class="va">pedestrians_count</span>, colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html" class="external-link">weekdays</a></span><span class="op">(</span><span class="va">timestamp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_path</span><span class="op">(</span>group <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">scale_x_datetime</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"7 days"</span>, labels <span class="op">=</span> <span class="fu">date_format</span><span class="op">(</span><span class="st">"%d.%m.%Y"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Date"</span>,
        y <span class="op">=</span> <span class="st">"Pedestrians"</span>,
        colour <span class="op">=</span> <span class="st">"Day"</span><span class="op">)</span></code></pre></div>
 <p><img src="README_figs/README-station_71-1.png" width="672" style="display: block; margin: auto;"></p>
-<div id="compare-different-stations" class="section level3">
-<h3 class="hasAnchor">
-<a href="#compare-different-stations" class="anchor"></a>Compare different stations</h3>
+<div class="section level3">
+<h3 id="compare-different-stations">Compare different stations<a class="anchor" aria-label="anchor" href="#compare-different-stations"></a>
+</h3>
 <p>Now let´s compare data from different stations:</p>
-<ol>
+<ol style="list-style-type: decimal">
 <li>Load the data</li>
 </ol>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_73</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span><span class="op">(</span>
     hystreetId <span class="op">=</span> <span class="fl">73</span>, 
-    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2019-01-01"</span>, to <span class="op">=</span> <span class="st">"2019-01-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">measurements</span> <span class="op">%&gt;%</span> 
+    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2019-01-01"</span>, to <span class="op">=</span> <span class="st">"2019-01-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">measurements</span> <span class="op">%&gt;%</span> 
   <span class="fu">select</span><span class="op">(</span><span class="va">pedestrians_count</span>, <span class="va">timestamp</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">mutate</span><span class="op">(</span>station <span class="op">=</span> <span class="fl">73</span><span class="op">)</span>
 
 <span class="va">data_74</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span><span class="op">(</span>
     hystreetId <span class="op">=</span> <span class="fl">74</span>, 
-    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2019-01-01"</span>, to <span class="op">=</span> <span class="st">"2019-01-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">measurements</span> <span class="op">%&gt;%</span> 
+    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2019-01-01"</span>, to <span class="op">=</span> <span class="st">"2019-01-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">measurements</span> <span class="op">%&gt;%</span> 
     <span class="fu">select</span><span class="op">(</span><span class="va">pedestrians_count</span>, <span class="va">timestamp</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">mutate</span><span class="op">(</span>station <span class="op">=</span> <span class="fl">74</span><span class="op">)</span>
 
 <span class="va">data_73_74</span> <span class="op">&lt;-</span> <span class="fu">bind_rows</span><span class="op">(</span><span class="va">data_73</span>, <span class="va">data_74</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="va">data_73_74</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">timestamp</span>, y <span class="op">=</span> <span class="va">pedestrians_count</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">weekdays</a></span><span class="op">(</span><span class="va">timestamp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+<code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="va">data_73_74</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">timestamp</span>, y <span class="op">=</span> <span class="va">pedestrians_count</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html" class="external-link">weekdays</a></span><span class="op">(</span><span class="va">timestamp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_bar</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">scale_x_datetime</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">date_format</span><span class="op">(</span><span class="st">"%d.%m.%Y"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">station</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span>
@@ -384,25 +380,25 @@ Osnabrück
         axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="README_figs/README-station_73_74-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="highest-ratio-pedestriansday" class="section level3">
-<h3 class="hasAnchor">
-<a href="#highest-ratio-pedestriansday" class="anchor"></a>Highest ratio (pedestrians/day)</h3>
+<div class="section level3">
+<h3 id="highest-ratio-pedestriansday">Highest ratio (pedestrians/day)<a class="anchor" aria-label="anchor" href="#highest-ratio-pedestriansday"></a>
+</h3>
 <p>Now a little bit of big data analysis. Let´s find the station with the highest pedestrians per day ratio:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hystreet_ids</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_locations.html">get_hystreet_locations</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="va">all_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">hystreet_ids</span><span class="op">[</span>,<span class="st">"id"</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">ID</span><span class="op">)</span><span class="op">{</span>
+<span class="va">all_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">hystreet_ids</span><span class="op">[</span>,<span class="st">"id"</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">ID</span><span class="op">)</span><span class="op">{</span>
   <span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span><span class="op">(</span>
     hystreetId <span class="op">=</span> <span class="va">ID</span>,
-    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2019-01-01"</span>, to <span class="op">=</span> <span class="st">"2019-12-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span>
+    query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2019-01-01"</span>, to <span class="op">=</span> <span class="st">"2019-12-31"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span><span class="op">)</span>
   
   
     <span class="va">lifetime_count</span> <span class="op">&lt;-</span> <span class="va">temp</span><span class="op">$</span><span class="va">statistics</span><span class="op">$</span><span class="va">timerange_count</span>
-    <span class="va">days_counted</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">metadata</span><span class="op">$</span><span class="va">latest_measurement_at</span>  <span class="op">-</span> <span class="va">temp</span><span class="op">$</span><span class="va">metadata</span><span class="op">$</span><span class="va">earliest_measurement_at</span><span class="op">)</span>
+    <span class="va">days_counted</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">metadata</span><span class="op">$</span><span class="va">latest_measurement_at</span>  <span class="op">-</span> <span class="va">temp</span><span class="op">$</span><span class="va">metadata</span><span class="op">$</span><span class="va">earliest_measurement_at</span><span class="op">)</span>
     
-    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>
       id <span class="op">=</span> <span class="va">ID</span>,
-      station <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">city</span>, <span class="st">" ("</span>,<span class="va">temp</span><span class="op">$</span><span class="va">name</span>,<span class="st">")"</span><span class="op">)</span>,
+      station <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">city</span>, <span class="st">" ("</span>,<span class="va">temp</span><span class="op">$</span><span class="va">name</span>,<span class="st">")"</span><span class="op">)</span>,
       ratio <span class="op">=</span> <span class="va">lifetime_count</span><span class="op">/</span><span class="va">days_counted</span><span class="op">)</span><span class="op">)</span>
   
 <span class="op">}</span><span class="op">)</span>
@@ -413,12 +409,12 @@ Osnabrück
 <code class="sourceCode R"><span class="va">ratio</span> <span class="op">%&gt;%</span> 
   <span class="fu">top_n</span><span class="op">(</span><span class="fl">5</span>, <span class="va">ratio</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">ratio</span><span class="op">)</span><span class="op">)</span>
-<span class="co">##    id                      station    ratio</span>
-<span class="co">## 1  73   München (Neuhauser Straße) 26466.29</span>
-<span class="co">## 2  63       Hannover (Georgstraße) 19491.42</span>
-<span class="co">## 3  47  Köln (Schildergasse (West)) 18873.99</span>
-<span class="co">## 4 165    München (Kaufingerstraße) 16631.00</span>
-<span class="co">## 5 159 Köln (Schildergasse (Mitte)) 15688.65</span></code></pre></div>
+<span class="co">##    id                          station    ratio</span>
+<span class="co">## 1  73 München (Neuhauser Straße (Ost)) 22532.26</span>
+<span class="co">## 2  63           Hannover (Georgstraße) 16593.75</span>
+<span class="co">## 3  47      Köln (Schildergasse (West)) 16068.02</span>
+<span class="co">## 4 165        München (Kaufingerstraße) 12841.97</span>
+<span class="co">## 5  76  Stuttgart (Königstraße (Mitte)) 12829.51</span></code></pre></div>
 <p>Now let´s visualise the top 10 locations:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span><span class="va">ratio</span> <span class="op">%&gt;%</span> 
@@ -430,24 +426,24 @@ Osnabrück
         axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="README_figs/README-ratio_plot-1.png" width="672" style="display: block; margin: auto;"></p>
 </div>
-<div id="corona-effects" class="section level3">
-<h3 class="hasAnchor">
-<a href="#corona-effects" class="anchor"></a>Corona effects</h3>
+<div class="section level3">
+<h3 id="corona-effects">Corona effects<a class="anchor" aria-label="anchor" href="#corona-effects"></a>
+</h3>
 <p>The Hystreet-API is a great source of analysing the social effects of the Corona pandemic in 2020. Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">hystreet_ids</span><span class="op">[</span>,<span class="st">"id"</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">ID</span><span class="op">)</span><span class="op">{</span>
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">hystreet_ids</span><span class="op">[</span>,<span class="st">"id"</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">ID</span><span class="op">)</span><span class="op">{</span>
 
     <span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_hystreet_station_data.html">get_hystreet_station_data</a></span><span class="op">(</span>
         hystreetId <span class="op">=</span> <span class="va">ID</span>,
-        query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2020-03-01"</span>, to <span class="op">=</span> <span class="st">"2020-06-10"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span>
+        query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>from <span class="op">=</span> <span class="st">"2020-03-01"</span>, to <span class="op">=</span> <span class="st">"2020-06-10"</span>, resolution <span class="op">=</span> <span class="st">"day"</span><span class="op">)</span>
     <span class="op">)</span>
     
-    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>
     name <span class="op">=</span> <span class="va">temp</span><span class="op">$</span><span class="va">name</span>,
     city <span class="op">=</span> <span class="va">temp</span><span class="op">$</span><span class="va">city</span>,
-    timestamp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">measurements</span><span class="op">$</span><span class="va">timestamp</span><span class="op">)</span>, <span class="st">"%Y-%m-%d"</span><span class="op">)</span>,
+    timestamp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/format.html" class="external-link">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">measurements</span><span class="op">$</span><span class="va">timestamp</span><span class="op">)</span>, <span class="st">"%Y-%m-%d"</span><span class="op">)</span>,
     pedestrians_count <span class="op">=</span> <span class="va">temp</span><span class="op">$</span><span class="va">measurements</span><span class="op">$</span><span class="va">pedestrians_count</span>,
-    legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">city</span>, <span class="va">temp</span><span class="op">$</span><span class="va">name</span>, sep <span class="op">=</span> <span class="st">" - "</span><span class="op">)</span>
+    legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">city</span>, <span class="va">temp</span><span class="op">$</span><span class="va">name</span>, sep <span class="op">=</span> <span class="st">" - "</span><span class="op">)</span>
   <span class="op">)</span><span class="op">)</span>
    
 <span class="op">}</span><span class="op">)</span> 
@@ -455,7 +451,7 @@ Osnabrück
 <span class="va">data_all</span> <span class="op">&lt;-</span> <span class="fu">bind_rows</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_all</span> <span class="op">%&gt;%</span> 
-<span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="va">timestamp</span><span class="op">)</span>, <span class="va">pedestrians_count</span>, colour <span class="op">=</span> <span class="va">legend</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+<span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd</a></span><span class="op">(</span><span class="va">timestamp</span><span class="op">)</span>, <span class="va">pedestrians_count</span>, colour <span class="op">=</span> <span class="va">legend</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
 <span class="fu">geom_line</span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu">scale_x_date</span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">date_format</span><span class="op">(</span><span class="st">"%d.%m.%Y"</span><span class="op">)</span>,
                breaks <span class="op">=</span> <span class="fu">date_breaks</span><span class="op">(</span><span class="st">"7 days"</span><span class="op">)</span>
@@ -473,50 +469,60 @@ Osnabrück
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=hystReet">https://​cloud.r-project.org/​package=hystReet</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/JohannesFriedrich/hystReet/">https://​github.com/​JohannesFriedrich/​hystReet/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/JohannesFriedrich/hystReet/issues">https://​github.com/​JohannesFriedrich/​hystReet/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=hystReet" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/JohannesFriedrich/hystReet/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/JohannesFriedrich/hystReet/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-2">GPL-2</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-2" class="external-link">GPL-2</a></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing hystReet</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Johannes Friedrich <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=hystReet"><img src="http://www.r-pkg.org/badges/version/hystReet" alt="CRAN"></a></li>
-<li><a href="https://www.r-pkg.org/pkg/hystReet"><img src="https://cranlogs.r-pkg.org/badges/grand-total/hystReet" alt="Downloads"></a></li>
-<li><a href="https://travis-ci.org/JohannesFriedrich/hystReet"><img src="https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master" alt="Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/JohannesFriedrich/hystreet"><img src="https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true" alt="Build status"></a></li>
-<li><a href="https://github.com/JohannesFriedrich/hystReet/actions"><img src="https://github.com/JohannesFriedrich/hystReet/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>
+<li><a href="https://CRAN.R-project.org/package=hystReet" class="external-link"><img src="http://www.r-pkg.org/badges/version/hystReet" alt="CRAN"></a></li>
+<li><a href="https://www.r-pkg.org/pkg/hystReet" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/hystReet" alt="Downloads"></a></li>
+<li><a href="https://travis-ci.org/JohannesFriedrich/hystReet" class="external-link"><img src="https://travis-ci.org/JohannesFriedrich/hystReet.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/JohannesFriedrich/hystreet" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/hfno1wngf2yqs4e9?svg=true" alt="Build status"></a></li>
+<li><a href="https://github.com/JohannesFriedrich/hystReet/actions" class="external-link"><img src="https://github.com/JohannesFriedrich/hystReet/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="http://www.repostatus.org/#active" class="external-link"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Johannes Friedrich.</p>
+  <p></p>
+<p>Developed by Johannes Friedrich.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -524,6 +530,8 @@ Osnabrück
 
   
 
+
+  
 
   </body>
 </html>

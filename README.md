@@ -113,10 +113,10 @@ today_count
 <tbody>
 <tr>
 <td style="text-align:right;">
-154
+180
 </td>
 <td style="text-align:right;">
-38869
+2249056
 </td>
 </tr>
 </tbody>
@@ -152,21 +152,21 @@ city
 <tbody>
 <tr>
 <td style="text-align:right;">
-85
+153
 </td>
 <td style="text-align:left;">
-Am Brand
+Große Straße (Süd)
 </td>
 <td style="text-align:left;">
-Mainz
+Osnabrück
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-127
+129
 </td>
 <td style="text-align:left;">
-Poststraße
+Schuhstraße
 </td>
 <td style="text-align:left;">
 Braunschweig
@@ -174,65 +174,21 @@ Braunschweig
 </tr>
 <tr>
 <td style="text-align:right;">
-300
+251
 </td>
 <td style="text-align:left;">
-Grimmaische Straße
+Annastraße
 </td>
 <td style="text-align:left;">
-Leipzig
+Augsburg
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-306
+352
 </td>
 <td style="text-align:left;">
-Mariahilfer Straße (Mitte)
-</td>
-<td style="text-align:left;">
-Wien
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-88
-</td>
-<td style="text-align:left;">
-Breite Gasse
-</td>
-<td style="text-align:left;">
-Nürnberg
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-256
-</td>
-<td style="text-align:left;">
-Kirchgasse (Nord)
-</td>
-<td style="text-align:left;">
-Wiesbaden
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-311
-</td>
-<td style="text-align:left;">
-Platzgasse (Süd)
-</td>
-<td style="text-align:left;">
-Ulm
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-255
-</td>
-<td style="text-align:left;">
-Simeonstraße
+Fahrstraße
 </td>
 <td style="text-align:left;">
 Trier
@@ -240,24 +196,68 @@ Trier
 </tr>
 <tr>
 <td style="text-align:right;">
-64
+347
 </td>
 <td style="text-align:left;">
-Große Packhofstraße
+Freckenhorster Straße (Nord)
 </td>
 <td style="text-align:left;">
-Hannover
+Warendorf
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-108
+351
 </td>
 <td style="text-align:left;">
-Große Straße (Mitte)
+Johann-Philipp-Straße
 </td>
 <td style="text-align:left;">
-Osnabrück
+Trier
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+317
+</td>
+<td style="text-align:left;">
+Kalverstraat (Süd)
+</td>
+<td style="text-align:left;">
+Amsterdam
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:left;">
+Königsstraße
+</td>
+<td style="text-align:left;">
+Regensburg
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:left;">
+Schildergasse (West)
+</td>
+<td style="text-align:left;">
+Köln
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:left;">
+Schildergasse (Mitte)
+</td>
+<td style="text-align:left;">
+Köln
 </td>
 </tr>
 </tbody>
@@ -372,12 +372,12 @@ Which stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                      station    ratio
-## 1  73   München (Neuhauser Straße) 26466.29
-## 2  63       Hannover (Georgstraße) 19491.42
-## 3  47  Köln (Schildergasse (West)) 18873.99
-## 4 165    München (Kaufingerstraße) 16631.00
-## 5 159 Köln (Schildergasse (Mitte)) 15688.65
+##    id                          station    ratio
+## 1  73 München (Neuhauser Straße (Ost)) 22532.26
+## 2  63           Hannover (Georgstraße) 16593.75
+## 3  47      Köln (Schildergasse (West)) 16068.02
+## 4 165        München (Kaufingerstraße) 12841.97
+## 5  76  Stuttgart (Königstraße (Mitte)) 12829.51
 ```
 
 Now let´s visualise the top 10 locations:
