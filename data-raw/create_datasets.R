@@ -11,7 +11,7 @@ save(locations, file = "data/locations.RData")
 
 location_71 <- get_hystreet_station_data(
   hystreetId = 71, 
-  query = list(from = "2018-12-01", to = "2019-01-01", resolution = "hour"))
+  query = list(from = "2021-12-01", to = "2022-01-01", resolution = "hour"))
 
 save(location_71, file = "data/location_71.RData")
 
@@ -19,13 +19,13 @@ save(location_71, file = "data/location_71.RData")
 
 location_73 <- get_hystreet_station_data(
   hystreetId = 73, 
-  query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+  query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 location_74 <- get_hystreet_station_data(
   hystreetId = 74, 
-  query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+  query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
@@ -40,10 +40,10 @@ hystreet_ids <- get_hystreet_locations()
 all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
     hystreetId = ID,
-    query = list(from = "2019-01-01", to = today(), resolution = "day"))
+    query = list(from = "2021-01-01", to = "2021-12-31", resolution = "day"))
   
   lifetime_count <- temp$statistics$timerange_count
-  days_counted <- as.numeric(temp$metadata$latest_measurement_at  - temp$metadata$earliest_measurement_at)
+  days_counted <- as.integer(ymd(temp$metadata$measured_to)  - ymd(temp$metadata$measured_from))
   
   return(data.frame(
     id = ID,

@@ -50,14 +50,14 @@ you will find you key in your hystreet account profile.
 
 Now you have three options:
 
-1.  Once you have your key, you can save it as an environment variable
+1)  Once you have your key, you can save it as an environment variable
     for the current session by running the following command:
 
 ``` r
 Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
 ```
 
-2.  Alternatively, you can set it permanently with the help of
+2)  Alternatively, you can set it permanently with the help of
     `usethis::edit_r_environ()` by adding the following line to your
     `.Renviron`:
 
@@ -65,7 +65,7 @@ Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
 
     HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
 
-3.  If you don’t want to save your API token here, you can enter it for
+3)  If you don’t want to save your API token here, you can enter it for
     each function of this package using the `API_token` parameter.
 
 ## Usage
@@ -113,10 +113,10 @@ today_count
 <tbody>
 <tr>
 <td style="text-align:right;">
-180
+188
 </td>
 <td style="text-align:right;">
-2249056
+2260884
 </td>
 </tr>
 </tbody>
@@ -152,57 +152,24 @@ city
 <tbody>
 <tr>
 <td style="text-align:right;">
-153
+308
 </td>
 <td style="text-align:left;">
-Große Straße (Süd)
+Leipziger Straße (West)
 </td>
 <td style="text-align:left;">
-Osnabrück
+Halle (Saale)
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-129
+76
 </td>
 <td style="text-align:left;">
-Schuhstraße
+Königstraße (Mitte)
 </td>
 <td style="text-align:left;">
-Braunschweig
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-251
-</td>
-<td style="text-align:left;">
-Annastraße
-</td>
-<td style="text-align:left;">
-Augsburg
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-352
-</td>
-<td style="text-align:left;">
-Fahrstraße
-</td>
-<td style="text-align:left;">
-Trier
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-347
-</td>
-<td style="text-align:left;">
-Freckenhorster Straße (Nord)
-</td>
-<td style="text-align:left;">
-Warendorf
+Stuttgart
 </td>
 </tr>
 <tr>
@@ -218,46 +185,79 @@ Trier
 </tr>
 <tr>
 <td style="text-align:right;">
-317
+108
 </td>
 <td style="text-align:left;">
-Kalverstraat (Süd)
+Große Straße (Mitte)
 </td>
 <td style="text-align:left;">
-Amsterdam
+Osnabrück
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-320
+309
 </td>
 <td style="text-align:left;">
-Königsstraße
+Hochstraße (Nord)
 </td>
 <td style="text-align:left;">
-Regensburg
+Krefeld
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-47
+140
 </td>
 <td style="text-align:left;">
-Schildergasse (West)
+Fleischstraße (Nord)
 </td>
 <td style="text-align:left;">
-Köln
+Trier
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-159
+53
 </td>
 <td style="text-align:left;">
-Schildergasse (Mitte)
+Schadowstraße (West)
 </td>
 <td style="text-align:left;">
-Köln
+Düsseldorf
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:left;">
+Flinger Straße (Ost)
+</td>
+<td style="text-align:left;">
+Düsseldorf
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+348
+</td>
+<td style="text-align:left;">
+Holstenstraße (Nord)
+</td>
+<td style="text-align:left;">
+Kiel
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+368
+</td>
+<td style="text-align:left;">
+Marktstraße
+</td>
+<td style="text-align:left;">
+Mönchengladbach
 </td>
 </tr>
 </tbody>
@@ -269,30 +269,32 @@ The (probably) most interesting function is
 `get_hystreet_station_data()`. Using the hystreetID it is possible to
 request a specific station. By default, all the data from the current
 day are received. With the `query` argument it is possible to define the
-time and sampling frame of the data more precisely: `from`: datetime of
-earliest measurement (default: today 00:00:00:): e.g. “2018-10-01
-12:00:00” or “2018-10-01” `to` : datetime of latest measurement
-(default: today 23:59:59): e.g. “2018-12-01 12:00:00” or “2018-12-01”
-`resoution`: Resolution for the measurement (default: hour): “day”,
-“hour”, “month”, “week”
+time and sampling frame of the data more precisely:
+
+-   `from`: datetime of earliest measurement (default: today 00:00:00:):
+    e.g. “2021-10-01 12:00:00” or “2021-10-01”
+-   `to` : datetime of latest measurement (default: today 23:59:59):
+    e.g. “2021-12-01 12:00:00” or “2021-12-01”
+-   `resoution`: Resolution for the measurement (default: hour): “day”,
+    “hour”, “month”, “week”
 
 ``` r
 data <- get_hystreet_station_data(
   hystreetId = 71,
-  query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
+  query = list(from = "2021-12-01", to = "2021-12-31", resolution = "day"))
 ```
 
 ## Some ideas for visualising the data
 
-Let´s see if we can find the busiest days in December 2018. Saturdays
+Let´s see if we can find the busiest days in December 2021. Saturdays
 were probably quite busy, while there should have been substantially
-less pedestrian traffic on the 24th and 25th of December, both of which
+less pedestrian traffic on the 25th and 26th of December, both of which
 are holidays in Germany.
 
 ``` r
 data <- get_hystreet_station_data(
     hystreetId = 71, 
-    query = list(from = "2018-12-01", to = "2019-01-01", resolution = "hour"))
+    query = list(from = "2021-12-01", to = "2022-01-01", resolution = "hour"))
 ```
 
 ``` r
@@ -310,18 +312,18 @@ ggplot(data$measurements, aes(x = timestamp, y = pedestrians_count, colour = wee
 
 Now let´s compare data from different stations:
 
-1.  Load the data
+1)  Load the data
 
 ``` r
 data_73 <- get_hystreet_station_data(
     hystreetId = 73, 
-    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+    query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 data_74 <- get_hystreet_station_data(
     hystreetId = 74, 
-    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+    query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
@@ -350,11 +352,11 @@ hystreet_ids <- get_hystreet_locations()
 all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
     hystreetId = ID,
-    query = list(from = "2019-01-01", to = "2019-12-31", resolution = "day"))
+    query = list(from = "2021-01-01", to = "2021-12-31", resolution = "day"))
   
   
     lifetime_count <- temp$statistics$timerange_count
-    days_counted <- as.numeric(temp$metadata$latest_measurement_at  - temp$metadata$earliest_measurement_at)
+    days_counted <- as.integer(ymd(temp$metadata$measured_to)  - ymd(temp$metadata$measured_from))
     
     return(data.frame(
       id = ID,
@@ -372,12 +374,12 @@ Which stations have the highest ratio?
 ratio %>% 
   top_n(5, ratio) %>% 
   arrange(desc(ratio))
-##    id                          station    ratio
-## 1  73 München (Neuhauser Straße (Ost)) 22532.26
-## 2  63           Hannover (Georgstraße) 16593.75
-## 3  47      Köln (Schildergasse (West)) 16068.02
-## 4 165        München (Kaufingerstraße) 12841.97
-## 5  76  Stuttgart (Königstraße (Mitte)) 12829.51
+##    id                           station    ratio
+## 1  73  München (Neuhauser Straße (Ost)) 45510.15
+## 2 165         München (Kaufingerstraße) 42458.42
+## 3 305    Wien (Kärntner Straße (Mitte)) 40067.34
+## 4 306 Wien (Mariahilfer Straße (Mitte)) 39642.14
+## 5  63            Hannover (Georgstraße) 38442.91
 ```
 
 Now let´s visualise the top 10 locations:

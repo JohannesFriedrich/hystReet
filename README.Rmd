@@ -134,25 +134,26 @@ knitr::kable(
 
 The (probably) most interesting function is `get_hystreet_station_data()`. Using the hystreetID it is possible to request a specific station. By default, all the data from the current day are received.
 With the `query` argument it is possible to define the time and sampling frame of the data more precisely: 
-`from`: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
-`to` : datetime of latest measurement (default: today 23:59:59): e.g. "2018-12-01 12:00:00" or "2018-12-01"
-`resoution`: Resolution for the measurement (default: hour): "day", "hour", "month", "week"
+
+* `from`: datetime of earliest measurement (default: today 00:00:00:): e.g. "2021-10-01 12:00:00" or "2021-10-01"
+* `to` : datetime of latest measurement (default: today 23:59:59): e.g. "2021-12-01 12:00:00" or "2021-12-01"
+* `resoution`: Resolution for the measurement (default: hour): "day", "hour", "month", "week"
 
 ```{r}
 data <- get_hystreet_station_data(
   hystreetId = 71,
-  query = list(from = "2018-12-01", to = "2018-12-31", resolution = "day"))
+  query = list(from = "2021-12-01", to = "2021-12-31", resolution = "day"))
 ```
 
 
 ## Some ideas for visualising the data
 
-Let´s see if we can find the busiest days in December 2018. Saturdays were probably quite busy, while there should have been substantially less pedestrian traffic on the 24th and 25th of December, both of which are holidays in Germany.
+Let´s see if we can find the busiest days in December 2021. Saturdays were probably quite busy, while there should have been substantially less pedestrian traffic on the 25th and 26th of December, both of which are holidays in Germany.
 
 ```{r}
 data <- get_hystreet_station_data(
     hystreetId = 71, 
-    query = list(from = "2018-12-01", to = "2019-01-01", resolution = "hour"))
+    query = list(from = "2021-12-01", to = "2022-01-01", resolution = "hour"))
 ```
 
 ```{r station_71}
@@ -173,13 +174,13 @@ Now let´s compare data from different stations:
 ```{r}
 data_73 <- get_hystreet_station_data(
     hystreetId = 73, 
-    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+    query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 data_74 <- get_hystreet_station_data(
     hystreetId = 74, 
-    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+    query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
@@ -205,11 +206,11 @@ hystreet_ids <- get_hystreet_locations()
 all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
     hystreetId = ID,
-    query = list(from = "2019-01-01", to = "2019-12-31", resolution = "day"))
+    query = list(from = "2021-01-01", to = "2021-12-31", resolution = "day"))
   
   
     lifetime_count <- temp$statistics$timerange_count
-    days_counted <- as.numeric(temp$metadata$latest_measurement_at  - temp$metadata$earliest_measurement_at)
+    days_counted <- as.integer(ymd(temp$metadata$measured_to)  - ymd(temp$metadata$measured_from))
     
     return(data.frame(
       id = ID,
