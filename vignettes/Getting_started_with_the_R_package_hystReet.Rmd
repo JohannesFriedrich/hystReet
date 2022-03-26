@@ -68,13 +68,13 @@ If you don't want to save it here, you can input it in each function using the `
 Function name       | Description                                        | Example
 --------------------|----------------------------------------------------| -------
 get_hystreet_stats() | request common statistics about the hystreet project | get_hystreet_stats() 
-get_hystreet_locations() | request all qvailable locations | get_hystreet_locations() 
+get_hystreet_locations() | request all available locations | get_hystreet_locations() 
 get_hystreet_station_data() | request data from a stations  | get_hystreet_station_data(71)
 set_hystreet_token() | set your API token | set_hystreet_token(123456789)
 
-### Load some statistics
+## Load some statistics
 
-The function 'get_hystreet_stats()' summarises the number of available stations and the sum of all counted pedestrians.
+The function 'get_hystreet_stats()' summaries the number of available stations and the sum of all counted pedestrians.
 
 ```{r}
 library(hystReet)
@@ -102,25 +102,26 @@ knitr::kable(
 
 The (probably) most interesting function is 'get_hystreet_station_data()'. With the hystreetID it is possible to request a specific station. By default, all the data from the current day are received.
 With the 'query' argument it is possible to set the received data more precise: 
-* from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2018-10-01 12:00:00" or "2018-10-01"
-* to : datetime of latest measurement (default: today 23:59:59): e.g. "2018-12-01 12:00:00" or "2018-12-01"
-* resoution: Resultion for the measurement grouping (default: hour): "day", "hour", "month", "week"
+
+* from: datetime of earliest measurement (default: today 00:00:00:): e.g. "2021-10-01 12:00:00" or "2021-10-01"
+* to : datetime of latest measurement (default: today 23:59:59): e.g. "2021-12-01 12:00:00" or "2021-12-01"
+* resolution: Resolution for the measurement grouping (default: hour): "day", "hour", "month", "week"
 
 ```{r}
 location_71 <- get_hystreet_station_data(
   hystreetId = 71,
-  query = list(from = "2018-12-01", to = "2019-01-01", resolution = "day"))
+  query = list(from = "2021-12-01", to = "2022-01-01", resolution = "day"))
 ```
 
 
 # Some ideas to visualise the data
 
-Let´s see if we can see the most frequent days before christmas ... I think it could be saturday ;-). Also nice to see the 24th and 25th of December ... holidays in Germany :-).
+Let´s see if we can see the most frequent days before Christmas ... I think it could be Saturday ;-). Also nice to see the 25th and 26th of December ... holidays in Germany :-).
 
 ```{r}
 location_71 <- get_hystreet_station_data(
     hystreetId = 71, 
-    query = list(from = "2018-12-01", to = "2019-01-01", resolution = "hour"))
+    query = list(from = "2021-12-01", to = "2022-01-01", resolution = "hour"))
 ```
 
 ```{r, eval = TRUE}
@@ -142,13 +143,13 @@ Now let´s compare different stations:
 ```{r}
 location_73 <- get_hystreet_station_data(
     hystreetId = 73, 
-    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+    query = list(from = "2022-01-01", to = "2022-01-31", resolution = "day"))$measurements %>% 
   select(pedestrians_count, timestamp) %>% 
   mutate(station = 73)
 
 location_74 <- get_hystreet_station_data(
     hystreetId = 74, 
-    query = list(from = "2019-01-01", to = "2019-01-31", resolution = "day"))$measurements %>% 
+    query = list(from = "2022-01-01", to = "2019-01-22", resolution = "day"))$measurements %>% 
     select(pedestrians_count, timestamp) %>% 
   mutate(station = 74)
 
@@ -174,10 +175,10 @@ hystreet_ids <- get_hystreet_locations()
 all_data <- lapply(hystreet_ids[,"id"], function(ID){
   temp <- get_hystreet_station_data(
     hystreetId = ID,
-    query = list(from = "2019-01-01", to = today(), resolution = "day"))
+    query = list(from = "2021-01-01", to = "2021-12-31", resolution = "day"))
   
     lifetime_count <- temp$statistics$timerange_count
-    days_counted <- as.numeric(temp$metadata$latest_measurement_at  - temp$metadata$earliest_measurement_at)
+    days_counted <- as.integer(ymd(temp$metadata$measured_to)  - ymd(temp$metadata$measured_from))
     
     return(data.frame(
       id = ID,
@@ -215,7 +216,7 @@ The Hystreet-API is a great source of analysing the social effects of the Corona
 Let´s collect all german stations since March 2020 and analyse the pedestrian count until 10th June 2020.
 
 ```{r corona_effects_data}
-corona_data <- lapply(hystreet_ids[,"id"], function(ID){
+data <- lapply(hystreet_ids[,"id"], function(ID){
 
     temp <- get_hystreet_station_data(
         hystreetId = ID,

@@ -58,7 +58,7 @@ save(ratio, file = "data/ratio.RData")
 
 ## ------------------------------
 
-corona_data <- lapply(hystreet_ids[,"id"], function(ID){
+data <- lapply(hystreet_ids[,"id"], function(ID){
   
   temp <- get_hystreet_station_data(
     hystreetId = ID,

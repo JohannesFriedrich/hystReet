@@ -24,7 +24,7 @@ Read downloaded data from the hystreet webpage to  data.frames
 
 \examples{
 \dontrun{
-## read data from downlaoded csv file data
+## read data from downloaded csv file data
 df <- hystReet::read_hystreet_csv("~/Downloads/hystreet.csv")
 
  }

@@ -137,7 +137,7 @@ With the `query` argument it is possible to define the time and sampling frame o
 
 * `from`: datetime of earliest measurement (default: today 00:00:00:): e.g. "2021-10-01 12:00:00" or "2021-10-01"
 * `to` : datetime of latest measurement (default: today 23:59:59): e.g. "2021-12-01 12:00:00" or "2021-12-01"
-* `resoution`: Resolution for the measurement (default: hour): "day", "hour", "month", "week"
+* `resolution`: Resolution for the measurement (default: hour): "day", "hour", "month", "week"
 
 ```{r}
 data <- get_hystreet_station_data(
