@@ -41,7 +41,7 @@
   ## Let´S GETTED STARTED
   ##=======================================##
   
-  host <- "https://hystreet.com/api/locations"
+  host <- "https://api.hystreet.com/locations"
   header_type <- "application/vnd.hystreet.v1" 
   
   url <- httr::modify_url(host, path = c("api", "locations", hystreetId))
