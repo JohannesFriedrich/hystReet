@@ -21,10 +21,10 @@ Create request to Hystreet API
 }
 \section{Function version}{
 
- 0.0.2
+ 0.0.3
 }
 
 \author{
-Johannes Friedrich
+Johannes Friedrich, Yannik Buhl
 }
 \keyword{internal}

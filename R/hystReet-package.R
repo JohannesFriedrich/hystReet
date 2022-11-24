@@ -4,7 +4,7 @@
 #' Download and analyse environmental data provided by https://hystreet.com/
 #'
 #' \tabular{ll}{Package: \tab hystReet \cr Type: \tab Package \cr Version:
-#' \tab 0.0.3 \cr Date: \tab 2021-XX-XX \cr License: \tab GPL-2 \cr }
+#' \tab 0.0.3 \cr Date: \tab 2022-11-24 \cr License: \tab GPL-2 \cr }
 #'
 #' @name hystReet-package
 #'

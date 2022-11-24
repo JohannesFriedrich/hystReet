@@ -7,8 +7,8 @@
 #' @return [data.frame] with parsed data from hystreet API
 #'
 #' @section Function version:
-#'  0.0.2
-#' @author Johannes Friedrich
+#'  0.0.3
+#' @author Johannes Friedrich, Yannik Buhl
 #'
 #' @keywords internal 
 .create_hystreet_request <- function(
@@ -20,7 +20,7 @@
   ## ERROR HANDLING
   ##=======================================##
   
-  if (!is.null(query) && class(query) != "list")
+  if (!is.null(query) && !inherits(query,"list"))
     stop("[create_hystreet_request()] Argument 'query' has to be a list", call. = FALSE)
   
   ##=======================================##

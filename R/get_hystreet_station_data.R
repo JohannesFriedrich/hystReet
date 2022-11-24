@@ -42,7 +42,7 @@ get_hystreet_station_data <- function(
   if (is.null(hystreetId))
     stop("[get_hystreet_station_data()] Argument 'hystreetId' has to be set.", call. = FALSE)
   
-  if (!is.null(query) && class(query) != "list")
+  if (!is.null(query) && !inherits(query,"list"))
     stop("[get_hystreet_station_data()] Argument 'query' has to be a list", call. = FALSE)
   
   if(!is.logical(no_metadata)) 

@@ -1,5 +1,6 @@
 # hystReet 0.0.3
 
+  * Use new API URL: https://api.hystreet.com (thanks to @yannikbuhl)
   * Add parameter `no_metadata` to `get_hystreet_station_data` (thanks to @yannikbuhl)
 
 # hystReet 0.0.2

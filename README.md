@@ -113,10 +113,10 @@ today_count
 <tbody>
 <tr>
 <td style="text-align:right;">
-188
+240
 </td>
 <td style="text-align:right;">
-2260884
+3836577
 </td>
 </tr>
 </tbody>
@@ -152,43 +152,10 @@ city
 <tbody>
 <tr>
 <td style="text-align:right;">
-308
+107
 </td>
 <td style="text-align:left;">
-Leipziger Straße (West)
-</td>
-<td style="text-align:left;">
-Halle (Saale)
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-76
-</td>
-<td style="text-align:left;">
-Königstraße (Mitte)
-</td>
-<td style="text-align:left;">
-Stuttgart
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-351
-</td>
-<td style="text-align:left;">
-Johann-Philipp-Straße
-</td>
-<td style="text-align:left;">
-Trier
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-108
-</td>
-<td style="text-align:left;">
-Große Straße (Mitte)
+Krahnstraße (Süd)
 </td>
 <td style="text-align:left;">
 Osnabrück
@@ -196,68 +163,101 @@ Osnabrück
 </tr>
 <tr>
 <td style="text-align:right;">
-309
+59
 </td>
 <td style="text-align:left;">
-Hochstraße (Nord)
+Goethestraße
 </td>
 <td style="text-align:left;">
-Krefeld
+Frankfurt a.M.
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-140
+102
 </td>
 <td style="text-align:left;">
-Fleischstraße (Nord)
+Bürgermeister-Fischer-Straße
 </td>
 <td style="text-align:left;">
-Trier
+Augsburg
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-53
+295
 </td>
 <td style="text-align:left;">
-Schadowstraße (West)
+Königstraße (Nord)
 </td>
 <td style="text-align:left;">
-Düsseldorf
+Stuttgart
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-55
+353
 </td>
 <td style="text-align:left;">
-Flinger Straße (Ost)
+Købmagergade (Mitte)
 </td>
 <td style="text-align:left;">
-Düsseldorf
+Kopenhagen
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-348
+63
 </td>
 <td style="text-align:left;">
-Holstenstraße (Nord)
+Georgstraße
 </td>
 <td style="text-align:left;">
-Kiel
+Hannover
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-368
+322
 </td>
 <td style="text-align:left;">
-Marktstraße
+Kalverstraat (Nord)
 </td>
 <td style="text-align:left;">
-Mönchengladbach
+Amsterdam
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+518
+</td>
+<td style="text-align:left;">
+Gespinstmarkt
+</td>
+<td style="text-align:left;">
+Ravensburg
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:left;">
+Sack
+</td>
+<td style="text-align:left;">
+Braunschweig
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+364
+</td>
+<td style="text-align:left;">
+Breite Straße (Süd)
+</td>
+<td style="text-align:left;">
+Lübeck
 </td>
 </tr>
 </tbody>
@@ -271,12 +271,12 @@ request a specific station. By default, all the data from the current
 day are received. With the `query` argument it is possible to define the
 time and sampling frame of the data more precisely:
 
--   `from`: datetime of earliest measurement (default: today 00:00:00:):
-    e.g. “2021-10-01 12:00:00” or “2021-10-01”
--   `to` : datetime of latest measurement (default: today 23:59:59):
-    e.g. “2021-12-01 12:00:00” or “2021-12-01”
--   `resoution`: Resolution for the measurement (default: hour): “day”,
-    “hour”, “month”, “week”
+- `from`: datetime of earliest measurement (default: today 00:00:00:):
+  e.g. “2021-10-01 12:00:00” or “2021-10-01”
+- `to` : datetime of latest measurement (default: today 23:59:59):
+  e.g. “2021-12-01 12:00:00” or “2021-12-01”
+- `resolution`: Resolution for the measurement (default: hour): “day”,
+  “hour”, “month”, “week”
 
 ``` r
 data <- get_hystreet_station_data(
