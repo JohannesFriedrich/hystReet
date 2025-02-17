@@ -2,31 +2,23 @@
 % Please edit documentation in R/get_hystreet_stats.R
 \name{get_hystreet_stats}
 \alias{get_hystreet_stats}
-\title{Get statistics from the Hystreet Project via Hystreet API}
+\title{Get statistics from the hystreet.com via hystreet.com's API}
 \usage{
 get_hystreet_stats(verbose = FALSE, API_token = NULL)
 }
 \arguments{
-\item{verbose}{\link{logical} (\strong{optional}): Show more verbose output?}
+\item{verbose}{[logical] (**optional**): Show more verbose output? Defaults to FALSE.}
 
-\item{API_token}{\link{character} (\strong{optional}): API key to get access to Hystreet API}
+\item{API_token}{[character] (**optional**): API key to get access to hystreet.com API}
 }
 \value{
-\link{data.frame} with parsed data from hystreet API
+A [data.frame] with parsed data from hystreet.com API
 }
 \description{
-Get statistics from the Hystreet Project via Hystreet API
+Get statistics from the hystreet.com via hystreet.com's API
 }
-\section{Function version}{
-
-0.0.2
-}
-
 \examples{
 \dontrun{
  get_hystreet_stats(TRUE)
 }
-}
-\author{
-Johannes Friedrich
 }

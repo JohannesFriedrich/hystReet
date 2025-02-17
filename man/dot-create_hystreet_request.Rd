@@ -2,29 +2,20 @@
 % Please edit documentation in R/create_hystreet_request.R
 \name{.create_hystreet_request}
 \alias{.create_hystreet_request}
-\title{Create request to Hystreet API}
+\title{Create HTTP request to hystreet.com API}
 \usage{
-.create_hystreet_request(API_key = NULL, hystreetId = NULL, query = NULL)
+.create_hystreet_request(hystreetId, query, API_token)
 }
 \arguments{
-\item{API_key}{[character]: API key to get access to Hystreet API}
+\item{hystreetId}{Integer. ID of a hystreet.com location}
 
-\item{hystreetId}{[integer]: Id of a hystreet location}
+\item{query}{List. Query parameters to get data for specific date.}
 
-\item{query}{[list]: Querys to get data for specific date. Use with argument path = c("from", "to", "resolution").}
+\item{API_token}{Character. API token to get access to hystreet.com API}
 }
 \value{
-[data.frame] with parsed data from hystreet API
+A data.frame with parsed data from hystreet.com API
 }
 \description{
-Create request to Hystreet API
+Create HTTP request to hystreet.com API
 }
-\section{Function version}{
-
- 0.0.3
-}
-
-\author{
-Johannes Friedrich, Yannik Buhl
-}
-\keyword{internal}

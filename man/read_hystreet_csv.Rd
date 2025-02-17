@@ -2,33 +2,23 @@
 % Please edit documentation in R/read_hystreet_csv.R
 \name{read_hystreet_csv}
 \alias{read_hystreet_csv}
-\title{Read downloaded data from the hystreet webpage to  data.frames}
+\title{Read downloaded data from the hystreet.com web page to data.frames}
 \usage{
 read_hystreet_csv(path, ...)
 }
 \arguments{
-\item{path}{\link{character} (\strong{required}): path to the downloaded csv file}
+\item{path}{[character] (**required**): Path to the downloaded CSV file}
 
-\item{...}{(\strong{optional}): arguments passed to \code{\link[utils:read.table]{utils::read.csv2()}}}
+\item{...}{(**optional**): Arguments passed to [utils::read.csv2()]}
 }
 \value{
-\link{data.frame} with parsed data from hystreet API
+A [data.frame] with parsed data from hystreet.com API
 }
 \description{
-Read downloaded data from the hystreet webpage to  data.frames
+Read downloaded data from the hystreet.com web page to data.frames
 }
-\section{Function version}{
-
-0.0.1
-}
-
 \examples{
 \dontrun{
-## read data from downloaded csv file data
 df <- hystReet::read_hystreet_csv("~/Downloads/hystreet.csv")
-
  }
-}
-\author{
-Johannes Friedrich
 }
