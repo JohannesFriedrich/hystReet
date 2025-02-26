@@ -6,8 +6,9 @@
 #'
 #' @return A data.frame with parsed data from hystreet.com API
 #'
-.create_hystreet_request <- function(hystreetId,
-                                     query,
+.create_hystreet_request <- function(endpoint,
+                                     hystreetId = NULL,
+                                     query = NULL,
                                      API_token) {
   
   #-----------------------------------------------------------------------------
@@ -16,7 +17,19 @@
   host <- "https://api.hystreet.com/"
   header_type <- "application/json" 
 
-  url <- httr::modify_url(host, path = c("v2", "locations", hystreetId, "measurements"))
+  if (endpoint == "locations") {
+  
+    url <- httr::modify_url(host, path = c("v2", "locations"))
+  
+  } else if (endpoint == "measurements") {
+    
+    url <- httr::modify_url(host, path = c("v2", "locations", hystreetId, "measurements"))
+    
+  } else if (endpoint == "details") {
+    
+    url <- httr::modify_url(host, path = c("v2", "locations", hystreetId))
+    
+  }
   
   res <- httr::GET(url,
                    query = query,
@@ -30,17 +43,15 @@
     
     content <- httr::content(res, "parsed", encoding = "UTF-8")
     
-    warning(
+    if ("message" %in% names(content)) {
+        
+      warning(content$message, call. = FALSE)
       
-      if ("message" %in% names(content)) {
+    } else {
         
-        content$message
+      httr::message_for_status(res)
         
-      } else {
-        
-        paste0("Errorcode: ", httr::status_code(res), ".\n")
-        
-      }, call. = FALSE)
+    }
     
     return(NULL)
     

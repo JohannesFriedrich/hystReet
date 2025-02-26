@@ -67,7 +67,7 @@ check_station_data_parameters <- function(hystreetId,
   }
   
   if (!(query$resolution %in% c("hour", "day", "week", "month")) || 
-      length(query$resolution) || 
+      length(query$resolution) > 1 || 
       !is.character(query$resolution)) {
     
     stop("Parameter 'resolution' has to be of length 1, of type character and accepts only the following values: 'hour', 'day', 'week', 'month'.", 

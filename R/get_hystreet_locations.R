@@ -10,10 +10,11 @@
 #' }
 #' @export
 #' 
-get_hystreet_locations <- function(API_token = NULL) {
+get_hystreet_locations <- function(API_token = Sys.getenv("HYSTREET_API_TOKEN")) {
   
-  res <- .create_hystreet_request(API_token)
+  res <- .create_hystreet_request(endpoint = "locations",
+                                  API_token = API_token)
   
-  return(res[,1:3])
+  return(res$locations)
 
 }
