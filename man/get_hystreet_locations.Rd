@@ -4,7 +4,7 @@
 \alias{get_hystreet_locations}
 \title{Get station IDs of hystreet.com}
 \usage{
-get_hystreet_locations(API_token = NULL)
+get_hystreet_locations(API_token = Sys.getenv("HYSTREET_API_TOKEN"))
 }
 \arguments{
 \item{API_token}{[character] (**optional**): Key access the hystreet.com API}

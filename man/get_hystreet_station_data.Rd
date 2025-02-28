@@ -31,22 +31,24 @@ get_hystreet_station_data(
 \item{API_token}{Character. API key for accessing the hystreet.com API.}
 }
 \value{
-A `data.frame` containing parsed data from the hystreet.com API.
+A nested list with the query results. If 'no_metadata' is set to TRUE: A `data.frame` containing parsed data from the hystreet.com API with only the raw counts and the timestamp.
 }
 \description{
 Fetches pedestrian count data from a specified station using the hystreet.com API.
 }
+\details{
+Note: Due to performance reasons, the maximum date range for the 'from' and 'to' parameters is limited to 366 days. Use 'from' and 'to' to fetch data in smaller chunks.
+}
 \examples{
 \dontrun{
-# Request data for the current day from station ID 71
-get_hystreet_station_data(71)
-
-# Request data for December 2018 with resolution "day"
-get_hystreet_station_data(hystreetId = 71, 
-                          query = list(from = "2018-12-01", 
-                                       to = "2018-12-31", 
-                                       resolution = "day")
-)
+# Request data with resolution "hour"
+res <- get_hystreet_station_data(hystreetId = 148,
+                                 query = list(from = "2025-02-20T15:00:00+01:00",
+                                              to = "2025-02-25T18:00:00+01:00",
+                                              resolution = "hour",
+                                              include_weather_data = TRUE,
+                                              include_zones = TRUE,
+                                              with_measured_data_only = FALSE))
 }
 
 }

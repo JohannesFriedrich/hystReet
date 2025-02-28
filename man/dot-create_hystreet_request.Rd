@@ -4,7 +4,7 @@
 \alias{.create_hystreet_request}
 \title{Create HTTP request to hystreet.com API}
 \usage{
-.create_hystreet_request(hystreetId, query, API_token)
+.create_hystreet_request(endpoint, hystreetId = NULL, query = NULL, API_token)
 }
 \arguments{
 \item{hystreetId}{Integer. ID of a hystreet.com location}

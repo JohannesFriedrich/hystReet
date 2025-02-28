@@ -16,20 +16,21 @@
 #' }
 #' @param no_metadata Logical. If `TRUE`, returns only the measurement data as a clean `data.frame`, excluding metadata. Defaults to `FALSE`.
 #' @param API_token Character. API key for accessing the hystreet.com API.
-
-#' @return A `data.frame` containing parsed data from the hystreet.com API.
+#' 
+#' @details Note: Due to performance reasons, the maximum date range for the 'from' and 'to' parameters is limited to 366 days. Use 'from' and 'to' to fetch data in smaller chunks.
+#' 
+#' @return A nested list with the query results. If 'no_metadata' is set to TRUE: A `data.frame` containing parsed data from the hystreet.com API with only the raw counts and the timestamp.
 #'
 #' @examples
 #' \dontrun{
-#' # Request data for the current day from station ID 71
-#' get_hystreet_station_data(71)
-#'
-#' # Request data for December 2018 with resolution "day"
-#' get_hystreet_station_data(hystreetId = 71, 
-#'                           query = list(from = "2018-12-01", 
-#'                                        to = "2018-12-31", 
-#'                                        resolution = "day")
-#' )
+#' # Request data with resolution "hour"
+#' res <- get_hystreet_station_data(hystreetId = 148,
+#'                                  query = list(from = "2025-02-20T15:00:00+01:00",
+#'                                               to = "2025-02-25T18:00:00+01:00",
+#'                                               resolution = "hour",
+#'                                               include_weather_data = TRUE,
+#'                                               include_zones = TRUE,
+#'                                               with_measured_data_only = FALSE))
 #' }
 #'
 #' @export
@@ -61,6 +62,10 @@ get_hystreet_station_data <- function(hystreetId,
                                 no_metadata = no_metadata, 
                                 API_token = API_token)
   
+  #-------------------------------------------------------------------------------
+  # Parse parameters to match API requirements
+  query <- parse_parameter_values(query)
+
   #-----------------------------------------------------------------------------
   # Perform API request and parse data 
   

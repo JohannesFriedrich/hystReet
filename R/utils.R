@@ -102,3 +102,77 @@ valid_api_token <- function(API_token) {
   }
   
 }
+
+#-------------------------------------------------------------------------------
+
+#' Parse query parameter list
+#'
+#' @param query Named query parameter list
+#'
+#' @returns Parsed query list
+#'
+parse_parameter_values <- function(query) {
+  
+  if ("include_weather_data" %in% names(query)) {
+    
+    if (!is.logical(query$include_weather_data) || 
+        length(query$include_weather_data) != 1) {
+      
+      stop("Parameter 'include_weather_data' has to be of type logical and of length 1.",
+           call. = FALSE)
+      
+    }
+    
+    if (query$resolution %in% c("week", "month") & 
+        isTRUE(query$include_weather_data)) {
+      
+      stop("Including weather data only applicable if 'resolution' is 'hour' or 'day'.",
+           call. = FALSE)
+      
+    }
+    
+    query$include_weather_data <- ifelse(isTRUE(query$include_weather_data), 
+                                         "true", 
+                                         "false")
+    
+  }
+  
+  #-----------------------------------------------------------------------------
+  
+  if ("include_zones" %in% names(query)) {
+    
+    if (!is.logical(query$include_zones) || 
+        length(query$include_zones) != 1) {
+      
+      stop("Parameter 'include_zones' has to be of type logical and of length 1.",
+           call. = FALSE)
+      
+    }
+    
+    query$include_zones <- ifelse(isTRUE(query$include_zones), 
+                                         "true", 
+                                         "false")
+    
+  }
+  
+  #-----------------------------------------------------------------------------
+  
+  if ("with_measured_data_only" %in% names(query)) {
+    
+    if (!is.logical(query$with_measured_data_only) || 
+        length(query$with_measured_data_only) != 1) {
+      
+      stop("Parameter 'with_measured_data_only' has to be of type logical and of length 1.",
+           call. = FALSE)
+      
+    }
+    
+    query$with_measured_data_only <- ifelse(isTRUE(query$with_measured_data_only), 
+                                         "true", 
+                                         "false")
+    
+  }
+  
+  return(query)
+  
+}

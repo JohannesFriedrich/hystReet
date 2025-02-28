@@ -39,30 +39,35 @@
   #-------------------------------------------------------------------------------
   # Parsing of results
   
+  if (httr::status_code(res) == 204) {
+    
+    stop("Your request has not returned any results. Check your parameter settings.",
+         call. = FALSE)
+    
+  }
+  
   if (httr::http_error(res)) {
-    
+
     content <- httr::content(res, "parsed", encoding = "UTF-8")
-    
+
     if ("message" %in% names(content)) {
-        
+
       warning(content$message, call. = FALSE)
-      
+
     } else {
-        
+
       httr::message_for_status(res)
-        
+
     }
-    
-    return(NULL)
-    
+
   } else {
-    
+
     content <- httr::content(res, "text")
-    
+
     parsed_request <- jsonlite::fromJSON(content)
-    
+
     return(parsed_request)
-    
+
   }
   
 }
