@@ -2,7 +2,7 @@ Package: hystReet
 Type: Package
 Title: Get Pedestrian Frequency Data from the 'Hystreet' Project
 Date: 2025-02-17
-Version: 0.0.4
+Version: 0.1.0
 Authors@R: c(person("Johannes", "Friedrich", role = c("aut", "cre"), email = "Johannes.Friedrich@posteo.de"),
              person("Buhl", "Yannik", role = c("ctb"), email = "yannik.buhl@posteo.de"))
 Maintainer: Johannes Friedrich <Johannes.Friedrich@posteo.de>

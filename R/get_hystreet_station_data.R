@@ -57,13 +57,14 @@ get_hystreet_station_data <- function(hystreetId,
     
   }
   
+  # Validity checks on API parameter values
   check_station_data_parameters(hystreetId = hystreetId,
                                 query = query, 
                                 no_metadata = no_metadata, 
                                 API_token = API_token)
   
   #-------------------------------------------------------------------------------
-  # Parse parameters to match API requirements
+  # Parse parameters to match API requirements + validity checks
   query <- parse_parameter_values(query)
 
   #-----------------------------------------------------------------------------
