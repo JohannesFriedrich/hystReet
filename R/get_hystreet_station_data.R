@@ -45,14 +45,14 @@ get_hystreet_station_data <- function(hystreetId,
 
   if (missing(hystreetId)) {
     
-    stop("[get_hystreet_station_data()]: Argument 'hystreetId' has to be set.", 
+    stop("Argument 'hystreetId' has to be set.", 
          call. = FALSE)
     
   }
   
   if (missing(query)) {
     
-    stop("[get_hystreet_station_data()]: Argument 'query' has to be set.", 
+    stop("Argument 'query' has to be set.", 
          call. = FALSE)
     
   }
@@ -70,25 +70,25 @@ get_hystreet_station_data <- function(hystreetId,
   #-----------------------------------------------------------------------------
   # Perform API request and parse data 
   
-  res <- .create_hystreet_request(endpoint = "measurements",
-                                  hystreetId = hystreetId, 
-                                  query = query,
-                                  API_token = API_token)
+  res <- create_hystreet_request(endpoint = "measurements",
+                                 hystreetId = hystreetId, 
+                                 query = query,
+                                 API_token = API_token)
   
   if (no_metadata == TRUE) {
     
     res <- res$measurements[, 1:3]
-    res$measured_at <- .convert_dates(res$measured_at)
-    res$measured_at_local_time <- .convert_dates(res$measured_at_local_time)
+    res$measured_at <- convert_dates(res$measured_at)
+    res$measured_at_local_time <- convert_dates(res$measured_at_local_time)
     
     return(res)
     
   } else {
     
-    res$measurement_period$from <- .convert_dates(res$measurement_period$from)
-    res$measurement_period$to <- .convert_dates(res$measurement_period$to)
-    res$measurements$measured_at <- .convert_dates(res$measurements$measured_at)
-    res$measurements$measured_at_local_time <- .convert_dates(res$measurements$measured_at_local_time)
+    res$measurement_period$from <- convert_dates(res$measurement_period$from)
+    res$measurement_period$to <- convert_dates(res$measurement_period$to)
+    res$measurements$measured_at <- convert_dates(res$measurements$measured_at)
+    res$measurements$measured_at_local_time <- convert_dates(res$measurements$measured_at_local_time)
     
     return(res)
     

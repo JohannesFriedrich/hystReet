@@ -1,15 +1,16 @@
 #' Create HTTP request to hystreet.com API
 #'
+#' @param endpoint Character. Endpoint to send the request to.
 #' @param hystreetId Integer. ID of a hystreet.com location
 #' @param query List. Query parameters to get data for specific date. 
-#' @param API_token Character. API token to get access to hystreet.com API
+#' @param API_token Character. API token to get access to hystreet.com API.
 #'
 #' @return A data.frame with parsed data from hystreet.com API
 #'
-.create_hystreet_request <- function(endpoint,
-                                     hystreetId = NULL,
-                                     query = NULL,
-                                     API_token) {
+create_hystreet_request <- function(endpoint,
+                                    hystreetId = NULL,
+                                    query = NULL,
+                                    API_token) {
   
   #-----------------------------------------------------------------------------
   # Create and perform HTTP call to hystreet.com API

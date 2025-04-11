@@ -24,9 +24,9 @@ get_hystreet_location_details <- function(hystreetId,
     
   }
   
-  res <- .create_hystreet_request(endpoint = "details",
-                                  hystreetId = hystreetId, 
-                                  API_token = API_token)
+  res <- create_hystreet_request(endpoint = "details",
+                                 hystreetId = hystreetId, 
+                                 API_token = API_token)
   
   return(res)
   

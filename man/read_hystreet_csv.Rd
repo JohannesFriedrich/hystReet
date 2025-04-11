@@ -7,12 +7,12 @@
 read_hystreet_csv(path, ...)
 }
 \arguments{
-\item{path}{[character] (**required**): Path to the downloaded CSV file}
+\item{path}{Character. (**Required**): Path to the downloaded CSV file.}
 
-\item{...}{(**optional**): Arguments passed to [utils::read.csv2()]}
+\item{...}{**Optional**: Arguments passed to 'utils::read.csv2()'}
 }
 \value{
-A [data.frame] with parsed data from hystreet.com API
+A data.frame with parsed data from the hystreet.com API
 }
 \description{
 Read downloaded data from the hystreet.com web page to data.frames

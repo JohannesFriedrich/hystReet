@@ -7,7 +7,7 @@
 \title{hystReet}
 \description{
 An R API wrapper for hystreet.com.  
-Download and analyse environmental data provided by <https://hystreet.com/>.
+Download and analyse data provided by <https://hystreet.com/>.
 }
 \seealso{
 Useful links:

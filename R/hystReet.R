@@ -1,7 +1,7 @@
 #' hystReet
 #'
 #' An R API wrapper for hystreet.com.  
-#' Download and analyse environmental data provided by <https://hystreet.com/>.
+#' Download and analyse data provided by <https://hystreet.com/>.
 #'
 #' @name hystReet
 #' @keywords package

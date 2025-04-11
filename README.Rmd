@@ -130,7 +130,7 @@ The most useful function is `get_hystreet_station_data()`. Using the 'hystreetID
 * `to` : datetime of latest measurement (default: today 23:59:59): e.g. "2021-12-01 12:00:00" or "2021-12-01"
 * `resolution`: Resolution for the measurement (default: hour): "day", "hour", "month", "week"
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, cache=TRUE}
 data <- get_hystreet_station_data(hystreetId = 148,
                                   query = list(from = "2021-12-01", 
                                                to = "2021-12-31", 
@@ -142,7 +142,7 @@ data <- get_hystreet_station_data(hystreetId = 148,
 
 Let's see if we can find the busiest days in December 2024. Saturdays were probably quite busy, while there should have been substantially less pedestrian traffic on the 25th and 26th of December, both of which are holidays in Germany.
 
-```{r}
+```{r cache=TRUE}
 data <- get_hystreet_station_data(hystreetId = 148, 
                                   query = list(from = "2024-12-01", 
                                                to = "2024-01-01", 

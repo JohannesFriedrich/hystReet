@@ -57,3 +57,13 @@ test_that("get_hystreet_station_data errors for 'resolution'", {
                regexp = "Parameter 'resolution' has to be of length 1")
   
 })
+
+#-------------------------------------------------------------------------------
+
+test_that("get_hystreet_location_details errors for 'hystreetId'", {
+  
+  expect_error(object = get_hystreet_location_details(hystreetId = "73",
+                                                      API_token = "foo_bar"),
+               regexp = "Parameter 'hystreetId' has to be of type numeric and of length 1.")
+  
+})
