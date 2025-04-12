@@ -2,18 +2,18 @@
 % Please edit documentation in R/get_hystreet_locations.R
 \name{get_hystreet_locations}
 \alias{get_hystreet_locations}
-\title{Get station IDs of hystreet.com}
+\title{Retrieve station IDs of hystreet.com}
 \usage{
 get_hystreet_locations(API_token = Sys.getenv("HYSTREET_API_TOKEN"))
 }
 \arguments{
-\item{API_token}{Character. Key access the hystreet.com API.}
+\item{API_token}{Character. API key for accessing the hystreet.com API.}
 }
 \value{
-A data.frame with parsed data from the hystreet.com API
+A data.frame with parsed data from the hystreet.com API.
 }
 \description{
-Get station IDs of hystreet.com
+Retrieve station IDs of hystreet.com
 }
 \examples{
 \dontrun{

@@ -17,12 +17,10 @@ convert_dates <- function(date) {
 #' @param hystreetId Parameter to be checked
 #' @param query Parameter to be checked
 #' @param no_metadata Parameter to be checked
-#' @param API_token Parameter to be checked
 #'
 check_station_data_parameters <- function(hystreetId,
                                           query,
-                                          no_metadata,
-                                          API_token) {
+                                          no_metadata) {
   
   if (length(hystreetId) != 1 || !is.numeric(hystreetId)) {
     
@@ -75,8 +73,6 @@ check_station_data_parameters <- function(hystreetId,
     
   }
   
-  valid_api_token(API_token)
-  
 }
 
 #-------------------------------------------------------------------------------
@@ -94,7 +90,7 @@ valid_api_token <- function(API_token) {
     
   }
   
-  if (API_token == "") {
+  if (isFALSE(nzchar(API_token))) {
     
     stop("You have to give your API key as function argument or set a HYSTREET_API_TOKEN environment variable.\n",
          call. = FALSE)

@@ -2,22 +2,22 @@
 % Please edit documentation in R/create_hystreet_request.R
 \name{create_hystreet_request}
 \alias{create_hystreet_request}
-\title{Create HTTP request to hystreet.com API}
+\title{Create HTTP request to the hystreet.com API}
 \usage{
 create_hystreet_request(endpoint, hystreetId = NULL, query = NULL, API_token)
 }
 \arguments{
 \item{endpoint}{Character. Endpoint to send the request to.}
 
-\item{hystreetId}{Integer. ID of a hystreet.com location}
+\item{hystreetId}{Integer. ID of a hystreet.com location.}
 
 \item{query}{List. Query parameters to get data for specific date.}
 
-\item{API_token}{Character. API token to get access to hystreet.com API.}
+\item{API_token}{Character. API key for accessing the hystreet.com API.}
 }
 \value{
-A data.frame with parsed data from hystreet.com API
+A data.frame with parsed data from the hystreet.com API.
 }
 \description{
-Create HTTP request to hystreet.com API
+Create HTTP request to the hystreet.com API
 }

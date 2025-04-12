@@ -1,18 +1,18 @@
 #' Retrieve data from a specific hystreet.com station
 #'
-#' Fetches pedestrian count data from a specified station using the hystreet.com API.
+#' @description This function fetches pedestrian count data from a specified station using the hystreet.com API. It is the main powerhouse of the package.
 #'
 #' @param hystreetId Integer. Mandatory parameter. ID of the requested station. See `get_hystreet_locations()` for available station IDs.
 #' @param query Named list of query parameters. Supported API parameters ('from', 'to', and 'resolution' are mandatory):
 #' \describe{
 #'   \item{\code{from}}{Character. The start date of the queried timerange. Only accepts valid RFC 3339 formatted timestamps (e.g., '2025-01-12T15:06:13+01:00'). Mandatory parameter.}
 #'   \item{\code{to}}{Character. The end date of the queried timerange. Only accepts valid RFC 3339 formatted timestamps (e.g., '2025-01-22T15:06:13+01:00'). Mandatory parameter.}
-#'   \item{\code{resolution}}{Character. Time resolution for measurements. Mandatory parameter. Accepts the following values: 'hour', 'day', 'week', and 'month'. Mandatory parameter.}
+#'   \item{\code{resolution}}{Character. Time resolution for measurements. Accepts the following values: 'hour', 'day', 'week', and 'month'. Mandatory parameter.}
 #'   \item{\code{include_weather_data}}{Logical. Adds data on weather conditions for every measurement if data is available. Weather information is only available with resolution set to 'hour' or 'day'.}
 #'   \item{\code{include_zones}}{Logical. Some streets are split into multiple zones. This parameter ensures to split measurements in the zones of a location and return them more granularly.}
-#'   \item{\code{with_measured_data_only}}{Logical. Filters the measurements to only include measurements with measured data (no modeled data). If set to false, all measurements will be returned.}
-#'   \item{\code{with_object_type}}{Character. Filters the measurements by the object type. This is a main category for organizing measurements. Accepted values: 'PERSON' or 'VEHICLE'.}
-#'   \item{\code{with_object_subtype}}{Character. Filters the measurements by the object subtype. This is a subcategory for organizing measurements. Accepted values: 'ADULT', 'CHILD', 'CAR', 'BUS', 'BICYCLE', or 'TRAM'. If the subtype is not related to the type, it will be ignored.}
+#'   \item{\code{with_measured_data_only}}{Logical. Filters the measurements to only include measurements with measured data (no modeled data). If set to FALSE, all measurements will be returned.}
+#'   \item{\code{with_object_type}}{Character. Filters the measurements by the object type. This is a main category for organising measurements. Accepted values: 'PERSON' or 'VEHICLE'.}
+#'   \item{\code{with_object_subtype}}{Character. Filters the measurements by the object subtype. This is a subcategory for organising measurements. Accepted values: 'ADULT', 'CHILD', 'CAR', 'BUS', 'BICYCLE', or 'TRAM'. If the subtype is not related to the type, it will be ignored. You can filter by subtypes without specifying the 'with_object_type' parameter. There is no extensive validation to the logic of the object types and subtypes.}
 #' }
 #' @param no_metadata Logical. If `TRUE`, returns only the measurement data as a clean `data.frame`, excluding metadata. Defaults to `FALSE`.
 #' @param API_token Character. API key for accessing the hystreet.com API.
@@ -60,8 +60,7 @@ get_hystreet_station_data <- function(hystreetId,
   # Validity checks on API parameter values
   check_station_data_parameters(hystreetId = hystreetId,
                                 query = query, 
-                                no_metadata = no_metadata, 
-                                API_token = API_token)
+                                no_metadata = no_metadata)
   
   #-------------------------------------------------------------------------------
   # Parse parameters to match API requirements + validity checks
@@ -69,7 +68,6 @@ get_hystreet_station_data <- function(hystreetId,
 
   #-----------------------------------------------------------------------------
   # Perform API request and parse data 
-  
   res <- create_hystreet_request(endpoint = "measurements",
                                  hystreetId = hystreetId, 
                                  query = query,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/datasets.R
 \name{ratio}
 \alias{ratio}
-\title{Downloaded data for the vignette: Pedestrian counts per day}
+\title{Data for the vignette: Pedestrian counts per day}
 \format{
 A data frame with pedestrian counts per day.
 }

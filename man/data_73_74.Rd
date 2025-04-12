@@ -2,7 +2,7 @@
 % Please edit documentation in R/datasets.R
 \name{data_73_74}
 \alias{data_73_74}
-\title{Downloaded data for the vignette: Pedestrian counts (Jan 2019)}
+\title{Data for the vignette: Pedestrian counts (Jan 2019)}
 \format{
 A data frame with pedestrian counts.
 }

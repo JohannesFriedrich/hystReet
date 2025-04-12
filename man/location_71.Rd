@@ -2,7 +2,7 @@
 % Please edit documentation in R/datasets.R
 \name{location_71}
 \alias{location_71}
-\title{Downloaded data for the vignette: Location 71 (Dec 2018)}
+\title{Data for the vignette: Location 71 (Dec 2018)}
 \format{
 A list with location data.
 }

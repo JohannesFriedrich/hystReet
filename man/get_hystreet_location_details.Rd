@@ -15,10 +15,10 @@ get_hystreet_location_details(
 \item{API_token}{Character. API key for accessing the hystreet.com API.}
 }
 \value{
-A list with detailled information on the station
+A list with detailed information on the station.
 }
 \description{
-Detailled information in form of a named list includes, e.g., postal code, time of earliest and latest measurement and information on the sensor and the zones.
+Detailed information in form of a named list includes, e.g., postal code, time of earliest and latest measurement and information on the sensor and the zones.
 }
 \examples{
 \dontrun{

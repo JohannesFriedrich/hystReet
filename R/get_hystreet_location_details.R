@@ -3,9 +3,9 @@
 #' @param hystreetId Integer. Mandatory parameter. ID of the requested station. See `get_hystreet_locations()` for available station IDs.
 #' @param API_token Character. API key for accessing the hystreet.com API.
 #'
-#' @description Detailled information in form of a named list includes, e.g., postal code, time of earliest and latest measurement and information on the sensor and the zones.
+#' @description Detailed information in form of a named list includes, e.g., postal code, time of earliest and latest measurement and information on the sensor and the zones.
 #'
-#' @returns A list with detailled information on the station
+#' @returns A list with detailed information on the station.
 #' 
 #' @examples
 #' \dontrun{

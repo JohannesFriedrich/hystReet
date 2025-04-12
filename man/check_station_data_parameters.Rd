@@ -4,7 +4,7 @@
 \alias{check_station_data_parameters}
 \title{Check parameter values for errors}
 \usage{
-check_station_data_parameters(hystreetId, query, no_metadata, API_token)
+check_station_data_parameters(hystreetId, query, no_metadata)
 }
 \arguments{
 \item{hystreetId}{Parameter to be checked}
@@ -12,8 +12,6 @@ check_station_data_parameters(hystreetId, query, no_metadata, API_token)
 \item{query}{Parameter to be checked}
 
 \item{no_metadata}{Parameter to be checked}
-
-\item{API_token}{Parameter to be checked}
 }
 \description{
 Check parameter values for errors

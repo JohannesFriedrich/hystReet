@@ -2,7 +2,7 @@
 % Please edit documentation in R/datasets.R
 \name{corona_data_all}
 \alias{corona_data_all}
-\title{Downloaded data for the vignette: All stations (March 2020)}
+\title{Data for the vignette: All stations (March 2020)}
 \format{
 A data frame with station data.
 }

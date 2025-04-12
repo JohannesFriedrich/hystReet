@@ -1,4 +1,4 @@
-#' Downloaded data for the vignette: Pedestrian counts (Jan 2019)
+#' Data for the vignette: Pedestrian counts (Jan 2019)
 #'
 #' A dataset containing pedestrian counts from January 2019.
 #'
@@ -7,7 +7,7 @@
 #' @keywords datasets
 NULL
 
-#' Downloaded data for the vignette: Location 71 (Dec 2018)
+#' Data for the vignette: Location 71 (Dec 2018)
 #'
 #' A list containing results from location 71 in December 2018.
 #'
@@ -16,7 +16,7 @@ NULL
 #' @keywords datasets
 NULL
 
-#' Downloaded data for the vignette: All locations (March 2020)
+#' Data for the vignette: All locations (March 2020)
 #'
 #' A dataset with all available locations as of March 2020.
 #'
@@ -25,7 +25,7 @@ NULL
 #' @keywords datasets
 NULL
 
-#' Downloaded data for the vignette: Pedestrian counts per day
+#' Data for the vignette: Pedestrian counts per day
 #'
 #' A dataset with daily pedestrian counts.
 #'
@@ -34,7 +34,7 @@ NULL
 #' @keywords datasets
 NULL
 
-#' Downloaded data for the vignette: All stations (March 2020)
+#' Data for the vignette: All stations (March 2020)
 #'
 #' A dataset with data from all available stations in March 2020.
 #'

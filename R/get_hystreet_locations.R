@@ -1,8 +1,8 @@
-#' Get station IDs of hystreet.com
+#' Retrieve station IDs of hystreet.com
 #'
-#' @param API_token Character. Key access the hystreet.com API.
+#' @param API_token Character. API key for accessing the hystreet.com API.
 #' 
-#' @return A data.frame with parsed data from the hystreet.com API
+#' @return A data.frame with parsed data from the hystreet.com API.
 #' 
 #' @examples
 #' \dontrun{

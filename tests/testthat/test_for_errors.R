@@ -67,3 +67,12 @@ test_that("get_hystreet_location_details errors for 'hystreetId'", {
                regexp = "Parameter 'hystreetId' has to be of type numeric and of length 1.")
   
 })
+
+#-------------------------------------------------------------------------------
+
+test_that("Functions error on wrong API token", {
+  
+  expect_error(object = get_hystreet_locations(API_token = ""),
+               regexp = "You have to give your API key as function argument or set a HYSTREET_API_TOKEN environment variable")
+  
+})
