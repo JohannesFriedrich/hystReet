@@ -11,6 +11,8 @@ with_mock_dir("raw_data_list_output", {
                                                   resolution = "hour",
                                                   include_weather_data = TRUE,
                                                   include_zones = TRUE,
+                                                  with_object_type = "PERSON",
+                                                  with_object_subtype = "CHILD",
                                                   with_measured_data_only = FALSE))
     
     # Tests

@@ -36,6 +36,18 @@ create_hystreet_request <- function(endpoint,
     
   }
   
+  #-----------------------------------------------------------------------------
+  # Sanitise the parameter name of 'with_object_subtype'
+  
+  if ("with_object_subtype" %in% names(query)) {
+    
+    names(query)[names(query) == "with_object_subtype"] <- "with_object_subtype[]"
+    
+  }
+  
+  #-------------------------------------------------------------------------------
+  # Perform request
+  
   res <- httr::GET(url,
                    query = query,
                    add_headers("x-api-token" = API_token, 
