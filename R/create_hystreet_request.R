@@ -1,73 +1,90 @@
-#' Create request to Hystreet API
+#' Create HTTP request to the hystreet.com API
 #'
-#' @param API_key [character]: API key to get access to Hystreet API
-#' @param hystreetId [integer]: Id of a hystreet location
-#' @param query [list]: Querys to get data for specific date. Use with argument path = c("from", "to", "resolution").
+#' @param endpoint Character. Endpoint to send the request to.
+#' @param hystreetId Integer. ID of a hystreet.com location.
+#' @param query List. Query parameters to get data for specific date. 
+#' @param API_token Character. API key for accessing the hystreet.com API.
 #'
-#' @return [data.frame] with parsed data from hystreet API
+#' @return A data.frame with parsed data from the hystreet.com API.
 #'
-#' @section Function version:
-#'  0.0.3
-#' @author Johannes Friedrich, Yannik Buhl
-#'
-#' @keywords internal 
-.create_hystreet_request <- function(
-  API_key = NULL,
-  hystreetId = NULL,
-  query = NULL){
+create_hystreet_request <- function(endpoint,
+                                    hystreetId = NULL,
+                                    query = NULL,
+                                    API_token) {
   
-  ##=======================================##
-  ## ERROR HANDLING
-  ##=======================================##
+  #-------------------------------------------------------------------------------
+  # Check API token
+  valid_api_token(API_token = API_token)
   
-  if (!is.null(query) && !inherits(query,"list"))
-    stop("[create_hystreet_request()] Argument 'query' has to be a list", call. = FALSE)
+  #-----------------------------------------------------------------------------
+  # Create and perform HTTP call to hystreet.com API
+
+  host <- "https://api.hystreet.com/"
+  header_type <- "application/json" 
+
+  if (endpoint == "locations") {
   
-  ##=======================================##
-  ## TRY TO GET API KEY FROM ENVIRONMENT
-  ##=======================================##
+    url <- httr::modify_url(host, path = c("v2", "locations"))
   
-  if(is.null(API_key)){
+  } else if (endpoint == "measurements") {
     
-    hystreet_token <- .get_hystreet_token()
+    url <- httr::modify_url(host, path = c("v2", "locations", hystreetId, "measurements"))
     
-  } else {
+  } else if (endpoint == "details") {
     
-    hystreet_token <- API_key
+    url <- httr::modify_url(host, path = c("v2", "locations", hystreetId))
     
   }
   
-  ##=======================================##
-  ## Let´S GETTED STARTED
-  ##=======================================##
+  #-----------------------------------------------------------------------------
+  # Sanitise the parameter name of 'with_object_subtype'
   
-  host <- "https://api.hystreet.com/locations"
-  header_type <- "application/vnd.hystreet.v1" 
+  if ("with_object_subtype" %in% names(query)) {
+    
+    names(query)[names(query) == "with_object_subtype"] <- "with_object_subtype[]"
+    
+  }
   
-  url <- httr::modify_url(host, path = c("api", "locations", hystreetId))
+  #-------------------------------------------------------------------------------
+  # Perform request
   
   res <- httr::GET(url,
-             query = query,
-             add_headers(
-               "x-api-token" = hystreet_token, 
-                Accept = header_type))
+                   query = query,
+                   add_headers("x-api-token" = API_token, 
+                               Accept = header_type))
+  
+  #-------------------------------------------------------------------------------
+  # Parsing of results
+  
+  if (httr::status_code(res) == 204) {
+    
+    stop("Your request has not returned any results. Check your parameter settings.",
+         call. = FALSE)
+    
+  }
   
   if (httr::http_error(res)) {
-    content <-  httr::content(res, 'parsed', encoding = 'UTF-8')
-    warning(
-      if ('message' %in% names(content)) {
-        content$message
-      } else {
-        paste0("Errorcode: ", httr::status_code(res), ".\n")
-      }, call. = FALSE)
-    
-    return(NULL)
+
+    content <- httr::content(res, "parsed", encoding = "UTF-8")
+
+    if ("message" %in% names(content)) {
+
+      warning(content$message, call. = FALSE)
+
+    } else {
+
+      httr::message_for_status(res)
+
+    }
+
   } else {
-    
+
     content <- httr::content(res, "text")
-    
+
     parsed_request <- jsonlite::fromJSON(content)
-    
+
     return(parsed_request)
+
   }
+  
 }

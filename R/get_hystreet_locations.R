@@ -1,25 +1,21 @@
-#' Get station IDs of the Hystreet project
+#' Retrieve station IDs of hystreet.com
 #'
-#' @param API_token [character] (**optional**): API key to get access to Hystreet API
+#' @param API_token Character. API key for accessing the hystreet.com API.
 #' 
-#' @return [data.frame] with parsed data from hystreet API
-#'
-#' @section Function version:
-#'  0.0.2
-#' @author Johannes Friedrich
+#' @return A data.frame with parsed data from the hystreet.com API.
 #' 
 #' @examples
 #' \dontrun{
 #'  get_hystreet_locations()
 #' }
-#' @md
+#' 
 #' @export
-
-get_hystreet_locations <- function(API_token = NULL){
+#' 
+get_hystreet_locations <- function(API_token = Sys.getenv("HYSTREET_API_TOKEN")) {
   
+  res <- create_hystreet_request(endpoint = "locations",
+                                 API_token = API_token)
   
-  res <- .create_hystreet_request(API_token)
-  
-  return(res[,1:3])
+  return(res$locations)
 
 }
