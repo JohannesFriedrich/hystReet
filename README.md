@@ -1,0 +1,155 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# hystReet
+
+<!-- badges: start -->
+
+[![CRAN](http://www.r-pkg.org/badges/version/hystReet)](https://CRAN.R-project.org/package=hystReet)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/hystReet)](https://www.r-pkg.org/pkg/hystReet)
+[![R-CMD-check](https://github.com/JohannesFriedrich/hystReet/workflows/R-CMD-check/badge.svg)](https://github.com/JohannesFriedrich/hystReet/actions)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+<!-- badges: end -->
+
+## Introduction
+
+[hystreet](https://hystreet.com) is a company that collects data on
+pedestrian traffic in shopping streets of different European (mostly
+German) cities. After registering you can access and download the data
+via their website.
+
+## Installation
+
+The package is on CRAN. The easiest way to download is via:
+
+``` r
+install.packages("hystReet")
+```
+
+You can install the development version from GitHub with the following
+command:
+
+``` r
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("JohannesFriedrich/hystReet")
+```
+
+## API Keys
+
+To use this package, you need to get a hystreet.com API key. To do so,
+you need to set up an account on <https://hystreet.com/>. After that,
+you can find your personal API key in the ‘Profile’ section of the
+webpage.
+
+Now you have three options:
+
+1)  Once you have your key, you can save it as an environment variable
+    for the current session by running the following command:
+
+``` r
+Sys.setenv(HYSTREET_API_TOKEN = "PASTE YOUR API TOKEN HERE")
+```
+
+2)  Alternatively, you can set it permanently with the help of
+    `usethis::edit_r_environ()` by adding the following line to your
+    `.Renviron`:
+
+<!-- -->
+
+    HYSTREET_API_TOKEN = PASTE YOUR API TOKEN HERE
+
+3)  If you don’t want to save your API token here, you can enter it for
+    each function of this package using the `API_token` parameter.
+
+## Usage
+
+| Function name | Description | Example |
+|----|----|----|
+| get_hystreet_locations() | request all available locations | get_hystreet_locations() |
+| get_hystreet_station_data() | request data from a stations | get_hystreet_station_data(71) |
+| set_hystreet_token() | set your API token | set_hystreet_token(“123456789”) |
+| get_hystreet_location_details | get station details | get_hystreet_location_details(148) |
+
+### Request all stations
+
+**Attention: The free API account does only provide access to one
+example location, which is Limburg.**
+
+The function `get_hystreet_locations()` generates a data frame with all
+available stations available to you as a user.
+
+``` r
+locations <- get_hystreet_locations()
+```
+
+``` r
+locations
+```
+
+### Request data from a specific station
+
+The most useful function is `get_hystreet_station_data()`. Using the
+‘hystreetID’ (the station’s ID, 148 in the case of Limburg) it is
+possible to request data from a specific station. With the `query`
+argument it is necessary to define the time and sampling frame of the
+data:
+
+- `from`: datetime of earliest measurement (default: today 00:00:00:):
+  e.g. “2021-10-01 12:00:00” or “2021-10-01”
+- `to` : datetime of latest measurement (default: today 23:59:59):
+  e.g. “2021-12-01 12:00:00” or “2021-12-01”
+- `resolution`: Resolution for the measurement (default: hour): “day”,
+  “hour”, “month”, “week”
+
+``` r
+data <- get_hystreet_station_data(hystreetId = 148,
+                                  query = list(from = "2021-12-01", 
+                                               to = "2021-12-31", 
+                                               resolution = "day"))
+```
+
+## Some ideas for visualising the data
+
+Let’s see if we can find the busiest days in December 2024. Saturdays
+were probably quite busy, while there should have been substantially
+less pedestrian traffic on the 25th and 26th of December, both of which
+are holidays in Germany.
+
+``` r
+data <- get_hystreet_station_data(hystreetId = 148, 
+                                  query = list(from = "2025-09-01", 
+                                               to = "2025-09-15", 
+                                               resolution = "hour"))
+```
+
+``` r
+ggplot(data$measurements, 
+       aes(x = timestamp, 
+           y = pedestrians_count, 
+           colour = weekdays(timestamp))) +
+  geom_path(group = 1) +
+  scale_x_datetime(date_breaks = "7 days", 
+                   labels = date_format("%d.%m.%Y")) +
+  labs(x = "Date",
+       y = "Pedestrians",
+       colour = "Day",
+       title = "Pedestrian counts for the example location of Limburg",
+       subtitle = "Source: hystreet.com")
+```
+
+<img src="README_figs/README-station_148-1.png" width="672" style="display: block; margin: auto;" />
+
+## Disclaimer
+
+This package has been developed independently of and is not in any way
+associated to hystreet.com GmbH. Some parts of or calls to the API may
+exhibit unforeseen behaviour due to the API still being subject to
+changes. It is a simple wrapper providing R functions to access the
+hystreet.com API. The package authors are in no way responsible for the
+data that can be retrieved using its functions and do not provide
+support for any problems arising from the API’s functionality itself.
+Conversely, support for problems related to this package is exclusively
+provided by the package authors. The license of this package solely
+applies to its source code.

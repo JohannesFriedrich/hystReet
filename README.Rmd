@@ -52,6 +52,7 @@ library(readr)
 library(lubridate)
 library(scales)
 library(ggplot2)
+library(hystReet)
 ```
 
 
@@ -84,33 +85,14 @@ If you don't want to save your API token here, you can enter it for each functio
 
 Function name       | Description                                        | Example
 --------------------|----------------------------------------------------| -------
-get_hystreet_stats() | request common statistics about the hystreet project | get_hystreet_stats() 
 get_hystreet_locations() | request all available locations | get_hystreet_locations() 
 get_hystreet_station_data() | request data from a stations  | get_hystreet_station_data(71)
-set_hystreet_token() | set your API token | set_hystreet_token(123456789)
-
-### Load some statistics
-
-**Attention: The free API account does only provide access to one example location, which is Limburg.**
-
-The function `get_hystreet_stats()` summarises the number of available stations and the sum of all counted pedestrians.
-
-```{r}
-library(hystReet)
-
-stats <- get_hystreet_stats()
-```
-
-```{r, eval=FALSE}
-stats
-```
-
-```{r echo=FALSE}
-knitr::kable(stats, format = "html")
-```
-
+set_hystreet_token() | set your API token | set_hystreet_token("123456789")
+get_hystreet_location_details | get station details | get_hystreet_location_details(148)
 
 ### Request all stations
+
+**Attention: The free API account does only provide access to one example location, which is Limburg.**
 
 The function `get_hystreet_locations()` generates a data frame with all available stations available to you as a user. 
 
