@@ -41,8 +41,7 @@ install.packages("hystReet")
 You can install the development version from GitHub with the following command:
 
 ```{r, eval=FALSE}
-if (!require("remotes"))
-  install.packages("remotes")
+if (!require("remotes")) install.packages("remotes")
 remotes::install_github("JohannesFriedrich/hystReet")
 ```
 
@@ -52,6 +51,7 @@ library(tidyverse)
 library(readr)
 library(lubridate)
 library(scales)
+library(ggplot2)
 ```
 
 
@@ -144,8 +144,8 @@ Let's see if we can find the busiest days in December 2024. Saturdays were proba
 
 ```{r cache=TRUE}
 data <- get_hystreet_station_data(hystreetId = 148, 
-                                  query = list(from = "2024-12-01", 
-                                               to = "2024-01-01", 
+                                  query = list(from = "2025-09-01", 
+                                               to = "2025-09-15", 
                                                resolution = "hour"))
 ```
 
