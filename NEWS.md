@@ -1,3 +1,9 @@
+# hystReet 0.1.0
+
+  * Update package to make use of the hystreet.com API v2
+  * Larger updates to the backend
+  * Write unit tests
+
 # hystReet 0.0.3
 
   * Use new API URL: https://api.hystreet.com (thanks to @yannikbuhl)

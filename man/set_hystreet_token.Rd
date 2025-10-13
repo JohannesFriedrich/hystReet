@@ -2,24 +2,16 @@
 % Please edit documentation in R/set_hystreet_token.R
 \name{set_hystreet_token}
 \alias{set_hystreet_token}
-\title{Set your API token for the Hystreet API}
+\title{Set your API token for the hystreet.com API}
 \usage{
-set_hystreet_token(API_token = NULL)
+set_hystreet_token(API_token)
 }
 \arguments{
-\item{API_token}{\link{character} (\strong{required}): API key to get access to Hystreet API}
+\item{API_token}{Character. API key to get access to hystreet.com API.}
 }
 \value{
-Set environment variable
+Environment variable set to the API token
 }
 \description{
-Set your API token for the Hystreet API
-}
-\section{Function version}{
-
-0.0.1
-}
-
-\author{
-Johannes Friedrich
+Set your API token for the hystreet.com API
 }
